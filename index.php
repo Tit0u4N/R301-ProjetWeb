@@ -79,3 +79,8 @@
 </main>
 </body>
 </html>
+
+
+<Directory /var/www/R301-ProjetWeb>
+AllowOverride All
+</Directory>
