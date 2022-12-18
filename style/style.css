@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 @font-face {
@@ -20,7 +22,16 @@
 }
 
 h1, h2, h3, h4 {
-  font-family: LIQUIDO;
+  font-family: LIQUIDO, sans-serif;
+}
+
+.divider {
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: var(--paragraphe);
+  user-select: none;
+  border: none;
 }
 
 nav {
@@ -35,14 +46,16 @@ nav {
 }
 nav .logo {
   font-size: 70px;
-  margin-top: -9px;
+  margin-top: -5px;
   margin-left: 5px;
   color: var(--highlight);
   text-decoration: none;
-  font-family: LIQUIDO-Fluid;
 }
 nav .logo span:first-of-type {
-  font-family: LIQUIDO;
+  font-family: LIQUIDO, sans-serif;
+}
+nav .logo span:last-of-type {
+  font-family: LIQUIDO-Fluid, sans-serif;
 }
 nav form {
   display: flex;
@@ -55,12 +68,17 @@ nav form input[type=search] {
   width: 60%;
   border: none;
   border-right: solid 1px var(--paragraphe);
+  padding-left: 5px;
+  font-size: 20px;
+  font-family: "Poppins Light", sans-serif;
 }
 nav form select {
   width: calc(40% - 38px);
   height: 38px;
   border: none;
   text-align: center;
+  font-size: 18px;
+  font-family: "Poppins Light", sans-serif;
 }
 nav form select * {
   height: 80px;
@@ -75,7 +93,12 @@ nav form button[type=submit] {
   width: 38px;
   background: var(--highlight);
   border: none;
-  padding: 2px;
+  text-align: center;
+  padding-top: 3px;
+}
+nav form button[type=submit] svg {
+  width: 75%;
+  aspect-ratio: 1/1;
 }
 nav div {
   height: 100%;
@@ -90,6 +113,64 @@ nav div > a {
   width: auto;
   background: var(--highlight);
   color: var(--background);
+}
+
+main {
+  max-width: 1100px;
+  min-height: 80vh;
+  margin: 0 auto;
+  background: var(--background);
+  padding: 20px 15px 0 15px;
+}
+main h2 {
+  margin-left: 10px;
+  margin-bottom: 20px;
+  font-size: 60px;
+}
+main .catalog {
+  display: flex;
+  gap: 30px;
+}
+main .catalog article.produitCard {
+  background: white;
+  width: 255px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+main .catalog article.produitCard img {
+  height: 270px;
+  width: 100%;
+  object-fit: scale-down;
+}
+main .catalog article.produitCard h3 {
+  font-size: 40px;
+  margin-left: 5px;
+}
+main .catalog article.produitCard > h4 {
+  margin-top: -10px;
+  font-size: 25px;
+  margin-left: 5px;
+}
+main .catalog article.produitCard .priceContainer {
+  display: flex;
+  justify-content: space-between;
+}
+main .catalog article.produitCard .priceContainer h4 {
+  font-size: 45px;
+  margin-left: 10px;
+}
+main .catalog article.produitCard .priceContainer button {
+  height: 60px;
+  aspect-ratio: 1/1;
+  background: var(--highlight);
+  border: none;
+}
+main .catalog article.produitCard .priceContainer button svg {
+  margin-top: 5px;
+  margin-left: -3px;
+  height: 80%;
+  aspect-ratio: 1/1;
 }
 
 /*# sourceMappingURL=style.css.map */

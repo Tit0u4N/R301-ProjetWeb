@@ -2,27 +2,40 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400&display=swap');
+
 @font-face {
-  font-family:"LIQUIDO-Fluid";
+  font-family: "LIQUIDO-Fluid";
   src: url("../ressources/fonts/LIQUIDO-Fluid.otf")
 }
 
 @font-face {
-  font-family:"LIQUIDO";
+  font-family: "LIQUIDO";
   src: url("../ressources/fonts/LIQUIDO-Reguar.otf")
 }
 
+
 :root {
-  --background : #F3F3F3;
-  --main : #1F1F1F;
-  --highlight : #FF0042;
+  --background: #F3F3F3;
+  --main: #1F1F1F;
+  --highlight: #FF0042;
   --paragraphe: #B0B0B0;
 }
 
 h1, h2, h3, h4 {
-  font-family: LIQUIDO;
+  font-family: LIQUIDO, sans-serif
+}
+
+.divider {
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: var(--paragraphe);
+  user-select: none;
+  border: none;
 }
 
 nav {
@@ -31,23 +44,25 @@ nav {
   align-items: center;
 
   background: var(--main);
-  height:60px;
-  width:100%;
+  height: 60px;
+  width: 100%;
   padding-left: calc((100vw - 1110px) / 2);
   padding-right: calc((100vw - 1110px) / 2);
 
   .logo {
-    font-size: 70px ;
-    margin-top: -9px;
+    font-size: 70px;
+    margin-top: -5px;
     margin-left: 5px;
     color: var(--highlight);
     text-decoration: none;
 
     span:first-of-type {
-      font-family: LIQUIDO;
+      font-family: LIQUIDO, sans-serif;
     }
 
-    font-family: LIQUIDO-Fluid;
+    span:last-of-type {
+      font-family: LIQUIDO-Fluid, sans-serif;
+    }
   }
 
   form {
@@ -61,18 +76,23 @@ nav {
       height: 38px;
       width: 60%;
       border: none;
-      border-right: solid 1px var(--paragraphe) ;
+      border-right: solid 1px var(--paragraphe);
+      padding-left: 5px;
+      font-size: 20px;
+      font-family: "Poppins Light", sans-serif;
     }
 
     select {
       width: calc(40% - 38px);
       height: 38px;
       border: none;
-      text-align: center ;
+      text-align: center;
+      font-size: 18px;
+      font-family: "Poppins Light", sans-serif;
 
       & * {
         height: 80px;
-        border-radius: 0 ;
+        border-radius: 0;
 
         &:hover {
           background: var(--highlight);
@@ -86,7 +106,13 @@ nav {
       width: 38px;
       background: var(--highlight);
       border: none;
-      padding: 2px;
+      text-align: center;
+      padding-top: 3px;
+
+      svg {
+        width: 75%;
+        aspect-ratio: 1/1;
+      }
     }
 
     label[for='rechercher'] {
@@ -97,6 +123,7 @@ nav {
   div {
     height: 100%;
     display: flex;
+
     > a {
       display: flex;
       align-items: center;
@@ -111,6 +138,78 @@ nav {
 
     }
   }
-
-
 }
+
+
+main {
+
+  max-width: 1100px;
+  min-height: 80vh;
+  margin: 0 auto;
+  background: var(--background);
+  padding: 20px 15px 0 15px ;
+
+  h2 {
+    margin-left:10px;
+    margin-bottom: 20px;
+    font-size: 60px;
+  }
+
+  .catalog {
+    display: flex;
+    gap: 30px;
+
+
+    article.produitCard {
+      background: white ;
+      width: 255px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+
+      img {
+        height: 270px;
+        width: 100%;
+        object-fit: scale-down;
+      }
+
+      h3 {
+        font-size: 40px;
+        margin-left: 5px;
+      }
+
+      > h4 {
+        margin-top: -10px;
+        font-size: 25px;
+        margin-left: 5px;
+      }
+
+      .priceContainer {
+        display: flex;
+        justify-content: space-between;
+
+        h4 {
+          font-size: 45px;
+          margin-left: 10px;
+        }
+
+        button{
+          height: 60px;
+          aspect-ratio: 1/1;
+          background: var(--highlight);
+          border: none;
+          svg {
+            margin-top: 5px;
+            margin-left: -3px;
+            height: 80%;
+            aspect-ratio: 1/1;
+          }
+
+        }
+      }
+    }
+
+
+  }
+}
+

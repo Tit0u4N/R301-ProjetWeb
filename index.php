@@ -16,18 +16,20 @@
     <a class="logo" href=""><span>MANGA</span><span>FLOW</span></a>
     <form action="">
         <input type="search" valeur="search" placeholder="ex : BOICHI">
-        <select name="categories" >
+        <select name="categories">
             <option valeur="categorie">Categories</option>
             <option valeur="other">Manga</option>
             <option valeur="nl">Auteur</option>
             <option valeur="fr">Type</option>
             <option valeur="en">Genre</option>
         </select>
-        <button type="submit" accesskey="enter" value="AA" >
+        <button type="submit" accesskey="enter" value="AA">
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_14_602)">
-                    <path d="M12.1867 22.3733C17.8126 22.3733 22.3733 17.8126 22.3733 12.1867C22.3733 6.56073 17.8126 2 12.1867 2C6.56073 2 2 6.56073 2 12.1867C2 17.8126 6.56073 22.3733 12.1867 22.3733Z" stroke="var(--background)" stroke-width="3" stroke-miterlimit="10"/>
-                    <path d="M30 30L19.1866 19.1867" stroke="var(--background)" stroke-width="3" stroke-miterlimit="10"/>
+                    <path d="M12.1867 22.3733C17.8126 22.3733 22.3733 17.8126 22.3733 12.1867C22.3733 6.56073 17.8126 2 12.1867 2C6.56073 2 2 6.56073 2 12.1867C2 17.8126 6.56073 22.3733 12.1867 22.3733Z"
+                          stroke="var(--background)" stroke-width="3" stroke-miterlimit="10"/>
+                    <path d="M30 30L19.1866 19.1867" stroke="var(--background)" stroke-width="3"
+                          stroke-miterlimit="10"/>
                 </g>
                 <defs>
                     <clipPath id="clip0_14_602">
@@ -40,13 +42,19 @@
     <div>
         <a>
             <svg width="53" height="53" viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M38.0496 45.4917H14.9504C13.4461 45.4963 11.9892 44.9656 10.8402 43.9946C9.69126 43.0237 8.9251 41.6757 8.67876 40.1917L5.34418 20.0958H47.6558L44.3213 40.1917C44.0749 41.6757 43.3088 43.0237 42.1598 43.9946C41.0108 44.9656 39.5539 45.4963 38.0496 45.4917V45.4917Z" stroke="var(--background)" stroke-width="3.2" stroke-miterlimit="10"/>
-                <path d="M51.8959 20.0958H1.10419" stroke="var(--background)" stroke-width="3.2" stroke-miterlimit="10"/>
-                <path d="M15.9221 24.3358V20.0958L22.26 5.3" stroke="var(--background)" stroke-width="3.2" stroke-miterlimit="10"/>
-                <path d="M37.0779 24.3358V20.0958L30.74 5.3" stroke="var(--background)" stroke-width="3.2" stroke-miterlimit="10"/>
+                <path d="M38.0496 45.4917H14.9504C13.4461 45.4963 11.9892 44.9656 10.8402 43.9946C9.69126 43.0237 8.9251 41.6757 8.67876 40.1917L5.34418 20.0958H47.6558L44.3213 40.1917C44.0749 41.6757 43.3088 43.0237 42.1598 43.9946C41.0108 44.9656 39.5539 45.4963 38.0496 45.4917V45.4917Z"
+                      stroke="var(--background)" stroke-width="3.2" stroke-miterlimit="10"/>
+                <path d="M51.8959 20.0958H1.10419" stroke="var(--background)" stroke-width="3.2"
+                      stroke-miterlimit="10"/>
+                <path d="M15.9221 24.3358V20.0958L22.26 5.3" stroke="var(--background)" stroke-width="3.2"
+                      stroke-miterlimit="10"/>
+                <path d="M37.0779 24.3358V20.0958L30.74 5.3" stroke="var(--background)" stroke-width="3.2"
+                      stroke-miterlimit="10"/>
                 <path d="M26.5 28.5758V39.1538" stroke="var(--background)" stroke-width="3.2" stroke-miterlimit="10"/>
-                <path d="M18.0421 28.5758V39.1538" stroke="var(--background)" stroke-width="3.2" stroke-miterlimit="10"/>
-                <path d="M34.9579 28.5758V39.1538" stroke="var(--background)" stroke-width="3.2" stroke-miterlimit="10"/>
+                <path d="M18.0421 28.5758V39.1538" stroke="var(--background)" stroke-width="3.2"
+                      stroke-miterlimit="10"/>
+                <path d="M34.9579 28.5758V39.1538" stroke="var(--background)" stroke-width="3.2"
+                      stroke-miterlimit="10"/>
             </svg>
 
         </a>
@@ -60,19 +68,104 @@
         </a>
     </div>
 </nav>
-<header>
-    <h2>Selection :</h2>
-</header>
+
 <main>
+    <h2>Selection :</h2>
     <section class="catalog">
         <article class="produitCard">
             <img src="https://www.nautiljon.com/images/manga/00/50/berserk_205.webp?1659201541" alt="Cover">
             <h3>Berserk</h3>
             <h4 class="vol">Vol. 1</h4>
-            <div class="divider"></div>
+            <hr class="divider">
             <div class="priceContainer">
                 <h4>6.50€</h4>
-                <span>logo</span>
+                <button>
+                    <svg viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.7625 12.2887V3.4679" stroke="white" stroke-width="2" stroke-miterlimit="10"/>
+                        <path d="M21.0613 8.97791L17.7625 12.2887L14.4517 8.97791" stroke="white" stroke-width="2"
+                              stroke-miterlimit="10"/>
+                        <path d="M12.2404 26.6438C13.4617 26.6438 14.4517 25.6538 14.4517 24.4326C14.4517 23.2113 13.4617 22.2213 12.2404 22.2213C11.0192 22.2213 10.0292 23.2113 10.0292 24.4326C10.0292 25.6538 11.0192 26.6438 12.2404 26.6438Z"
+                              stroke="white" stroke-width="2" stroke-miterlimit="10"/>
+                        <path d="M22.1729 26.6438C23.3942 26.6438 24.3842 25.6538 24.3842 24.4326C24.3842 23.2113 23.3942 22.2213 22.1729 22.2213C20.9517 22.2213 19.9617 23.2113 19.9617 24.4326C19.9617 25.6538 20.9517 26.6438 22.1729 26.6438Z"
+                              stroke="white" stroke-width="2" stroke-miterlimit="10"/>
+                        <path d="M1.20833 2.41668H4.2775C4.97909 2.41279 5.66378 2.63189 6.23279 3.04235C6.80179 3.45282 7.22569 4.03343 7.44333 4.70043L11.1408 16.7113H10.585C9.85433 16.7113 9.15358 17.0015 8.63692 17.5182C8.12026 18.0348 7.83 18.7356 7.83 19.4663V19.4663C7.83 20.1969 8.12026 20.8977 8.63692 21.4143C9.15358 21.931 9.85433 22.2213 10.585 22.2213H22.1729"
+                              stroke="white" stroke-width="2" stroke-miterlimit="10"/>
+                        <path d="M26.5833 6.77881V8.97797L24.3721 16.7113H11.1408" stroke="white" stroke-width="2"
+                              stroke-miterlimit="10"/>
+                    </svg>
+                </button>
+            </div>
+        </article>
+        <article class="produitCard">
+            <img src="https://www.nautiljon.com/images/manga/00/50/berserk_205.webp?1659201541" alt="Cover">
+            <h3>Berserk</h3>
+            <h4 class="vol">Vol. 1</h4>
+            <hr class="divider">
+            <div class="priceContainer">
+                <h4>6.50€</h4>
+                <button>
+                    <svg viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.7625 12.2887V3.4679" stroke="white" stroke-width="2" stroke-miterlimit="10"/>
+                        <path d="M21.0613 8.97791L17.7625 12.2887L14.4517 8.97791" stroke="white" stroke-width="2"
+                              stroke-miterlimit="10"/>
+                        <path d="M12.2404 26.6438C13.4617 26.6438 14.4517 25.6538 14.4517 24.4326C14.4517 23.2113 13.4617 22.2213 12.2404 22.2213C11.0192 22.2213 10.0292 23.2113 10.0292 24.4326C10.0292 25.6538 11.0192 26.6438 12.2404 26.6438Z"
+                              stroke="white" stroke-width="2" stroke-miterlimit="10"/>
+                        <path d="M22.1729 26.6438C23.3942 26.6438 24.3842 25.6538 24.3842 24.4326C24.3842 23.2113 23.3942 22.2213 22.1729 22.2213C20.9517 22.2213 19.9617 23.2113 19.9617 24.4326C19.9617 25.6538 20.9517 26.6438 22.1729 26.6438Z"
+                              stroke="white" stroke-width="2" stroke-miterlimit="10"/>
+                        <path d="M1.20833 2.41668H4.2775C4.97909 2.41279 5.66378 2.63189 6.23279 3.04235C6.80179 3.45282 7.22569 4.03343 7.44333 4.70043L11.1408 16.7113H10.585C9.85433 16.7113 9.15358 17.0015 8.63692 17.5182C8.12026 18.0348 7.83 18.7356 7.83 19.4663V19.4663C7.83 20.1969 8.12026 20.8977 8.63692 21.4143C9.15358 21.931 9.85433 22.2213 10.585 22.2213H22.1729"
+                              stroke="white" stroke-width="2" stroke-miterlimit="10"/>
+                        <path d="M26.5833 6.77881V8.97797L24.3721 16.7113H11.1408" stroke="white" stroke-width="2"
+                              stroke-miterlimit="10"/>
+                    </svg>
+                </button>
+            </div>
+        </article>
+        <article class="produitCard">
+            <img src="https://www.nautiljon.com/images/manga/00/50/berserk_205.webp?1659201541" alt="Cover">
+            <h3>Berserk</h3>
+            <h4 class="vol">Vol. 1</h4>
+            <hr class="divider">
+            <div class="priceContainer">
+                <h4>6.50€</h4>
+                <button>
+                    <svg viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.7625 12.2887V3.4679" stroke="white" stroke-width="2" stroke-miterlimit="10"/>
+                        <path d="M21.0613 8.97791L17.7625 12.2887L14.4517 8.97791" stroke="white" stroke-width="2"
+                              stroke-miterlimit="10"/>
+                        <path d="M12.2404 26.6438C13.4617 26.6438 14.4517 25.6538 14.4517 24.4326C14.4517 23.2113 13.4617 22.2213 12.2404 22.2213C11.0192 22.2213 10.0292 23.2113 10.0292 24.4326C10.0292 25.6538 11.0192 26.6438 12.2404 26.6438Z"
+                              stroke="white" stroke-width="2" stroke-miterlimit="10"/>
+                        <path d="M22.1729 26.6438C23.3942 26.6438 24.3842 25.6538 24.3842 24.4326C24.3842 23.2113 23.3942 22.2213 22.1729 22.2213C20.9517 22.2213 19.9617 23.2113 19.9617 24.4326C19.9617 25.6538 20.9517 26.6438 22.1729 26.6438Z"
+                              stroke="white" stroke-width="2" stroke-miterlimit="10"/>
+                        <path d="M1.20833 2.41668H4.2775C4.97909 2.41279 5.66378 2.63189 6.23279 3.04235C6.80179 3.45282 7.22569 4.03343 7.44333 4.70043L11.1408 16.7113H10.585C9.85433 16.7113 9.15358 17.0015 8.63692 17.5182C8.12026 18.0348 7.83 18.7356 7.83 19.4663V19.4663C7.83 20.1969 8.12026 20.8977 8.63692 21.4143C9.15358 21.931 9.85433 22.2213 10.585 22.2213H22.1729"
+                              stroke="white" stroke-width="2" stroke-miterlimit="10"/>
+                        <path d="M26.5833 6.77881V8.97797L24.3721 16.7113H11.1408" stroke="white" stroke-width="2"
+                              stroke-miterlimit="10"/>
+                    </svg>
+                </button>
+            </div>
+        </article>
+        <article class="produitCard">
+            <img src="https://www.nautiljon.com/images/manga/00/50/berserk_205.webp?1659201541" alt="Cover">
+            <h3>Berserk</h3>
+            <h4 class="vol">Vol. 1</h4>
+            <hr class="divider">
+            <div class="priceContainer">
+                <h4>6.50€</h4>
+                <button>
+                    <svg viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.7625 12.2887V3.4679" stroke="white" stroke-width="2" stroke-miterlimit="10"/>
+                        <path d="M21.0613 8.97791L17.7625 12.2887L14.4517 8.97791" stroke="white" stroke-width="2"
+                              stroke-miterlimit="10"/>
+                        <path d="M12.2404 26.6438C13.4617 26.6438 14.4517 25.6538 14.4517 24.4326C14.4517 23.2113 13.4617 22.2213 12.2404 22.2213C11.0192 22.2213 10.0292 23.2113 10.0292 24.4326C10.0292 25.6538 11.0192 26.6438 12.2404 26.6438Z"
+                              stroke="white" stroke-width="2" stroke-miterlimit="10"/>
+                        <path d="M22.1729 26.6438C23.3942 26.6438 24.3842 25.6538 24.3842 24.4326C24.3842 23.2113 23.3942 22.2213 22.1729 22.2213C20.9517 22.2213 19.9617 23.2113 19.9617 24.4326C19.9617 25.6538 20.9517 26.6438 22.1729 26.6438Z"
+                              stroke="white" stroke-width="2" stroke-miterlimit="10"/>
+                        <path d="M1.20833 2.41668H4.2775C4.97909 2.41279 5.66378 2.63189 6.23279 3.04235C6.80179 3.45282 7.22569 4.03343 7.44333 4.70043L11.1408 16.7113H10.585C9.85433 16.7113 9.15358 17.0015 8.63692 17.5182C8.12026 18.0348 7.83 18.7356 7.83 19.4663V19.4663C7.83 20.1969 8.12026 20.8977 8.63692 21.4143C9.15358 21.931 9.85433 22.2213 10.585 22.2213H22.1729"
+                              stroke="white" stroke-width="2" stroke-miterlimit="10"/>
+                        <path d="M26.5833 6.77881V8.97797L24.3721 16.7113H11.1408" stroke="white" stroke-width="2"
+                              stroke-miterlimit="10"/>
+                    </svg>
+                </button>
             </div>
         </article>
     </section>
