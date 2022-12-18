@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family:"LIQUIDO-Fluid";
+  src: url("../ressources/fonts/LIQUIDO-Fluid.otf")
+}
+
+@font-face {
+  font-family:"LIQUIDO";
+  src: url("../ressources/fonts/LIQUIDO-Reguar.otf")
+}
+
+:root {
+  --background : #F3F3F3;
+  --main : #1F1F1F;
+  --highlight : #FF0042;
+  --paragraphe: #B0B0B0;
+}
+
+h1, h2, h3, h4 {
+  font-family: LIQUIDO;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: var(--main);
+  height:60px;
+  width:100%;
+  padding-left: calc((100vw - 1110px) / 2);
+  padding-right: calc((100vw - 1110px) / 2);
+
+  .logo {
+    font-size: 70px ;
+    margin-top: -9px;
+    margin-left: 5px;
+    color: var(--highlight);
+    text-decoration: none;
+
+    span:first-of-type {
+      font-family: LIQUIDO;
+    }
+
+    font-family: LIQUIDO-Fluid;
+  }
+
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55%;
+
+
+    input[type=search] {
+      height: 38px;
+      width: 60%;
+      border: none;
+      border-right: solid 1px var(--paragraphe) ;
+    }
+
+    select {
+      width: calc(40% - 38px);
+      height: 38px;
+      border: none;
+      text-align: center ;
+
+      & * {
+        height: 80px;
+        border-radius: 0 ;
+
+        &:hover {
+          background: var(--highlight);
+          color: var(--background);
+        }
+      }
+    }
+
+    button[type=submit] {
+      height: 38px;
+      width: 38px;
+      background: var(--highlight);
+      border: none;
+      padding: 2px;
+    }
+
+    label[for='rechercher'] {
+
+    }
+  }
+
+  div {
+    height: 100%;
+    display: flex;
+    > a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      height: 100%;
+      aspect-ratio: 1/1;
+      width: auto;
+
+      background: var(--highlight);
+      color: var(--background);
+
+    }
+  }
+
+
+}
