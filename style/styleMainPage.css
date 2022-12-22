@@ -1,3 +1,7 @@
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 1000, "GRAD" 0, "opsz" 48;
+}
+
 nav form {
   display: flex;
   justify-content: center;
@@ -120,6 +124,21 @@ main .descCardsContainer > article.productCard {
   border: solid 1px var(--paragraphe);
   background: white;
   padding: 30px;
+}
+main .descCardsContainer > article.productCard.hide {
+  display: none;
+}
+main .descCardsContainer > article.productCard > button {
+  margin-left: -20px;
+  width: 50px;
+  aspect-ratio: 1/1;
+  border: none;
+  background: none;
+}
+main .descCardsContainer > article.productCard > button span {
+  color: red;
+  margin: 2px 0 0 8px;
+  font-size: 40px;
 }
 main .descCardsContainer > article.productCard section.headerCardFull {
   display: flex;

@@ -15,7 +15,9 @@
     <?php $testTome3->echoHTMLCard(); ?>
 
 </section>
-<section class="descCardsContainer" id="">
+<section class="descCardsContainer" id="descCardsContainer">
     <?php $testTome1->echoHTMLDescCard(); ?>
+    <?php $testTome2->echoHTMLDescCard(); ?>
+    <?php $testTome3->echoHTMLDescCard(); ?>
 
 </section>

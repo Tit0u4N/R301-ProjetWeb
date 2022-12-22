@@ -19,7 +19,8 @@
 
     $alt = "Cover de ".$title." ".$vol;
 ?>
-    <article class="productCard" id="">
+    <article class="productCard hide" id="<?= $id ?>">
+        <button onclick="closeDescCard()"><span class="material-symbols-outlined">arrow_forward_ios</span></button>
         <section class="headerCardFull">
             <div>
                 <div class="titleCard">
