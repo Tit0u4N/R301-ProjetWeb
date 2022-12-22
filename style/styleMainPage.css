@@ -64,7 +64,6 @@ main .catalog {
   display: grid;
   padding: 0 15px 0 15px;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
   grid-column-gap: 15px;
   grid-row-gap: 20px;
 }
