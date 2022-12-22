@@ -47,7 +47,7 @@
         </section>
         <section>
             <button class="priceContainer">
-                <h4><?= $price ?> </h4>
+                <h4><?= $price ?></h4>
                 <div>
                     <svg viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M17.7625 12.2887V3.4679" stroke="white" stroke-width="2" stroke-miterlimit="10"/>
@@ -67,3 +67,4 @@
         </section>
 
     </article>
+

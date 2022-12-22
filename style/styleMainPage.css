@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 1000, "GRAD" 0, "opsz" 48;
 }
@@ -16,6 +17,9 @@ nav form input[type=search] {
   padding-left: 5px;
   font-size: 20px;
   font-family: "Poppins Light", sans-serif;
+}
+nav form input[type=search]:focus {
+  outline: none;
 }
 nav form select {
   width: calc(40% - 38px);
@@ -62,7 +66,6 @@ nav div > a {
 
 main .catalog {
   display: grid;
-  padding: 0 15px 0 15px;
   grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 15px;
   grid-row-gap: 20px;
@@ -97,20 +100,38 @@ main article.productCard .priceContainer {
   justify-content: space-between;
 }
 main article.productCard .priceContainer h4 {
+  position: absolute;
   font-size: 50px;
   margin-left: 10px;
+  transition: color 1s;
+}
+main article.productCard .priceContainer h4:after {
+  content: "€";
 }
 main article.productCard .priceContainer button {
   height: 60px;
-  aspect-ratio: 1/1;
+  width: 60px;
   background: var(--highlight);
   border: none;
+  margin-left: calc(100% - 60px);
+  transition: width 1s, margin-left 1s;
 }
 main article.productCard .priceContainer button svg {
   margin-top: 5px;
   margin-left: -3px;
   height: 80%;
   aspect-ratio: 1/1;
+  transition: margin-left 1s;
+}
+main article.productCard:hover .priceContainer h4 {
+  color: white;
+}
+main article.productCard:hover .priceContainer button {
+  margin-left: 0;
+  width: 100%;
+}
+main article.productCard:hover .priceContainer svg {
+  margin-left: calc(100% - 65px);
 }
 main .descCardsContainer > article.productCard {
   position: fixed;
@@ -207,15 +228,44 @@ main .descCardsContainer > article.productCard .priceContainer h4 {
   margin-top: -5px;
   font-size: 60px;
 }
+main .descCardsContainer > article.productCard .priceContainer h4:after {
+  content: "€";
+}
 main .descCardsContainer > article.productCard .priceContainer div {
   height: 70px;
   aspect-ratio: 1/1;
+  margin-left: calc(100% - 70px);
 }
 main .descCardsContainer > article.productCard .priceContainer div svg {
   margin-top: 5px;
   margin-left: -3px;
   height: 80%;
   aspect-ratio: 1/1;
+}
+
+.slideIn {
+  animation: slideIn 0.5s;
+}
+@keyframes slideIn {
+  from {
+    translate: 710px 0;
+  }
+  to {
+    translate: 0 0;
+  }
+}
+
+.slideOut {
+  animation: slideOut 0.5s;
+  translate: 710px 0;
+}
+@keyframes slideOut {
+  from {
+    translate: 0 0;
+  }
+  to {
+    translate: 710px 0;
+  }
 }
 
 /*# sourceMappingURL=styleMainPage.css.map */

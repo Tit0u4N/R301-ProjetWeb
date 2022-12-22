@@ -13,6 +13,13 @@
     <?php $testTome1->echoHTMLCard(); ?>
     <?php $testTome2->echoHTMLCard(); ?>
     <?php $testTome3->echoHTMLCard(); ?>
+    <?php $testTome3->echoHTMLCard(); ?>
+    <?php $testTome3->echoHTMLCard(); ?>
+    <?php $testTome3->echoHTMLCard(); ?>
+    <?php $testTome3->echoHTMLCard(); ?>
+    <?php $testTome3->echoHTMLCard(); ?>
+    <?php $testTome3->echoHTMLCard(); ?>
+    <?php $testTome3->echoHTMLCard(); ?>
 
 </section>
 <section class="descCardsContainer" id="descCardsContainer">
