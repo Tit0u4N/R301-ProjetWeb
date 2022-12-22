@@ -38,6 +38,11 @@ h1, h2, h3, h4 {
   border: none;
 }
 
+body {
+  overflow: hidden ;
+  background: url("../ressources/background.png") repeat;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -46,12 +51,13 @@ nav {
   background: var(--main);
   height: 60px;
   width: 100%;
-  padding-left: calc((100vw - 1110px) / 2);
-  padding-right: calc((100vw - 1110px) / 2);
+  --widthNavBar: 1200px;
+  padding-left: calc((100vw - var(--widthNavBar)) / 2);
+  padding-right: calc((100vw - var(--widthNavBar)) / 2);
 
   .logo {
     font-size: 70px;
-    margin-top: -5px;
+    margin-top: -3px;
     margin-left: 5px;
     color: var(--highlight);
     text-decoration: none;
@@ -64,152 +70,22 @@ nav {
       font-family: LIQUIDO-Fluid, sans-serif;
     }
   }
-
-  form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 55%;
-
-
-    input[type=search] {
-      height: 38px;
-      width: 60%;
-      border: none;
-      border-right: solid 1px var(--paragraphe);
-      padding-left: 5px;
-      font-size: 20px;
-      font-family: "Poppins Light", sans-serif;
-    }
-
-    select {
-      width: calc(40% - 38px);
-      height: 38px;
-      border: none;
-      text-align: center;
-      font-size: 18px;
-      font-family: "Poppins Light", sans-serif;
-
-      & * {
-        height: 80px;
-        border-radius: 0;
-
-        &:hover {
-          background: var(--highlight);
-          color: var(--background);
-        }
-      }
-    }
-
-    button[type=submit] {
-      height: 38px;
-      width: 38px;
-      background: var(--highlight);
-      border: none;
-      text-align: center;
-      padding-top: 3px;
-
-      svg {
-        width: 75%;
-        aspect-ratio: 1/1;
-      }
-    }
-
-    label[for='rechercher'] {
-
-    }
-  }
-
-  div {
-    height: 100%;
-    display: flex;
-
-    > a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      height: 100%;
-      aspect-ratio: 1/1;
-      width: auto;
-
-      background: var(--highlight);
-      color: var(--background);
-
-    }
-  }
 }
 
 
 main {
 
-  max-width: 1100px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+  max-width: 1200px;
   min-height: 80vh;
   margin: 0 auto;
-  background: var(--background);
-  padding: 20px 15px 0 15px ;
+  background: white;
+  padding: 20px 15px 0 15px;
 
   h2 {
-    margin-left:10px;
+    margin-left: 10px;
     margin-bottom: 20px;
     font-size: 60px;
-  }
-
-  .catalog {
-    display: flex;
-    gap: 30px;
-
-
-    article.produitCard {
-      background: white ;
-      width: 255px;
-      height: 400px;
-      display: flex;
-      flex-direction: column;
-
-      img {
-        height: 270px;
-        width: 100%;
-        object-fit: scale-down;
-      }
-
-      h3 {
-        font-size: 40px;
-        margin-left: 5px;
-      }
-
-      > h4 {
-        margin-top: -10px;
-        font-size: 25px;
-        margin-left: 5px;
-      }
-
-      .priceContainer {
-        display: flex;
-        justify-content: space-between;
-
-        h4 {
-          font-size: 45px;
-          margin-left: 10px;
-        }
-
-        button{
-          height: 60px;
-          aspect-ratio: 1/1;
-          background: var(--highlight);
-          border: none;
-          svg {
-            margin-top: 5px;
-            margin-left: -3px;
-            height: 80%;
-            aspect-ratio: 1/1;
-          }
-
-        }
-      }
-    }
-
-
   }
 }
 

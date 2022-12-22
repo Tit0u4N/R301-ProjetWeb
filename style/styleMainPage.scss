@@ -1,0 +1,265 @@
+nav {
+
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55%;
+
+
+    input[type=search] {
+      height: 38px;
+      width: 60%;
+      border: none;
+      border-right: solid 1px var(--paragraphe);
+      padding-left: 5px;
+      font-size: 20px;
+      font-family: "Poppins Light", sans-serif;
+    }
+
+    select {
+      width: calc(40% - 38px);
+      height: 38px;
+      border: none;
+      text-align: center;
+      font-size: 18px;
+      font-family: "Poppins Light", sans-serif;
+
+      & * {
+        height: 80px;
+        border-radius: 0;
+
+        &:hover {
+          background: var(--highlight);
+          color: var(--background);
+        }
+      }
+    }
+
+    button[type=submit] {
+      height: 38px;
+      width: 38px;
+      background: var(--highlight);
+      border: none;
+      text-align: center;
+      padding-top: 3px;
+
+      svg {
+        width: 75%;
+        aspect-ratio: 1/1;
+      }
+    }
+
+    label[for='rechercher'] {
+
+    }
+  }
+
+  div {
+    height: 100%;
+    display: flex;
+
+    > a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      height: 100%;
+      aspect-ratio: 1/1;
+      width: auto;
+
+      background: var(--highlight);
+      color: var(--background);
+
+    }
+  }
+}
+
+
+main {
+
+  .catalog {
+    display: grid;
+    padding: 0 15px 0 15px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 20px;
+
+  }
+
+  article.productCard {
+    background: white;
+    width: 100%;
+    aspect-ratio: 5/3;
+    display: flex;
+    flex-direction: column;
+
+    box-shadow: 0 0 5px 1px rgb(182, 182, 182);
+
+    img {
+      margin-top: 5px;
+      height: 300px;
+      width: 100%;
+      object-fit: contain;
+      filter: drop-shadow(2px 2px 7px rgba(0, 0, 0, 0.25))
+    }
+
+    h3 {
+      font-size: 45px;
+      margin-left: 8px;
+    }
+
+    > h4 {
+      margin-top: -9px;
+      font-size: 15px;
+      margin-left: 7px;
+      font-family: "Poppins Light", sans-serif;
+    }
+
+    .priceContainer {
+      display: flex;
+      justify-content: space-between;
+
+      h4 {
+        font-size: 50px;
+        margin-left: 10px;
+      }
+
+      button {
+        height: 60px;
+        aspect-ratio: 1/1;
+        background: var(--highlight);
+        border: none;
+
+        svg {
+          margin-top: 5px;
+          margin-left: -3px;
+          height: 80%;
+          aspect-ratio: 1/1;
+        }
+
+      }
+    }
+  }
+
+  .descCardsContainer {
+    //display: none;
+
+    > article.productCard{
+      position: fixed;
+      max-width: 705px;
+      width: 100%;
+      height: 100%;
+      right: 0;
+      top: 60px;
+
+      box-shadow: none;
+      border: solid 1px var(--paragraphe) ;
+      background: white;
+      padding: 30px;
+
+      section.headerCardFull {
+        display: flex;
+
+
+        div {
+          flex: 5;
+          width: 50%;
+
+
+          div.titleCard {
+            margin-bottom: 20px;
+
+            h3 {
+              margin: 0;
+              font-size: 50px;
+            }
+
+            h4 {
+              margin-top: -15px;
+              font-size: 30px;
+            }
+          }
+
+          div.infoCard {
+            width: 100%;
+
+
+            p {
+              font-size: 20px;
+              width: 100%;
+              font-family: "Poppins Light", sans-serif;
+              margin-bottom: 10px;
+
+              span {
+                font-family: "Poppins Light", sans-serif;
+              }
+            }
+          }
+
+          &.imageContainer {
+            flex: 5;
+            text-align: center;
+            height: 100%;
+
+            img {
+              margin-top: 10px;
+              width: 80%;
+              height: auto;
+            }
+          }
+
+        }
+      }
+
+      section.synopsisCardFull {
+        margin-bottom: 30px;
+
+        h4 {
+          font-size: 25px;
+          font-family: Poppins, sans-serif;
+          margin-bottom: 15px;
+        }
+
+        p {
+          padding-left: 10px;
+          padding-right: 40px;
+          text-align: justify;
+          color: var(--paragraphe);
+        }
+      }
+
+
+      .priceContainer {
+        display: flex;
+        margin: auto;
+        justify-content: space-between;
+        background: (var(--highlight));
+        width: 35%;
+        padding-left: 10px;
+        border: none;
+
+
+        h4 {
+          color: var(--background);
+          margin-top: -5px;
+          font-size: 60px;
+        }
+
+        div {
+          height: 70px;
+          aspect-ratio: 1/1;
+
+
+          svg {
+            margin-top: 5px;
+            margin-left: -3px;
+            height: 80%;
+            aspect-ratio: 1/1;
+          }
+        }
+      }
+    }
+  }
+}
