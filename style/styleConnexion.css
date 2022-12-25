@@ -8,13 +8,92 @@ nav a {
 main {
   width: 360px;
   background: white;
+  padding: 0;
 }
-main section {
+main > div {
+  height: 50px;
+  width: 100%;
+}
+main > div > div {
+  margin: auto;
+  position: absolute;
   display: flex;
 }
-main section > h2 {
+main > div > div > h2 {
+  display: block;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-size: 40px;
+  width: 180px;
+}
+main > div rect {
+  display: block;
+  height: 100%;
   width: 50%;
-  font-size: 44px;
+  background: var(--highlight);
+}
+main section > h3 {
+  font-size: 22px;
+  font-family: "Poppins Light", sans-serif;
+  font-weight: lighter;
+  text-align: center;
+  margin-bottom: 20px;
+}
+main section form button[type=submit] {
+  height: 35px;
+  background: var(--highlight);
+  width: 60%;
+  margin: auto;
+  border: none;
+}
+main section form button[type=submit]:focus {
+  outline: none;
+  border: none;
+}
+main section form button[type=submit] span {
+  display: block;
+  color: var(--background);
+  font-family: LIQUIDO, sans-serif;
+  font-size: 35px;
+  margin-top: -5px;
+}
+main section form > div {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto 10px;
+  width: 75%;
+}
+main section form > div label {
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+main section form > div input {
+  padding-left: 5px;
+  font-size: 18px;
+  background: var(--background);
+  border: none;
+  border-bottom: var(--paragraphe) solid 2px;
+  transition: border-bottom-color 0.5s;
+  width: 100%;
+  margin: 0 auto;
+}
+main section form > div input:focus {
+  border-bottom: var(--highlight) solid 2px;
+  outline: none;
+}
+main section form > div.submitConnexionContainer {
+  margin: 20px auto 30px auto;
+}
+main section form > div.submitConnexionContainer label {
+  color: var(--paragraphe);
+  font-size: 12px;
+  text-decoration-line: underline;
+  text-align: center;
+  transition: color 0.4s;
+}
+main section form > div.submitConnexionContainer label:hover {
+  color: var(--highlight);
 }
 
 /*# sourceMappingURL=styleConnexion.css.map */

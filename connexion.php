@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 ?>
 <!doctype html>
@@ -10,52 +10,70 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <link rel="stylesheet" type="text/css" href="style/styleConnexion.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
     <title>MangaFlow | Connexion</title>
 </head>
 <body>
-    <?php
-        $fullNavBar = False;
-        require "component/navBar/navbar.php"
-    ?>
+<?php
+$fullNavBar = False;
+require "component/navBar/navbar.php"
+?>
 
-    <main>
+<main>
 
-        <section>
+    <div>
+        <div>
+            <h2>CONNEXION</h2>
+            <h2>INSCRIPTION</h2>
+        </div>
+        <rect>&nbsp;</rect>
+    </div>
+    <section id="connexionContainer">
+        <h3>Replonger dans le FLOW ? </h3>
+        <form action="">
             <div>
-                <h2>CONNEXION</h2>
-                <h2>INSCRIPTION</h2>
-            </div>
-            <rect></rect>
-        </section>
-        <section id="connexionContainer">
-            <h3></h3>
-            <form action="">
                 <label for="emailConnexion">Email :</label>
                 <input name="emailConnexion" type="email" placeholder="lelouch@code-geass.fr">
+            </div>
+            <div>
                 <label for="passwordConnexion">Mot de passe :</label>
                 <input name="passwordConnexion" type="password" placeholder="**************">
-                <input name="submitConnexion" value="Connexion" type="submit">
+            </div>
+            <div class="submitConnexionContainer">
+                <button name="submitConnexion" value="Connexion" type="submit"><span>Connexion</span></button>
                 <label for="submitConnexion">Mot de passe oublié ?</label>
-            </form>
-        </section>
-        <section id="susbribeContainer">
-            <h3>Rejoinre le flow</h3>
-            <form action="">
+            </div>
+        </form>
+    </section>
+    <section id="susbribeContainer">
+        <h3>Rejoinre le flow</h3>
+        <form action="">
+            <div>
                 <label for="emailSubcribe">Email :</label>
                 <input name="emailSubcribe" type="email" placeholder="lelouch@code-geass.fr">
+            </div>
+            <div>
                 <label for="surnameSubcribe">Nom :</label>
                 <input name="surnameSubcribe" type="text" placeholder="Monkey D">
+            </div>
+            <div>
                 <label for="nameSubcribe">Prénom :</label>
                 <input name="nameSubcribe" type="text" placeholder="Luffy">
-
+            </div>
+            <div>
                 <label for="passwordConnexion">Mot de passe :</label>
                 <input name="passwordConnexion" type="password" placeholder="**************">
+            </div>
+            <div>
                 <label for="passwordConnexion">Confirmation :</label>
                 <input name="passwordConnexion" type="password" placeholder="**************">
-                <input name="submitConnexion" value="Inscritpion" type="submit">
-            </form>
-        </section>
-    </main>
+            </div>
+            <div>
+                <button name="submitConnexion" value="Inscritpion" type="submit"><span>Inscritpion</span></button>
+            </div>
+        </form>
+    </section>
+</main>
 </body>
 </html>
