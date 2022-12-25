@@ -1,0 +1,21 @@
+nav {
+  justify-content: center;
+
+  a {
+    margin: 0;
+  }
+}
+
+main {
+  width: 360px;
+  background: white;
+
+  section {
+    display: flex;
+
+    > h2 {
+      width: 50%;
+      font-size: 44px;
+    }
+  }
+}

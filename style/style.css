@@ -35,7 +35,7 @@ h1, h2, h3, h4 {
 }
 
 body {
-  overflow: hidden;
+  overflow-x: hidden;
   background: url("../ressources/background.png") repeat;
 }
 
@@ -52,7 +52,7 @@ nav {
 }
 nav .logo {
   font-size: 70px;
-  margin-top: -3px;
+  margin-top: -2px;
   margin-left: 5px;
   color: var(--highlight);
   text-decoration: none;

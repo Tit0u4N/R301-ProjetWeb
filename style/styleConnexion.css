@@ -1,3 +1,20 @@
+nav {
+  justify-content: center;
+}
+nav a {
+  margin: 0;
+}
 
+main {
+  width: 360px;
+  background: white;
+}
+main section {
+  display: flex;
+}
+main section > h2 {
+  width: 50%;
+  font-size: 44px;
+}
 
 /*# sourceMappingURL=styleConnexion.css.map */

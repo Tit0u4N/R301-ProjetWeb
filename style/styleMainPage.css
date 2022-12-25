@@ -63,6 +63,9 @@ nav div > a {
   background: var(--highlight);
   color: var(--background);
 }
+nav div > a:hover {
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.25) inset;
+}
 
 main .catalog {
   display: grid;
@@ -79,9 +82,9 @@ main article.productCard {
   box-shadow: 0 0 5px 1px rgb(182, 182, 182);
 }
 main article.productCard img {
-  margin-top: 5px;
-  height: 300px;
-  width: 100%;
+  margin: 5px auto;
+  height: auto;
+  width: 80%;
   object-fit: contain;
   filter: drop-shadow(2px 2px 7px rgba(0, 0, 0, 0.25));
 }

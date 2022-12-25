@@ -84,6 +84,10 @@ nav {
       background: var(--highlight);
       color: var(--background);
 
+
+      &:hover{
+        box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.25) inset;
+      }
     }
   }
 }
@@ -109,9 +113,9 @@ main {
     box-shadow: 0 0 5px 1px rgb(182, 182, 182);
 
     img {
-      margin-top: 5px;
-      height: 300px;
-      width: 100%;
+      margin: 5px auto;
+      height: auto;
+      width: 80%;
       object-fit: contain;
       filter: drop-shadow(2px 2px 7px rgba(0, 0, 0, 0.25))
     }
