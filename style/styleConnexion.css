@@ -6,6 +6,8 @@ nav a {
 }
 
 main {
+  min-height: 0;
+  height: auto;
   width: 360px;
   background: white;
   padding: 0;
@@ -26,12 +28,34 @@ main > div > div > h2 {
   text-align: center;
   font-size: 40px;
   width: 180px;
+  transition: color 0.4s;
+}
+main > div > div h2:first-of-type {
+  color: black;
+}
+main > div > div h2:last-of-type {
+  color: var(--background);
+}
+main > div.hide > div h2:first-of-type {
+  color: var(--background);
+}
+main > div.hide > div h2:last-of-type {
+  color: black;
+}
+main > div.hide rect {
+  margin-left: 0;
 }
 main > div rect {
   display: block;
   height: 100%;
   width: 50%;
   background: var(--highlight);
+  margin-left: 50%;
+  transition: margin-left 0.5s;
+}
+main section {
+  padding: 20px 0 20px;
+  display: block;
 }
 main section > h3 {
   font-size: 22px;
@@ -82,18 +106,21 @@ main section form > div input:focus {
   border-bottom: var(--highlight) solid 2px;
   outline: none;
 }
-main section form > div.submitConnexionContainer {
+main section form > div.submitContainer {
   margin: 20px auto 30px auto;
 }
-main section form > div.submitConnexionContainer label {
+main section form > div.submitContainer label {
   color: var(--paragraphe);
   font-size: 12px;
   text-decoration-line: underline;
   text-align: center;
   transition: color 0.4s;
 }
-main section form > div.submitConnexionContainer label:hover {
+main section form > div.submitContainer label:hover {
   color: var(--highlight);
+}
+main section.hide {
+  display: none;
 }
 
 /*# sourceMappingURL=styleConnexion.css.map */

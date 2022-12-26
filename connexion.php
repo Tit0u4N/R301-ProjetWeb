@@ -22,7 +22,7 @@ require "component/navBar/navbar.php"
 
 <main>
 
-    <div>
+    <div id="switchConnexion" onclick="toggleConnexion()">
         <div>
             <h2>CONNEXION</h2>
             <h2>INSCRIPTION</h2>
@@ -40,13 +40,13 @@ require "component/navBar/navbar.php"
                 <label for="passwordConnexion">Mot de passe :</label>
                 <input name="passwordConnexion" type="password" placeholder="**************">
             </div>
-            <div class="submitConnexionContainer">
+            <div class="submitContainer">
                 <button name="submitConnexion" value="Connexion" type="submit"><span>Connexion</span></button>
                 <label for="submitConnexion">Mot de passe oublié ?</label>
             </div>
         </form>
     </section>
-    <section id="susbribeContainer">
+    <section id="susbribeContainer" class="hide">
         <h3>Rejoinre le flow</h3>
         <form action="">
             <div>
@@ -69,11 +69,21 @@ require "component/navBar/navbar.php"
                 <label for="passwordConnexion">Confirmation :</label>
                 <input name="passwordConnexion" type="password" placeholder="**************">
             </div>
-            <div>
+            <div class="submitContainer">
                 <button name="submitConnexion" value="Inscritpion" type="submit"><span>Inscritpion</span></button>
             </div>
         </form>
     </section>
 </main>
 </body>
+<script>
+    function toggleConnexion() {
+        document.getElementById('switchConnexion').classList.toggle("hide")
+        sectionList = document.querySelectorAll("main > section")
+        sectionList.forEach(section => {
+            section.classList.toggle('hide')
+        })
+
+    }
+</script>
 </html>

@@ -7,6 +7,8 @@ nav {
 }
 
 main {
+  min-height: 0;
+  height: auto;
   width: 360px;
   background: white;
   padding: 0;
@@ -14,6 +16,7 @@ main {
   > div {
     height: 50px;
     width: 100%;
+
     > div {
       margin: auto;
       position: absolute;
@@ -26,6 +29,30 @@ main {
         text-align: center;
         font-size: 40px;
         width: 180px;
+        transition: color .4s;
+      }
+
+      h2:first-of-type {
+        color: black;
+      }
+
+      h2:last-of-type {
+        color: var(--background);
+      }
+    }
+
+    &.hide {
+      > div {
+        h2:first-of-type {
+          color: var(--background);
+        }
+        h2:last-of-type {
+          color: black;
+        }
+      }
+
+      rect {
+        margin-left: 0;
       }
     }
 
@@ -34,10 +61,15 @@ main {
       height: 100%;
       width: 50%;
       background: var(--highlight);
+      margin-left: 50%;
+      transition: margin-left 0.5s ;
     }
   }
 
   section {
+    padding: 20px 0 20px;
+    display: block;
+
     > h3 {
       font-size: 22px;
       font-family: "Poppins Light", sans-serif;
@@ -99,7 +131,7 @@ main {
           }
         }
 
-        &.submitConnexionContainer {
+        &.submitContainer {
           margin: 20px auto 30px auto;
 
           label {
@@ -117,6 +149,10 @@ main {
       }
 
 
+    }
+
+    &.hide {
+      display: none;
     }
   }
 }
