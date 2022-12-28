@@ -7,7 +7,7 @@
     <?php
         if ($fullNavBar) {
             require "./component/navBar/searchBar.html";
-            require "./component/navBar/account.html";
+            require "./component/navBar/account.php";
         }
 
         ?>

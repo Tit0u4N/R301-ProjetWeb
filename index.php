@@ -1,5 +1,6 @@
 <?php
-
+    $_GET['dev'] = True;
+    $__DIR__ = '/'
 ?>
 <!doctype html>
 <html lang="fr">

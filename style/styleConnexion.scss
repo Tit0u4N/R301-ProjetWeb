@@ -7,6 +7,7 @@ nav {
 }
 
 main {
+  margin-top: 100px;
   min-height: 0;
   height: auto;
   width: 360px;
@@ -23,6 +24,7 @@ main {
       display: flex;
 
       > h2 {
+        user-select: none;
         display: block;
         padding: 0;
         margin: 0;
@@ -69,6 +71,7 @@ main {
   section {
     padding: 20px 0 20px;
     display: block;
+
 
     > h3 {
       font-size: 22px;
