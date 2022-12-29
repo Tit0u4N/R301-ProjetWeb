@@ -1,4 +1,7 @@
 .gitignore
+*.gitignore
+
+.idea/
 
 # User-specific stuff
 .idea/**/workspace.xml
