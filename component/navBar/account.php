@@ -1,5 +1,5 @@
 <div>
-  <a href="<?= '../../../connexion.php' ?>">
+  <a href="">
     <svg width="53" height="53" viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M38.0496 45.4917H14.9504C13.4461 45.4963 11.9892 44.9656 10.8402 43.9946C9.69126 43.0237 8.9251 41.6757 8.67876 40.1917L5.34418 20.0958H47.6558L44.3213 40.1917C44.0749 41.6757 43.3088 43.0237 42.1598 43.9946C41.0108 44.9656 39.5539 45.4963 38.0496 45.4917V45.4917Z"
             stroke="var(--background)" stroke-width="3.2" stroke-miterlimit="10"/>
@@ -17,7 +17,7 @@
     </svg>
 
   </a>
-  <a>
+  <a href="../../../connexion.php">
     <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M25 27.0417C31.5929 27.0417 36.9375 21.6971 36.9375 15.1042C36.9375 8.51127 31.5929 3.16667 25 3.16667C18.4071 3.16667 13.0625 8.51127 13.0625 15.1042C13.0625 21.6971 18.4071 27.0417 25 27.0417Z"
             stroke="var(--background)" stroke-width="3.2" stroke-miterlimit="10"/>

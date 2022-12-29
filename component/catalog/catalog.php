@@ -51,3 +51,5 @@
     ?>
 
 </section>
+
+<?php require "component/basket/basketCard.php";
