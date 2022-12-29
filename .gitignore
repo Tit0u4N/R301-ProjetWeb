@@ -78,3 +78,5 @@ fabric.properties
 .sass-cache/
 *.sass.map
 *.scss.map
+
+img/
