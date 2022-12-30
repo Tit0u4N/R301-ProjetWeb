@@ -8,13 +8,16 @@
 
 
 $alt = "Cover de " . $title . " " . $vol;
+$title = str_replace(" ","&nbsp;",$title);
 
 ?>
 
 <article class="productCard" onclick="openDescCard('<?= $id ?>')">
     <img src=<?= $img ?> alt="<?= $alt ?>">
-    <h3><?= $title ?></h3>
-    <h4 class="vol"><?= $vol ?></h4>
+    <div class="titleCard">
+        <h3><?= $title ?></h3>
+        <h4 class="vol"><?= $vol ?></h4>
+    </div>
     <hr class="divider">
     <div class="priceContainer">
         <h4><?= $price ?></h4>

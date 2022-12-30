@@ -18,6 +18,7 @@
 
 
     $alt = "Cover de ".$title." ".$vol;
+    $title = str_replace(" ","&nbsp;",$title);
 ?>
     <article class="productCard hide" id="<?= $id ?>">
         <button onclick="closeDescCard()"><span class="material-symbols-outlined">arrow_forward_ios</span></button>

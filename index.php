@@ -23,9 +23,14 @@
     <?php require "component/catalog/catalog.php" ?>
 </main>
 </body>
+<script>
+    autoFontSizeTitle()
+    setTimeout(() => {
+        autoFontSizeTitle()
+    },1)
+    window.onresize = () => {
+        console.log(window.screen.height)
+        autoFontSizeTitle()
+    }
+</script>
 </html>
-
-
-<Directory /var/www/R301-ProjetWeb>
-AllowOverride All
-</Directory>

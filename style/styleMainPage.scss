@@ -97,7 +97,7 @@ main {
 
   .catalog {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, calc(25% - 12px));
     grid-column-gap: 15px;
     grid-row-gap: 20px;
 
@@ -120,17 +120,23 @@ main {
       filter: drop-shadow(2px 2px 7px rgba(0, 0, 0, 0.25))
     }
 
-    h3 {
-      font-size: 45px;
-      margin-left: 8px;
+    div.titleCard {
+      width: 100%;
+
+      > h3 {
+        font-size: 60px;
+        margin: -10px 8px 0;
+      }
+
+      > h4 {
+        margin-top: -9px;
+        font-size: 15px;
+        margin-left: 7px;
+        font-family: "Poppins Light", sans-serif;
+      }
     }
 
-    > h4 {
-      margin-top: -9px;
-      font-size: 15px;
-      margin-left: 7px;
-      font-family: "Poppins Light", sans-serif;
-    }
+
 
     .priceContainer {
 
@@ -226,13 +232,12 @@ main {
 
           div {
             flex: 5;
-            width: 50%;
 
             div.titleCard {
               margin-bottom: 20px;
 
               h3 {
-                margin: 0;
+                margin: 0 0 0 7px;
                 font-size: 50px;
               }
 

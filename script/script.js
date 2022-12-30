@@ -25,3 +25,20 @@ document.addEventListener("keydown", (event) => {
     if(event.key === 'Escape')
         closeDescCard()
 })
+
+function autoFontSizeTitle() {
+    let textParent = document.querySelectorAll('.productCard .titleCard');
+    textParent.forEach((elementParent) => {
+        let text = elementParent.querySelector('h3');
+        let i = 30 // let's start with 30px
+        let overflow = text.clientWidth < text.scrollWidth;
+        const maxSize = 60;
+        while (!overflow && i <= maxSize) {
+            text.style.fontSize = `${i}px`
+            overflow = text.clientWidth < text.scrollWidth;
+            i++
+        }
+        text.style.fontSize = `${i-2}px`
+    })
+
+}
