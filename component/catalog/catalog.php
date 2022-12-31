@@ -37,7 +37,7 @@
 
             $mysqli = new mysqli("165.227.152.225", "p2", "FicsiT22!", "db",3306);
 
-            $index = rand(1,9);
+            $index = rand(1,10);
             $result = $mysqli->query("SELECT * FROM MANGA m WHERE m.idManga  =".$index);
             $result->data_seek(1);
             $mangaSQL = $result->fetch_assoc();
