@@ -12,9 +12,9 @@ $title = str_replace(" ","&nbsp;",$title);
 
 ?>
 
-<article class="productCard" onclick="openDescCard('<?= $id ?>')">
+<article class="productCard" onclick="openPanel('<?= $id ?>')">
     <img src=<?= $img ?> alt="<?= $alt ?>">
-    <div class="titleCard">
+    <div class="productTitle">
         <h3><?= $title ?></h3>
         <h4 class="vol"><?= $vol ?></h4>
     </div>

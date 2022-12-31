@@ -75,7 +75,6 @@
     <?php
     if (isset($_GET['dev'])) {
         if ($_GET['dev'] == True) {
-
             $testTome1->echoHTMLDescCard();
             $testTome2->echoHTMLDescCard();
             $testTome3->echoHTMLDescCard();
@@ -91,4 +90,4 @@
 
 </section>
 
-<?php require "component/basket/basketCard.php";
+<?php require "component/basket/basketPanel.php";

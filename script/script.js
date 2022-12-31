@@ -1,17 +1,17 @@
 
-function openDescCard(id){
-    closeDescCard()
+function openPanel(id){
+    closePanel()
     card = document.querySelector('#'+id)
     card.classList.toggle("hide", false)
     card.classList.toggle("slideIn",true)
 }
 
-function closeDescCard(){
-    cardList = document.querySelectorAll("#descCardsContainer > .productCard:not(.hide)")
-    cardList.forEach(card => hideDescCard(card))
+function closePanel(){
+    cardList = document.querySelectorAll("main .default-panel:not(.hide)")
+    cardList.forEach(card => hidePanel(card))
 }
 
-function hideDescCard(card){
+function hidePanel(card){
     card.classList.toggle("slideOut",true)
     setTimeout(() =>{
         card.classList.add("hide")
@@ -23,11 +23,11 @@ function hideDescCard(card){
 
 document.addEventListener("keydown", (event) => {
     if(event.key === 'Escape')
-        closeDescCard()
+        closePanel()
 })
 
 function autoFontSizeTitle() {
-    let textParent = document.querySelectorAll('.productCard .titleCard');
+    let textParent = document.querySelectorAll('.productCard .productTitle');
     textParent.forEach((elementParent) => {
         let text = elementParent.querySelector('h3');
         let i = 30 // let's start with 30px

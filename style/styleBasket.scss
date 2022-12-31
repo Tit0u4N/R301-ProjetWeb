@@ -1,0 +1,119 @@
+#basket {
+
+  .caroussel {
+
+    width: 100% ;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    gap: 4px;
+
+    article.productCard:hover .priceContainer h4 {
+      color: inherit;
+    }
+
+    > article.productCard {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      height: 120px;
+      width: 100%;
+
+      img {
+        margin: 0;
+        height: 95%;
+        width: 15%;
+      }
+
+      div {
+        display: flex;
+        justify-content: center;
+
+        &.productTitle {
+          width: 52%;
+          flex-direction: column;
+
+          padding: 3px;
+
+          > h4{
+            margin-left: 0;
+            font-family: "Poppins Light", sans-serif;
+          }
+
+          > h3 {
+            margin-left: 0;
+            font-family: "Poppins", sans-serif;
+          }
+        }
+
+        &.productCounter {
+          align-items: center;
+          justify-content: center;
+          width: 15%;
+
+          > div {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 3px;
+
+            > div {
+              width: 30%;
+
+              > h4 {
+                margin-top: 2px;
+                font-family: "Poppins Light", sans-serif;
+              }
+            }
+
+            > button {
+              display: block;
+              width: 28px;
+              aspect-ratio: 1/1;
+                > rect {
+                  margin: auto;
+                  background: white;
+                  width: 21px;
+                  height: 4px;
+                  display: block;
+                }
+
+              &:first-of-type {
+                background: var(--paragraphe);
+              }
+
+              &:last-of-type {
+                background: var(--highlight);
+
+                > rect {
+                  &:first-of-type {
+                    margin-top: -1px;
+                  }
+                  &:last-of-type {
+                    transform: rotate(90deg) translateY(-1px);
+                    margin-top: -4px;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        &.priceContainer {
+          align-items: center;
+          width: 18%;
+
+          h4 {
+            position: static;
+            text-align: center;
+            margin: 0;
+          }
+        }
+      }
+
+    }
+
+  }
+}

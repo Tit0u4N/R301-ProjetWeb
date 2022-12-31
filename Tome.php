@@ -62,5 +62,19 @@ class Tome
 
         require "component/catalog/card/productDescCardTemplate.php";
     }
+
+
+    public function echoHTMLCardBasket(){
+        $title = $this->manga->getTitle();
+        $img = $this->imgPath;
+        $price = $this->price;
+        if ($this->vol == -1)
+            $vol = "Hors Serie";
+        else
+            $vol = "Vol. ".$this->vol;
+
+        $id = "basket-tome-".$this->id;
+        require "component/basket/productCardBasketTemplate.php";
+    }
 }
 
