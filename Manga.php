@@ -4,22 +4,19 @@ class Manga
 {
     private $title ;
     private $author ;
-    private $editor;
     private $type ;
     private $genre ;
 
     /**
      * @param $title
      * @param $autor
-     * @param $editor
      * @param $type
      * @param $genre
      */
-    public function __construct($title, $autor, $editor, $type, $genre)
+    public function __construct($title, $autor,  $type, $genre)
     {
         $this->title = $title;
         $this->author = $autor;
-        $this->editor = $editor;
         $this->type = $type;
         $this->genre = $genre;
     }
@@ -38,14 +35,6 @@ class Manga
     public function getAuthor()
     {
         return $this->author;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getEditor()
-    {
-        return $this->editor;
     }
 
     /**
