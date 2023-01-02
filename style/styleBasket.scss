@@ -6,17 +6,18 @@
     display: flex;
     flex-direction: column;
     padding: 5px;
-    gap: 4px;
+    gap: 5px;
 
     article.productCard:hover .priceContainer h4 {
       color: inherit;
     }
 
-    > article.productCard {
+    > article.productCard{
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
+      border: 1px #dcdcdc;
 
       height: 120px;
       width: 100%;
@@ -116,4 +117,57 @@
     }
 
   }
+}
+
+#totalBasket {
+  width: 100%;
+  height: 120px;
+  padding: 5px;
+  display: flex;
+  justify-content: flex-end;
+
+  > div {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-top: 10px;
+
+    > div {
+      display: flex;
+      justify-content: space-between;
+
+      > div {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 5px;
+
+        p {
+          font-weight: bold;
+        }
+        span {
+          margin-top: -5px;
+        }
+
+      }
+
+      > h4 {
+        margin-top: -13px;
+        font-size: 50px;
+      }
+    }
+
+      button {
+        background: var(--highlight);
+
+        span {
+          font-size: 50px;
+          font-family: LIQUIDO, sans-serif;
+          color: white;
+        }
+      }
+
+  }
+
 }
