@@ -52,7 +52,7 @@ class Tome
             $vol = "Vol. ".$this->vol;
 
         $author = $this->manga->getAuthor();
-        $editor = $this->manga->getEditor();
+        $editor = "editeur";
         $publicationDate = $this->date;
         $type = $this->manga->getType();
         $genre = $this->manga->getGenre();

@@ -2,56 +2,27 @@
 
 class Manga
 {
-    private $title ;
-    private $author ;
-    private $type ;
-    private $genre ;
+    private String $title ;
+    private String $titleOriginal ;
+    private String $author ;
+    private String $drawer ;
+    private String $type ;
+    private String $genre ;
+    private String $desc ;
 
-    /**
-     * @param $title
-     * @param $autor
-     * @param $type
-     * @param $genre
-     */
-    public function __construct($title, $autor,  $type, $genre)
+
+    public function __construct(String $title, String $type, String $titleOrginal, String $autor, String $drawer)
     {
         $this->title = $title;
+        $this->titleOriginal = $titleOrginal;
         $this->author = $autor;
         $this->type = $type;
-        $this->genre = $genre;
+        if(!empty($drawer)){
+            $this->drawer = $drawer;
+        }
     }
 
-    /**
-     * @return mixed
-     */
-    public function getTitle()
-    {
-        return $this->title;
-    }
 
-    /**
-     * @return mixed
-     */
-    public function getAuthor()
-    {
-        return $this->author;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getGenre()
-    {
-        return $this->genre;
-    }
 
 
 
