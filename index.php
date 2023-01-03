@@ -1,6 +1,6 @@
 <?php
-    $_GET['dev'] = False;
-    $__DIR__ = '/'
+    //$_GET['dev'] = True;
+    $__DIR__ = '/';
 ?>
 <!doctype html>
 <html lang="fr">
@@ -17,7 +17,6 @@
 </head>
 <body>
 <?php require "component/navBar/navbar.php" ?>
-
 <main>
     <h2>Selection :</h2>
     <?php require "component/catalog/catalog.php" ?>
