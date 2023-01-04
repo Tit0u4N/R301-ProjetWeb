@@ -13,7 +13,9 @@ class Editeur{
         $result = $mysqli->query("SELECT * FROM EDITEUR e WHERE e.idEditeur = ".$id);
         $editSQL = $result->fetch_all()[0];
         $this->name = $editSQL[1];
-        $this->imgPath = $editSQL[2];
+        if(isset($editSQL[2])){
+            $this->imgPath = $editSQL[2];
+        }
 
     }
 

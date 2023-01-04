@@ -37,17 +37,9 @@
             }*/
         }
         else {
-            $index = rand(1,17);
-
-            $mangaTest = new Manga($index);
-
-            $mysqli = new mysqli("165.227.152.225", "p2", "FicsiT22!", "db",3306);
-            $tomeArray = array();
-            $result = $mysqli->query("SELECT p.idProduit FROM PRODUIT p WHERE p.idManga =".$mangaTest->getId());
-            $tome = $result->fetch_all();
-            foreach($tome as $row){
-                array_push($tomeArray,new Tome($row[0]));
-            }
+            $index = rand(1,18);
+            $manga = new Manga($index);
+            $tomeArray = $manga->getTomes();
 
             foreach ($tomeArray as $tome){
                 $tome->echoHTMLCard();

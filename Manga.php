@@ -67,6 +67,22 @@ class Manga
         return $this->id;
     }
 
+    public function getTomes(){
+        $tomeArray = array();
+
+        $mysqli = new mysqli("localhost", "public", "phpClient22!", "db",3306);
+        $result = $mysqli->query("SELECT p.idProduit FROM PRODUIT p WHERE p.idManga =".$this->id);
+        $tome = $result->fetch_all();
+
+        foreach($tome as $row){
+            array_push($tomeArray,new Tome($row[0]));
+        }
+
+        return $tomeArray;
+    }
+
+
+    
 
 
 }
