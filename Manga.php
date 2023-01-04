@@ -15,7 +15,7 @@ class Manga
     {
         $this->id = $id;
 
-        $mysqli = new mysqli("165.227.152.225", "p2", "FicsiT22!", "db",3306);
+        $mysqli = new mysqli("localhost", "public", "phpClient22!", "db",3306);
         $result = $mysqli->query("SELECT * FROM MANGA m WHERE m.idManga = ".$id);
         $mangaSQL = $result->fetch_all()[0];
         
@@ -37,6 +37,9 @@ class Manga
             array_push( $genres,$values[0]);
         }
         $this->genre = implode(" - ",$genres);
+
+        //destruct object SQL
+        $mysqli = null;
 
     }
 

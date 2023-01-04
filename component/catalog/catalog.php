@@ -37,25 +37,16 @@
             }*/
         }
         else {
-
-
             $index = rand(1,17);
 
             $mangaTest = new Manga($index);
 
             $mysqli = new mysqli("165.227.152.225", "p2", "FicsiT22!", "db",3306);
             $tomeArray = array();
-            
-            $result = $mysqli->query("SELECT * FROM PRODUIT p WHERE p.idManga =".$mangaTest->getId());
-            for ($row_no = 0 ; $row_no < $result->num_rows; $row_no++) {
-                $result->data_seek($row_no);
-                $row = $result->fetch_assoc();
-
-                $resultImg = $mysqli->query("SELECT * FROM IMAGE i WHERE i.idProduit =".$row['idProduit']);
-                $resultImg->data_seek(0);
-                $Img = $resultImg->fetch_assoc();
-
-                array_push($tomeArray,new Tome($mangaTest,(int) $row['numTome'],$row['dateParution'],$row['description'],$Img['lienImage'],$row['prixPublic'],$row['idProduit']));
+            $result = $mysqli->query("SELECT p.idProduit FROM PRODUIT p WHERE p.idManga =".$mangaTest->getId());
+            $tome = $result->fetch_all();
+            foreach($tome as $row){
+                array_push($tomeArray,new Tome($row[0]));
             }
 
             foreach ($tomeArray as $tome){

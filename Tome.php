@@ -1,36 +1,45 @@
 <?php
 require "Manga.php";
+require "Editeur.php";
 
 class Tome
 {
-    private Manga $manga;
+    private int $id;
+    private int $idManga;
+    private int $idEditeur;
     private int $vol;
     private $date;
     private $desc;
     private $imgPath;
     private $price ;
-    private int $id;
 
-    /**
-     * @param Manga $manga
-     * @param int $vol
-     * @param $date
-     * @param $desc
-     * @param $imgPath
-     */
-    public function __construct(Manga $manga, int $vol, $date, $desc, $imgPath, $price, int $id)
+    
+    public function __construct(String $id)
     {
-        $this->manga = $manga;
-        $this->vol = $vol;
-        $this->date = $date;
-        $this->desc = $desc;
-        $this->imgPath = $imgPath;
-        $this->price = $price;
         $this->id = $id;
+        $mysqli = new mysqli("localhost", "public", "phpClient22!", "db",3306);
+        $result = $mysqli->query("SELECT * FROM PRODUIT p WHERE p.idProduit = ".$id);
+        $tomeSQL = $result->fetch_all()[0];
+        
+        $this->idManga = $tomeSQL[1];
+        $this->idEditeur = $tomeSQL[2];
+        $this->vol = $tomeSQL[4];
+        $this->price = $tomeSQL[5];
+        $this->desc = $tomeSQL[7];
+        $this->date = $tomeSQL[8];
+
+        $resultImg = $mysqli->query("SELECT i.lienImage FROM IMAGE i WHERE i.idProduit =".$id);
+        $this->imgPath = $resultImg->fetch_all()[0][0];
+
+        //destruct object SQL
+        $mysqli = null;
+
     }
 
     public function echoHTMLCard(){
-        $title = $this->manga->getTitle();
+        
+        $manga =  new Manga($this->idManga);
+        $title = $manga->getTitle();
         $img = $this->imgPath;
         $price = $this->price;
         if ($this->vol == -1)
@@ -43,7 +52,8 @@ class Tome
     }
 
     public function echoHTMLDescCard(){
-        $title = $this->manga->getTitle();
+        $manga =  new Manga($this->idManga);
+        $title = $manga->getTitle();
         $img = $this->imgPath;
         $price = $this->price;
         if ($this->vol == -1)
@@ -51,11 +61,14 @@ class Tome
         else
             $vol = "Vol. ".$this->vol;
 
-        $author = $this->manga->getAuthor();
-        $editor = "editeur";
+        $author = $manga->getAuthor();
+
+        $edit = new Editeur($this->idEditeur);
+        $editor = $edit->getName();
+
         $publicationDate = $this->date;
-        $type = $this->manga->getType();
-        $genre = $this->manga->getGenre();
+        $type = $manga->getType();
+        $genre = $manga->getGenre();
         $desc = $this->desc;
 
         $id = "tome-".$this->id;
