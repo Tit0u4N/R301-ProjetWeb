@@ -39,7 +39,7 @@ class Tome
             $vol = "Vol. ".$this->vol;
 
         $id = "tome-".$this->id;
-        require "component/catalog/card/productCardTemplate.php";
+        require "component/card/productCardTemplate.php";
     }
 
     public function echoHTMLDescCard(){
@@ -60,7 +60,7 @@ class Tome
 
         $id = "tome-".$this->id;
 
-        require "component/catalog/card/productDescCardTemplate.php";
+        require "component/card/productDescCardTemplate.php";
     }
 
 
@@ -74,7 +74,7 @@ class Tome
             $vol = "Vol. ".$this->vol;
 
         $id = "basket-tome-".$this->id;
-        require "component/basket/productCardBasketTemplate.php";
+        require "component/card/productCardBasketTemplate.php";
     }
 }
 

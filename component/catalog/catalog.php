@@ -18,7 +18,7 @@
 ?>
 
 
-<section class="catalog searchMode">
+<section class="catalog">
     <?php
         if (isset($_GET['dev'])) {
             if ($_GET['dev'] == True) {

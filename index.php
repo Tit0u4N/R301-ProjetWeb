@@ -26,24 +26,16 @@ $__DIR__ = '/'
 </main>
 </body>
 <script>
-    // autoFontSizeTitles()
-    // setTimeout(() => {
-    //     autoFontSizeTitles()
-    // }, 1)
-    // window.onresize = () => {
-    //     console.log("boot")
-    // }
-    //
-    // window.onresize = ev => {
-    //     autoFontSizeTitles()
-    //     boom()
-    // }
-
-    title.createTitles()
-    title.autoSizeTitles()
+    window.onresize = () => {
+        console.log("boot")
+    }
+    Title.createTitles()
+    setTimeout(() => {
+        Title.autoSizeTitles()
+    }, 50)
 
     window.onresize = () => {
-        title.autoSizeTitles()
+        Title.autoSizeTitles()
     }
 
     function boom() {
@@ -55,10 +47,10 @@ $__DIR__ = '/'
         console.log("scrollWidth = " + text.scrollWidth + " width = " + text.clientWidth)
     }
 
-    test = document.querySelector("main > .catalog .productCard .productTitle > h3 ")
+    // test = document.querySelector("main > .catalog .productCard .productTitle > h3 ")
     // console.log(test + " : " + title.splitSpan(test))
-    test = document.querySelector("main > .catalog .productCard .productTitle")
-    test = window.getComputedStyle(test, null).paddingLeft;
-    console.log(test)
+    // test = document.querySelector("main > .catalog .productCard .productTitle")
+    // test = window.getComputedStyle(test, null).paddingLeft;
+    // console.log(test)
 </script>
 </html>

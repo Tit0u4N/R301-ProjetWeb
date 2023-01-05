@@ -2,7 +2,7 @@
 
 $alt = "Cover de " . $title . " " . $vol;
 $title = str_replace(" ", "&nbsp;", $title);
-
+//require "component/card/formatTitle.php"
 ?>
 
 <article class="productCard" id="<?= $id ?>">
