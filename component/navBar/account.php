@@ -6,9 +6,9 @@
       <path d="M51.8959 20.0958H1.10419" stroke="var(--background)" stroke-width="3.2"
             stroke-miterlimit="10"/>
       <path d="M15.9221 24.3358V20.0958L22.26 5.3" stroke="var(--background)" stroke-width="3.2"
-            stroke-miterlimit="10"/>
+            stroke-miterlimit="10" class="cove"/>
       <path d="M37.0779 24.3358V20.0958L30.74 5.3" stroke="var(--background)" stroke-width="3.2"
-            stroke-miterlimit="10"/>
+            stroke-miterlimit="10" class="cove"/>
       <path d="M26.5 28.5758V39.1538" stroke="var(--background)" stroke-width="3.2" stroke-miterlimit="10"/>
       <path d="M18.0421 28.5758V39.1538" stroke="var(--background)" stroke-width="3.2"
             stroke-miterlimit="10"/>
