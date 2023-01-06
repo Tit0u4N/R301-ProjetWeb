@@ -64,6 +64,15 @@ class Manga
         return $this->genre;
     }
 
-
+    public function echoHTMLCard(){
+        $title = $this->title;
+        $img = "https://www.nautiljon.com/images/manga_volumes/00/48/35484.webp?1649609175";
+        $author = $this->author;
+        $editor = $this->editor;
+        $type = $this->type;
+        $genre = $this->genre;
+//        $desc = $this->desc;
+        require "component/card/mangaCardTemplate.php";
+    }
 
 }

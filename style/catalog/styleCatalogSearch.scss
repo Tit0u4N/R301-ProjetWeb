@@ -1,0 +1,88 @@
+main {
+
+  .manga {
+    display: flex;
+    justify-content: center;
+    gap : 15px;
+
+    > div.imageContainer {
+      width: 25%;
+      padding: 5px;
+
+      > img {
+        width: 100%;
+      }
+    }
+
+    > div.descCardContainer {
+      padding-left: 10px;
+      width: 70%;
+
+    }
+  }
+  .catalog {
+    &.carousselMod {
+      display: flex;
+      overflow-x: scroll;
+      padding-bottom: 20px;
+      scroll-snap-type : x proximity;
+      & > .productCard {
+        width: calc(16% - 5px) ;
+        &:first-of-type {
+          margin-left: 15px;
+        }
+
+        > .priceContainer {
+        transition: background-color 1s;
+
+          > h4 {
+            position: static;
+          }
+
+          > button {
+            margin-left: 0;
+            transition: width 1s, margin-left 1s;
+          }
+
+          &:hover {
+            background: var(--highlight);
+          }
+        }
+      }
+    }
+
+    &.classicMod {
+      grid-template-columns: repeat(6, calc(16% - 5px));
+    }
+
+
+    &.classicMod, &.carousselMod  {
+      > article.productCard {
+        > .productTitle {
+          height: 70px;
+          > h3 {
+            line-height: calc(var(--fontSizeTitle) - 4px);
+          }
+
+          > h4 {
+            margin: 0;
+          }
+          > .vol {
+            margin-top: -2px;
+          }
+        }
+        > .priceContainer {
+          > h4 {
+            margin-top: -4px;
+            font-size: 40px;
+          }
+
+          button {
+            height: 45px;
+          }
+        }
+      }
+    }
+
+  }
+}

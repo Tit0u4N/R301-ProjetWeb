@@ -42,7 +42,7 @@ require "component/card/formatTitle.php"
                 <img src=<?= $img ?>  alt="<?= $alt ?>">
             </div>
         </section>
-        <section class="synopsisCardFull">
+        <section class="synopsisCard">
             <h4> Synopsis :</h4>
             <p>
                 <?= $desc ?>
