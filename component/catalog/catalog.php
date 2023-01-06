@@ -3,11 +3,10 @@
     function transformSearchQuery(String $search){
         $searchTab = array();
         $searchTab = str_split($search);
-        return "%".implode("%",$searchTab)."%";
+        return str_replace("'","''","%".implode("%",$searchTab)."%");
     }
 
     function searchManga(String $search){
-        $search =str_replace("'","''",transformSearchQuery($search));
         $pdo = new PDO('mysql:host=localhost;dbname=db','public','phpClient22!');
         $mangaSQL = $pdo->query("SELECT DISTINCT (m.idManga) FROM TITRE_MANGA tm, MANGA m WHERE tm.idManga = m.idManga AND (tm.titre LIKE '".$search."' OR m.titreManga LIKE '".$search."')")->fetchAll()[0];
 
