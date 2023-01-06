@@ -282,7 +282,7 @@ main {
             h3 {
               margin-top: 20px;
               font-size: 50px;
-              line-height: calc(var(--fontSizeTitle) - 18px);
+              line-height:   calc(var(--fontSizeTitle) - 18px);
             }
 
             > h4.vol {
@@ -370,6 +370,7 @@ main {
             margin-left: -3px;
             height: 80%;
             aspect-ratio: 1/1;
+            box-shadow: none;
           }
         }
       }

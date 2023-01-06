@@ -38,14 +38,9 @@ $__DIR__ = '/'
         Title.autoSizeTitles()
     }
 
-    function boom() {
-        let elementParent = document.querySelector("main > .catalog .productCard .productTitle")
-        let padding = window.getComputedStyle(elementParent).paddingLeft.replace('px','') * 2
-        console.log("padding = " + padding)
-        console.log("elm width = " + (elementParent.clientWidth - padding));
-        let text = elementParent.querySelector("h3")
-        console.log("scrollWidth = " + text.scrollWidth + " width = " + text.clientWidth)
-    }
+    let panier = new Basket();
+
+
 
     // test = document.querySelector("main > .catalog .productCard .productTitle > h3 ")
     // console.log(test + " : " + title.splitSpan(test))

@@ -1,4 +1,4 @@
-<?php
+    <?php
 
 ?>
 <section id="basket" class="default-panel ">
@@ -9,12 +9,12 @@
             <?php
             if (isset($_GET['dev'])) {
                 if ($_GET['dev'] == True) {
-                    $testTome1->echoHTMLCardBasket();
-                    $testTome2->echoHTMLCardBasket();
-                    $testTome3->echoHTMLCardBasket();
-                    $testTome1->echoHTMLCardBasket();
-                    $testTome2->echoHTMLCardBasket();
-                    $testTome3->echoHTMLCardBasket();
+//                    $testTome1->echoHTMLCardBasket();
+//                    $testTome2->echoHTMLCardBasket();
+//                    $testTome3->echoHTMLCardBasket();
+//                    $testTome1->echoHTMLCardBasket();
+//                    $testTome2->echoHTMLCardBasket();
+//                    $testTome3->echoHTMLCardBasket();
                 }
             }
             ?>

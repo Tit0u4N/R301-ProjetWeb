@@ -39,6 +39,7 @@ class Tome
             $vol = "Vol. ".$this->vol;
 
         $id = "tome-".$this->id;
+        $idDescCard = "desc-tome-".$this->id;
         require "component/card/productCardTemplate.php";
     }
 
@@ -58,7 +59,7 @@ class Tome
         $genre = $this->manga->getGenre();
         $desc = $this->desc;
 
-        $id = "tome-".$this->id;
+        $id = "desc-tome-".$this->id;
 
         require "component/card/productDescCardTemplate.php";
     }
