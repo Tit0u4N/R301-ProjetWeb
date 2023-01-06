@@ -38,6 +38,10 @@ h1, h2, h3, h4 {
   border: none;
 }
 
+button {
+  border: none;
+}
+
 body {
   overflow-x: hidden ;
   background: url("../ressources/background.png") repeat;
@@ -47,6 +51,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
 
   background: var(--main);
   height: 60px;
@@ -54,6 +59,7 @@ nav {
   --widthNavBar: 1200px;
   padding-left: calc((100vw - var(--widthNavBar)) / 2);
   padding-right: calc((100vw - var(--widthNavBar)) / 2);
+  z-index: 5;
 
   .logo {
     user-select: none ;
@@ -81,12 +87,13 @@ main {
   min-height: 80vh;
   margin: 0 auto;
   background: white;
-  padding: 20px 15px 0 15px;
+  padding: 80px 15px 0 15px;
 
   h2 {
     margin-left: 10px;
     margin-bottom: 20px;
     font-size: 60px;
   }
+
 }
 

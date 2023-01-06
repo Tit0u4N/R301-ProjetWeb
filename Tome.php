@@ -46,7 +46,8 @@ class Tome
             $vol = "Vol. ".$this->vol;
 
         $id = "tome-".$this->id;
-        require "component/catalog/card/productCardTemplate.php";
+        $idDescCard = "desc-tome-".$this->id;
+        require "component/card/productCardTemplate.php";
     }
 
     public function echoHTMLDescCard(){
@@ -69,9 +70,23 @@ class Tome
         $genre = $manga->getGenre();
         $desc = $this->desc;
 
-        $id = "tome-".$this->id;
+        $id = "desc-tome-".$this->id;
 
-        require "component/catalog/card/productDescCardTemplate.php";
+        require "component/card/productDescCardTemplate.php";
+    }
+
+
+    public function echoHTMLCardBasket(){
+        $title = $this->manga->getTitle();
+        $img = $this->imgPath;
+        $price = $this->price;
+        if ($this->vol == -1)
+            $vol = "Hors Serie";
+        else
+            $vol = "Vol. ".$this->vol;
+
+        $id = "basket-tome-".$this->id;
+        require "component/card/productCardBasketTemplate.php";
     }
 }
 
