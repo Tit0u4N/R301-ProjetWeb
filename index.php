@@ -18,7 +18,6 @@
 <body>
 <?php require "component/navBar/navbar.php" ?>
 <main>
-    <h2>Selection :</h2>
     <?php require "component/catalog/catalog.php" ?>
 </main>
 </body>

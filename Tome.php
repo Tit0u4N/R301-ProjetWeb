@@ -17,9 +17,8 @@ class Tome
     public function __construct(String $id)
     {
         $this->id = $id;
-        $mysqli = new mysqli("localhost", "public", "phpClient22!", "db",3306);
-        $result = $mysqli->query("SELECT * FROM PRODUIT p WHERE p.idProduit = ".$id);
-        $tomeSQL = $result->fetch_all()[0];
+        $pdo = new PDO('mysql:host=localhost;dbname=db','public','phpClient22!');
+        $tomeSQL = $pdo->query("SELECT * FROM PRODUIT p WHERE p.idProduit = ".$id)->fetchAll()[0];
         
         $this->idManga = $tomeSQL[1];
         $this->idEditeur = $tomeSQL[2];
@@ -28,11 +27,10 @@ class Tome
         $this->desc = $tomeSQL[7];
         $this->date = $tomeSQL[8];
 
-        $resultImg = $mysqli->query("SELECT i.lienImage FROM IMAGE i WHERE i.idProduit =".$id);
-        $this->imgPath = $resultImg->fetch_all()[0][0];
+        $this->imgPath = $pdo->query("SELECT i.lienImage FROM IMAGE i WHERE i.idProduit =".$id)->fetchAll()[0][0];
 
         //destruct object SQL
-        $mysqli = null;
+        $pdo = null;
 
     }
 

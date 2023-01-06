@@ -14,32 +14,28 @@ class Manga
     public function __construct(String $id)
     {
         $this->id = $id;
+        $pdo = new PDO('mysql:host=localhost;dbname=db','public','phpClient22!');
 
-        $mysqli = new mysqli("localhost", "public", "phpClient22!", "db",3306);
-        $result = $mysqli->query("SELECT * FROM MANGA m WHERE m.idManga = ".$id);
-        $mangaSQL = $result->fetch_all()[0];
-        
+        $mangaSQL = $pdo->query("SELECT * FROM MANGA m WHERE m.idManga = ".$id)->fetchAll()[0];
         $this->title = $mangaSQL[2];
         $this->author = $mangaSQL[3];
         $this->drawer = $mangaSQL[4];
         $this->desc = $mangaSQL[5];
 
 
-        $resultType = $mysqli->query("SELECT t.nom FROM TYPE t WHERE t.idType  = ".$mangaSQL[1]);
-        $type = $resultType->fetch_all()[0][0];
+        $resultType = $pdo->query("SELECT t.nom FROM TYPE t WHERE t.idType  = ".$mangaSQL[1])->fetchAll()[0];
+        $type = $resultType[0];
         $this->type = $type;
-
         
-        $resultGenres = $mysqli->query("SELECT g.nom FROM GENRE g, GENRE_MANGA gm WHERE gm.idGenre=g.idGenre AND gm.idManga = ".$id);
-        $genresSQL = $resultGenres->fetch_all();
+        $resultGenres = $pdo->query("SELECT g.nom FROM GENRE g, GENRE_MANGA gm WHERE gm.idGenre=g.idGenre AND gm.idManga = ".$id)->fetchAll();
         $genres = array();
-        foreach($genresSQL as $values){
-            array_push( $genres,$values[0]);
+        foreach($resultGenres as $values){
+            array_push($genres,$values[0]);
         }
         $this->genre = implode(" - ",$genres);
 
         //destruct object SQL
-        $mysqli = null;
+        $pdo = null;
 
     }
 
@@ -69,10 +65,9 @@ class Manga
 
     public function getTomes(){
         $tomeArray = array();
-
-        $mysqli = new mysqli("localhost", "public", "phpClient22!", "db",3306);
-        $result = $mysqli->query("SELECT p.idProduit FROM PRODUIT p WHERE p.idManga =".$this->id);
-        $tome = $result->fetch_all();
+        
+        $pdo = new PDO('mysql:host=localhost;dbname=db','public','phpClient22!');
+        $tome = $pdo->query("SELECT p.idProduit FROM PRODUIT p WHERE p.idManga =".$this->id)->fetchAll();
 
         foreach($tome as $row){
             array_push($tomeArray,new Tome($row[0]));

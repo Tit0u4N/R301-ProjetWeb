@@ -9,9 +9,8 @@ class Editeur{
     {
         $this->id = $id;
 
-        $mysqli = new mysqli("localhost", "public", "phpClient22!", "db",3306);
-        $result = $mysqli->query("SELECT * FROM EDITEUR e WHERE e.idEditeur = ".$id);
-        $editSQL = $result->fetch_all()[0];
+        $pdo = new PDO('mysql:host=localhost;dbname=db','public','phpClient22!');
+        $editSQL = $pdo->query("SELECT * FROM EDITEUR e WHERE e.idEditeur = ".$id)->fetchAll()[0];
         $this->name = $editSQL[1];
         if(isset($editSQL[2])){
             $this->imgPath = $editSQL[2];
