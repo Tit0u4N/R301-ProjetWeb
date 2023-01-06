@@ -18,13 +18,15 @@
 
 
     $alt = "Cover de ".$title." ".$vol;
-    $title = str_replace(" ","&nbsp;",$title);
+
+require "component/card/formatTitle.php"
+
 ?>
-    <article class="productCard hide" id="<?= $id ?>">
-        <button onclick="closeDescCard()"><span class="material-symbols-outlined">arrow_forward_ios</span></button>
+    <article class="default-panel productCard hide" id="<?= $id ?>">
+        <button onclick="closePanel()"><span class="material-symbols-outlined">arrow_forward_ios</span></button>
         <section class="headerCardFull">
             <div>
-                <div class="titleCard">
+                <div class="productTitle">
                     <h3><?= $title ?> </h3>
                     <h4 class="vol"><?= $vol ?> </h4>
                 </div>
@@ -40,7 +42,7 @@
                 <img src=<?= $img ?>  alt="<?= $alt ?>">
             </div>
         </section>
-        <section class="synopsisCardFull">
+        <section class="synopsisCard">
             <h4> Synopsis :</h4>
             <p>
                 <?= $desc ?>
@@ -50,7 +52,7 @@
             <button class="priceContainer">
                 <h4><?= $price ?></h4>
                 <div>
-                    <img src="../../../ressources/icons/basket.svg">
+                    <img src="/ressources/icons/basket.svg">
                 </div>
             </button>
         </section>

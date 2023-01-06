@@ -1,14 +1,14 @@
 <div>
-  <a href="">
+  <a onclick="openPanel('basket')">
     <svg width="53" height="53" viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M38.0496 45.4917H14.9504C13.4461 45.4963 11.9892 44.9656 10.8402 43.9946C9.69126 43.0237 8.9251 41.6757 8.67876 40.1917L5.34418 20.0958H47.6558L44.3213 40.1917C44.0749 41.6757 43.3088 43.0237 42.1598 43.9946C41.0108 44.9656 39.5539 45.4963 38.0496 45.4917V45.4917Z"
             stroke="var(--background)" stroke-width="3.2" stroke-miterlimit="10"/>
       <path d="M51.8959 20.0958H1.10419" stroke="var(--background)" stroke-width="3.2"
             stroke-miterlimit="10"/>
       <path d="M15.9221 24.3358V20.0958L22.26 5.3" stroke="var(--background)" stroke-width="3.2"
-            stroke-miterlimit="10"/>
+            stroke-miterlimit="10" class="cove"/>
       <path d="M37.0779 24.3358V20.0958L30.74 5.3" stroke="var(--background)" stroke-width="3.2"
-            stroke-miterlimit="10"/>
+            stroke-miterlimit="10" class="cove"/>
       <path d="M26.5 28.5758V39.1538" stroke="var(--background)" stroke-width="3.2" stroke-miterlimit="10"/>
       <path d="M18.0421 28.5758V39.1538" stroke="var(--background)" stroke-width="3.2"
             stroke-miterlimit="10"/>

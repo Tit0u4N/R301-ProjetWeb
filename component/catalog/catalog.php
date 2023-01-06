@@ -3,7 +3,7 @@
     function transformSearchQuery(String $search){
         $searchTab = array();
         $searchTab = str_split($search);
-        return "%".implode("%",$searchTab)."%";
+        return "%" . implode("%", $searchTab) . "%";
     }
 
     function searchManga(String $search){
@@ -14,6 +14,7 @@
         return new Manga($mangaSQL[0]);
 
     }
+
 
 
     if (isset($_GET['dev'])) {
@@ -60,50 +61,24 @@
 
 ?>
 
+
 <section class="catalog">
     <?php
-        if (isset($_GET['dev'])) {
-            if ($_GET['dev'] == True) {
-
-                $testTome1->echoHTMLCard();
-                $testTome2->echoHTMLCard();
-                $testTome3->echoHTMLCard();
-                $testTome1->echoHTMLCard();
-                $testTome2->echoHTMLCard();
-                $testTome3->echoHTMLCard();
-                $testTome1->echoHTMLCard();
-                $testTome2->echoHTMLCard();
-                $testTome3->echoHTMLCard();
-            }
+        foreach ($tomeArray as $tome) {
+            $tome->echoHTMLCard();
         }
-        else {
-            foreach ($tomeArray as $tome){
-                $tome->echoHTMLCard();
-            }
-        }
-
     ?>
+    </section>
 
 
-</section>
-<section class="descCardsContainer" id="descCardsContainer">
+    <section class="descCardsContainer" id="descCardsContainer">
+
     <?php
-    if (isset($_GET['dev'])) {
-        if ($_GET['dev'] == True) {
-
-            $testTome1->echoHTMLDescCard();
-            $testTome2->echoHTMLDescCard();
-            $testTome3->echoHTMLDescCard();
-        }
-    }
-    else {
-        foreach ($tomeArray as $tome){
+        foreach ($tomeArray as $tome) {
             $tome->echoHTMLDescCard();
         }
-    }
-
     ?>
 
-</section>
+    </section>
 
-<?php require "component/basket/basketCard.php";
+<?php require "component/basket/basketPanel.php";
