@@ -1,0 +1,65 @@
+main .manga {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+main .manga > div.imageContainer {
+  width: 25%;
+  padding: 5px;
+}
+main .manga > div.imageContainer > img {
+  width: 100%;
+}
+main .manga > div.descCardContainer {
+  padding-left: 10px;
+  width: 70%;
+}
+main .catalog.carousselMod {
+  display: flex;
+  overflow-x: scroll;
+  padding-bottom: 20px;
+  scroll-snap-type: x proximity;
+}
+main .catalog.carousselMod > .productCard {
+  width: calc(16% - 5px);
+}
+main .catalog.carousselMod > .productCard:first-of-type {
+  margin-left: 15px;
+}
+main .catalog.carousselMod > .productCard > .priceContainer {
+  transition: background-color 1s;
+}
+main .catalog.carousselMod > .productCard > .priceContainer > h4 {
+  position: static;
+}
+main .catalog.carousselMod > .productCard > .priceContainer > button {
+  margin-left: 0;
+  transition: width 1s, margin-left 1s;
+}
+main .catalog.carousselMod > .productCard > .priceContainer:hover {
+  background: var(--highlight);
+}
+main .catalog.classicMod {
+  grid-template-columns: repeat(6, calc(16% - 5px));
+}
+main .catalog.classicMod > article.productCard > .productTitle, main .catalog.carousselMod > article.productCard > .productTitle {
+  height: 70px;
+}
+main .catalog.classicMod > article.productCard > .productTitle > h3, main .catalog.carousselMod > article.productCard > .productTitle > h3 {
+  line-height: calc(var(--fontSizeTitle) - 4px);
+}
+main .catalog.classicMod > article.productCard > .productTitle > h4, main .catalog.carousselMod > article.productCard > .productTitle > h4 {
+  margin: 0;
+}
+main .catalog.classicMod > article.productCard > .productTitle > .vol, main .catalog.carousselMod > article.productCard > .productTitle > .vol {
+  margin-top: -2px;
+}
+main .catalog.classicMod > article.productCard > .priceContainer > h4, main .catalog.carousselMod > article.productCard > .priceContainer > h4 {
+  margin-top: -4px;
+  font-size: 40px;
+}
+main .catalog.classicMod > article.productCard > .priceContainer button, main .catalog.carousselMod > article.productCard > .priceContainer button {
+  height: 45px;
+}
+
+/*# sourceMappingURL=styleCatalogSearch.css.map */
