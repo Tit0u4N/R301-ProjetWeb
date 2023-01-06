@@ -1,0 +1,141 @@
+#basket .caroussel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  gap: 5px;
+}
+#basket .caroussel article.productCard:hover .priceContainer h4 {
+  color: inherit;
+}
+#basket .caroussel > article.productCard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px #dcdcdc;
+  height: 120px;
+  width: 100%;
+}
+#basket .caroussel > article.productCard img {
+  margin: 0;
+  height: 95%;
+  width: 15%;
+}
+#basket .caroussel > article.productCard div {
+  display: flex;
+  justify-content: center;
+}
+#basket .caroussel > article.productCard div.productTitle {
+  width: 52%;
+  height: auto;
+  align-items: normal;
+  flex-direction: column;
+  --maxHeightTitle: 80;
+  padding: 3px;
+}
+#basket .caroussel > article.productCard div.productTitle > h4 {
+  margin-left: 0;
+  font-family: "Poppins Light", sans-serif;
+}
+#basket .caroussel > article.productCard div.productTitle > h3 {
+  margin-left: 0;
+  font-family: "Poppins", sans-serif;
+}
+#basket .caroussel > article.productCard div.productCounter {
+  align-items: center;
+  justify-content: center;
+  width: 15%;
+}
+#basket .caroussel > article.productCard div.productCounter > div {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 3px;
+}
+#basket .caroussel > article.productCard div.productCounter > div > div {
+  width: 30%;
+}
+#basket .caroussel > article.productCard div.productCounter > div > div > h4 {
+  margin-top: 2px;
+  font-family: "Poppins Light", sans-serif;
+}
+#basket .caroussel > article.productCard div.productCounter > div > button {
+  display: block;
+  width: 28px;
+  aspect-ratio: 1/1;
+}
+#basket .caroussel > article.productCard div.productCounter > div > button > rect {
+  margin: auto;
+  background: white;
+  width: 21px;
+  height: 4px;
+  display: block;
+}
+#basket .caroussel > article.productCard div.productCounter > div > button:first-of-type {
+  background: var(--paragraphe);
+}
+#basket .caroussel > article.productCard div.productCounter > div > button:last-of-type {
+  background: var(--highlight);
+}
+#basket .caroussel > article.productCard div.productCounter > div > button:last-of-type > rect:first-of-type {
+  margin-top: -1px;
+}
+#basket .caroussel > article.productCard div.productCounter > div > button:last-of-type > rect:last-of-type {
+  transform: rotate(90deg) translateY(-1px);
+  margin-top: -4px;
+}
+#basket .caroussel > article.productCard div.priceContainer {
+  align-items: center;
+  width: 18%;
+}
+#basket .caroussel > article.productCard div.priceContainer h4 {
+  position: static;
+  text-align: center;
+  margin: 0;
+}
+
+#totalBasket {
+  width: 100%;
+  height: 120px;
+  padding: 5px;
+  display: flex;
+  justify-content: flex-end;
+}
+#totalBasket > div {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-top: 10px;
+}
+#totalBasket > div > div {
+  display: flex;
+  justify-content: space-between;
+}
+#totalBasket > div > div > div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+#totalBasket > div > div > div p {
+  font-weight: bold;
+}
+#totalBasket > div > div > div span {
+  margin-top: -5px;
+}
+#totalBasket > div > div > h4 {
+  margin-top: -13px;
+  font-size: 50px;
+}
+#totalBasket > div button {
+  background: var(--highlight);
+}
+#totalBasket > div button span {
+  font-size: 50px;
+  font-family: LIQUIDO, sans-serif;
+  color: white;
+}
+
+/*# sourceMappingURL=styleBasket.css.map */
