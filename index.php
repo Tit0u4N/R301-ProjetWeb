@@ -16,7 +16,7 @@
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
     <title>MangaFlow</title>
-    <script src="script/script.js"></script>
+    <script type="text/javascript" src="script/script.js?version = 0.1"></script>
 </head>
 <body>
 <?php require "component/navBar/navbar.php" ?>

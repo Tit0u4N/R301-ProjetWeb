@@ -1,17 +1,53 @@
 <?php
     require "Tome.php";
 
-    function transformSearchQuery(String $search){
-        $searchTab = array();
+    function transformSearchQueryAll(String $search){
         $searchTab = str_split($search);
-        return str_replace("'","''","%".implode("%",$searchTab)."%");
+        foreach($searchTab as $key => $val){
+            if(preg_match("/[a-zA-Z]/",$val)){
+                $searchTab[$key] = "(".strtoupper($val)."|".strtolower($val).")";
+            }
+        }
+        $searchTemp = implode("",$searchTab);
+        $searchTab = explode(" ", $searchTemp);
+        if(strlen($search)<=2){
+            return str_replace("'","''","^".implode(".*",$searchTab).".*");
+        }
+        else{
+            return str_replace("'","''",implode(".*",$searchTab).".*");
+        }
     }
+
+    function transformSearchQueryInitials(String $search){
+        $searchTab = str_split($search);
+        foreach($searchTab as $key => $val){
+            if(preg_match("/[a-zA-Z]/",$val)){
+                $searchTab[$key] = "(".strtoupper($val)."|".strtolower($val).")";
+            }
+        }
+        return str_replace("'","''","^(.* )?".implode(".*(-| )",$searchTab).".*");
+    }
+
 
     function searchManga(String $search){
         $pdo = new PDO('mysql:host=localhost;dbname=db','public','phpClient22!');
-        $mangaSQL = $pdo->query("SELECT DISTINCT (m.idManga) FROM TITRE_MANGA tm, MANGA m WHERE tm.idManga = m.idManga AND (tm.titre LIKE '".$search."' OR m.titreManga LIKE '".$search."')")->fetchAll()[0];
 
-        return new Manga($mangaSQL[0]);
+        $searchQuery = transformSearchQueryInitials($search);
+        $mangaSQL = $pdo->query("SELECT DISTINCT (m.idManga),m.titreManga FROM TITRE_MANGA tm, MANGA m WHERE tm.idManga = m.idManga AND (tm.titre REGEXP '".$searchQuery."' OR m.titreManga REGEXP '".$searchQuery."') ORDER BY m.titreManga")->fetchAll();
+
+
+
+        $searchQuery = transformSearchQueryAll($search);
+        $mangaSQLAll = $pdo->query("SELECT DISTINCT (m.idManga),m.titreManga FROM TITRE_MANGA tm, MANGA m WHERE tm.idManga = m.idManga AND (tm.titre REGEXP '".$searchQuery."' OR m.titreManga REGEXP '".$searchQuery."') ORDER BY m.titreManga")->fetchAll();
+        
+        foreach($mangaSQLAll as $key => $val){
+            if(!in_array($val,$mangaSQL)){
+                array_push($mangaSQL,$val);
+            }
+        }
+
+
+        return $mangaSQL;
 
     }
 
@@ -23,9 +59,12 @@
     else{
         
         if(isset($_GET['categories'])&&isset($_GET['search'])){
-            if($_GET['categories'] == "Manga"){
-                $manga = searchManga($_GET['search']);
-                $tomeArray = $manga->getTomes();
+            $mangaArray = array();
+            if($_GET['categories'] =='manga'){
+                $mangas = searchManga($_GET['search']);
+                foreach($mangas as $mangaN){
+                    array_push($mangaArray, new Manga($mangaN[0]));
+                }
             }
         }
         else{
@@ -38,11 +77,7 @@
 
     if(isset($_GET['categories'])&&isset($_GET['search'])){
         ?>
-        <h2>
-            <?php
-                echo $manga->getTitle().":";
-            ?>
-        </h2>
+        <h2><?= $_GET['categories']?>:</h2>
         <?php
     }
     else{
@@ -51,13 +86,31 @@
         <?php
     }
 
-    ?>
 
+    if(isset($_GET['categories'])&&isset($_GET['search'])){
+        if($_GET['categories'] =='manga'){
+            foreach($mangaArray as $manga){
+                $manga->echoHTMLCard();
+            }
+        }
+    }
+
+    ?>
+        
 
     <section class="catalog">
     <?php
-        foreach ($tomeArray as $tome) {
-            $tome->echoHTMLCard();
+        if(isset($_GET['categories'])&&isset($_GET['search'])){
+            if($_GET['categories'] =='manga'){
+                foreach($tomeArray as $manga){
+                    $tome->echoHTMLCard();
+                }
+            }
+        }
+        else{
+            foreach ($tomeArray as $tome) {
+                $tome->echoHTMLCard();
+            }                
         }
     ?>
     </section>

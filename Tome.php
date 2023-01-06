@@ -8,10 +8,10 @@ class Tome
     private int $idManga;
     private int $idEditeur;
     private int $vol;
-    private $date;
-    private $desc;
-    private $imgPath;
-    private $price ;
+    private String $date;
+    private String $desc;
+    private String $imgPath;
+    private float $price ;
 
     
     public function __construct(String $id)
@@ -39,7 +39,7 @@ class Tome
         $manga =  new Manga($this->idManga);
         $title = $manga->getTitle();
         $img = $this->imgPath;
-        $price = $this->price;
+        $price = sprintf('%.2f',$this->price);
         if ($this->vol == -1)
             $vol = "Hors Serie";
         else
@@ -54,7 +54,7 @@ class Tome
         $manga =  new Manga($this->idManga);
         $title = $manga->getTitle();
         $img = $this->imgPath;
-        $price = $this->price;
+        $price = sprintf('%.2f',$this->price);
         if ($this->vol == -1)
             $vol = "Hors Serie";
         else

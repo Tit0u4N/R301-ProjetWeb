@@ -1,11 +1,19 @@
+<?php
+function getSelected(String $value){
+  if($_GET['categories'] == $value){
+    return " selected";
+  }
+}
+?>
+
 <form action="index.php" method="get">
-  <input type="search" name="search" valeur="search" placeholder="ex : BOICHI">
+  <input type="search" name="search" value="<?= $_GET['search'] ?>" placeholder="ex : BOICHI">
   <select name="categories">
-    <option valeur="categorie">Categories</option>
-    <option valeur="manga">Manga</option>
-    <option valeur="auteur">Auteur</option>
-    <option valeur="type">Type</option>
-    <option valeur="genre">Genre</option>
+    <option value="categorie"<?= getSelected("categorie") ?>>Categories</option>
+    <option value="manga"<?= getSelected("manga") ?>>Manga</option>
+    <option value="auteur"<?= getSelected("auteur") ?>>Auteur</option>
+    <option value="type"<?= getSelected("type") ?>>Type</option>
+    <option value="genre"<?= getSelected("genre") ?>>Genre</option>
   </select>
   <button type="submit" accesskey="enter" value="AA">
     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
