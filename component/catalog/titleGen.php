@@ -1,6 +1,6 @@
 <?php
 if(isset($_GET['categories'])&&isset($_GET['search'])){
-    if($_GET['categories'] == 'type'||$_GET['categories'] == 'genre'){
+    if($_GET['categories'] == 'type'||$_GET['categories'] == 'genre'||$_GET['categories'] == 'editeur'){
         ?>
         <h2><?= $_POST['title']?>:</h2>
         <?php

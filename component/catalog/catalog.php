@@ -34,7 +34,7 @@
     }
 
 
-
+    /* Search manga */
     function searchManga(String $search,PDO $pdo){
         $searchQuery = formatSearchQueryInitials($search,true);
         $mangaList = $pdo->query("SELECT DISTINCT (m.idManga),m.titreManga FROM MANGA m WHERE m.titreManga REGEXP '".$searchQuery."' ORDER BY m.titreManga")->fetchAll();
@@ -53,6 +53,7 @@
         
     }
 
+    /* Search autor */
     function searchAutor(String $search,PDO $pdo){
         $searchQuery = formatSearchQueryAll($search,true);
         $mangaList = $pdo->query("SELECT DISTINCT (m.idManga),m.titreManga FROM MANGA m WHERE m.auteur REGEXP '".$searchQuery."' ORDER BY m.titreManga")->fetchAll();
@@ -62,7 +63,8 @@
         
         return mergeMangaList($mangaList,$mangaList2);
     }
-
+    
+    /* Search drawer */
     function searchDrawer(String $search,PDO $pdo){
         $searchQuery = formatSearchQueryAll($search,true);
         $mangaList = $pdo->query("SELECT DISTINCT (m.idManga),m.titreManga FROM MANGA m WHERE m.dessinateur REGEXP '".$searchQuery."' ORDER BY m.titreManga")->fetchAll();
@@ -73,6 +75,7 @@
         return mergeMangaList($mangaList,$mangaList2);
     }
 
+    /* Search type */
     function searchTypeInfo(String $search,PDO $pdo){
         $searchQuery = formatSearchQueryAll($search,false);
         $type = $pdo->query("SELECT t.idType,t.nom FROM TYPE t WHERE t.nom REGEXP '".$searchQuery."'")->fetchAll();
@@ -84,6 +87,7 @@
         return $mangas;
     }
 
+    /* Search Genre */
     function searchGenreInfo(String $search,PDO $pdo){
         $searchQuery = formatSearchQueryAll($search,true);
         $genres = $pdo->query("SELECT g.idGenre,g.nom FROM GENRE g WHERE g.nom REGEXP '".$searchQuery."'")->fetchAll();
@@ -95,9 +99,21 @@
         return $mangas;
     }
 
+    /* Search editeur */
+    function searchEditorInfo(String $search,PDO $pdo){
+        $searchQuery = formatSearchQueryAll($search,false);
+        $genres = $pdo->query("SELECT e.idEditeur,e.nom FROM EDITEUR e WHERE e.nom REGEXP '".$searchQuery."'")->fetchAll();
+        return $genres;
+    }
+
+    function searchEditorManga(int $idEditeur,PDO $pdo){
+        $mangas = $pdo->query("SELECT DISTINCT(p.idManga) FROM PRODUIT p, EDITEUR e WHERE  e.idEditeur = ".$idEditeur." AND e.idEditeur = p.idEditeur")->fetchAll();
+        return $mangas;
+    }
 
 
 
+    /* Merge manga list */
     function mergeMangaList($mangaList, $additionalManga){
         foreach($additionalManga as $key => $val){
             if(!in_array($val,$mangaList)){
@@ -121,8 +137,11 @@
         if($_GET['categories'] =='type'){
             $types = searchTypeInfo($_GET['search'],$pdo);
         }
-        if($_GET['categories'] =='genre'){
+        else if($_GET['categories'] =='genre'){
             $genres = searchGenreInfo($_GET['search'],$pdo);
+        }
+        else if($_GET['categories'] =='editeur'){
+            $editors = searchEditorInfo($_GET['search'],$pdo);
         }
         else{
             if($_GET['categories'] =='auteur'){
@@ -159,6 +178,7 @@
     if(isset($_GET['categories'])&&isset($_GET['search'])){
         if($_GET['categories'] =='type'){
             foreach($types as $val){
+                /* get mangas */
                 $mangas = searchTypeManga($val[0],$pdo);
                 $_POST['title'] = $val[1];
                 $mangaArray = array();
@@ -166,6 +186,7 @@
                     array_push($mangaArray, new Manga($manga[0]));
                 }
 
+                /* echo mangas */
                 require "component/catalog/titleGen.php";
                 foreach($mangaArray as $manga){
                     echo $manga->echoHTMLSection();
@@ -174,6 +195,7 @@
         }
         else if($_GET['categories'] =='genre'){
             foreach($genres as $val){
+                /* get mangas */
                 $mangas = searchGenreManga($val[0],$pdo);
                 $_POST['title'] = $val[1];
                 $mangaArray = array();
@@ -181,6 +203,24 @@
                     array_push($mangaArray, new Manga($manga[0]));
                 }
                 
+                /* echo mangas */
+                require "component/catalog/titleGen.php";
+                foreach($mangaArray as $manga){
+                    echo $manga->echoHTMLSection();
+                }
+            }
+        }
+        else if($_GET['categories'] =='editeur'){
+            foreach($editors as $val){
+                /* get mangas */
+                $mangas = searchEditorManga($val[0],$pdo);
+                $_POST['title'] = $val[1];
+                $mangaArray = array();
+                foreach($mangas as $manga){
+                    array_push($mangaArray, new Manga($manga[0]));
+                }
+                
+                /* echo mangas */
                 require "component/catalog/titleGen.php";
                 foreach($mangaArray as $manga){
                     echo $manga->echoHTMLSection();
