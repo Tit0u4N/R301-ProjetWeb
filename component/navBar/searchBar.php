@@ -12,8 +12,10 @@ function getSelected(String $value){
     <option value="categorie"<?= getSelected("categorie") ?>>Categories</option>
     <option value="manga"<?= getSelected("manga") ?>>Manga</option>
     <option value="auteur"<?= getSelected("auteur") ?>>Auteur</option>
+    <option value="dessinateur"<?= getSelected("dessinateur") ?>>Dessinateur</option>
     <option value="type"<?= getSelected("type") ?>>Type</option>
     <option value="genre"<?= getSelected("genre") ?>>Genre</option>
+    <option value="editeur"<?= getSelected("editeur") ?>>Editeur</option>
   </select>
   <button type="submit" accesskey="enter" value="AA">
     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">

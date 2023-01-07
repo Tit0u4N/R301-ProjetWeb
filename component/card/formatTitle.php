@@ -26,5 +26,6 @@ if ($lengthTitle > 22) {
     $title .= $temp . "</span>";
 } else {
     $title = str_replace(" ","&nbsp;", $title);
+    $title = str_replace("-", "&#8209;", $title);
     $title = "<span>" . $title . "</span>";
 }

@@ -1,6 +1,6 @@
 <?php
-$alt = "Cover de " . $title;
-$title = str_replace(" ", "&nbsp;", $title);
+    $alt = "Cover de " . $title;
+    $title = str_replace(" ", "&nbsp;", $title);
 ?>
 
 <section class="manga">
@@ -12,8 +12,14 @@ $title = str_replace(" ", "&nbsp;", $title);
             <h3><?= $title ?></h3>
         </div>
         <div class="infoCard">
+            <?php 
+            if(!empty($titleAlt)){
+                ?>
+                <p>Titres alternatifs : <span><?= $titleAlt ?> </span></p>
+                <?php
+            }?>
             <p>Auteur : <span><?= $author ?> </span></p>
-            <p>Déssinateur : <span><?= $drawer ?> </span></p>
+            <p>Dessinateur : <span><?= $drawer ?> </span></p>
             <p>Éditeur : <span><?= $editor ?> </span></p>
             <p>Type : <span><?= $type ?> </span></p>
             <p>Genre : <span><?= $genre ?> </span></p>
