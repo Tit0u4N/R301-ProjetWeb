@@ -21,9 +21,12 @@ $__DIR__ = '/'
 <body>
 <?php require "component/navBar/navbar.php" ?>
 
+
 <main>
     <h2>Selection :</h2>
-    <?php require "component/catalog/catalog.php" ?>
+    <?php require "component/catalog/catalogMangaTome.php" ?>
+    <?php require "component/catalog/catalogMangaTome.php" ?>
+    <?php require "component/basket/basketPanel.php";?>
 </main>
 </body>
 <script>

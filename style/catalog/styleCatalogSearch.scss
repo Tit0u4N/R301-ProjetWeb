@@ -1,35 +1,47 @@
 main {
+  .mangaContainer {
+    .manga {
+      display: flex;
+      justify-content: center;
+      gap : 15px;
 
-  .manga {
-    display: flex;
-    justify-content: center;
-    gap : 15px;
+      > div.imageContainer {
+        width: 25%;
+        padding: 5px;
 
-    > div.imageContainer {
-      width: 25%;
-      padding: 5px;
+        > img {
+          width: 100%;
+        }
+      }
 
-      > img {
-        width: 100%;
+      > div.descCardContainer {
+        padding-left: 10px;
+        width: 70%;
+
       }
     }
 
-    > div.descCardContainer {
-      padding-left: 10px;
-      width: 70%;
+    > .divider {
+      margin-bottom: 40px;
+      margin-top: 40px;
 
     }
   }
   .catalog {
     &.carousselMod {
-      display: flex;
+      grid-auto-flow: column dense;
+      grid-template-columns: none;
+
       overflow-x: scroll;
-      padding-bottom: 20px;
+      padding: 10px 0 20px 0;
       scroll-snap-type : x proximity;
       & > .productCard {
-        width: calc(16% - 5px) ;
+        width: 220px;
+        scroll-snap-align: start;
+
         &:first-of-type {
-          margin-left: 15px;
+          margin-left: 7px;
+          scroll-snap-align: center;
         }
 
         > .priceContainer {
@@ -57,6 +69,7 @@ main {
 
 
     &.classicMod, &.carousselMod  {
+      display: grid;
       > article.productCard {
         > .productTitle {
           height: 70px;

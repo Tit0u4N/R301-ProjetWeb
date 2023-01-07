@@ -2,6 +2,8 @@
 
 $alt = "Cover de " . $title . " " . $vol;
 $title = str_replace(" ", "&nbsp;", $title);
+$title = str_replace("-", "&#8209;", $title);
+
 //require "component/card/formatTitle.php"
 ?>
 

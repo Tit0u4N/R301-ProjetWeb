@@ -1,6 +1,8 @@
 <?php
 $lengthTitle = strlen($title);
-if ($lengthTitle > 22) {
+$title = str_replace("-", "&#8209;", $title);
+
+if ($lengthTitle > 25) {
     $lengthTitle = ceil($lengthTitle / 2);
     $title = explode(" ", $title);
     $tabSplitTitle = [];
@@ -12,7 +14,8 @@ if ($lengthTitle > 22) {
 
     $i = 0;
     $temp = "<span>";
-
+    if ($tabSplitTitle[0] >= $lengthTitle)
+        $temp .= $title[0];
     while ($tabSplitTitle[$i] < ($lengthTitle)) {
         $temp .= $title[$i] . "&nbsp;";
         $i++;
@@ -28,3 +31,5 @@ if ($lengthTitle > 22) {
     $title = str_replace(" ","&nbsp;", $title);
     $title = "<span>" . $title . "</span>";
 }
+
+?>
