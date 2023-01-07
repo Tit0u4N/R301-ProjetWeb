@@ -9,6 +9,7 @@ class Manga
     private String $type ;
     private String $genre ;
     private String $desc ;
+    private String $editor ;
 
 
     public function __construct(String $id)
@@ -34,8 +35,8 @@ class Manga
         }
         $this->genre = implode(" - ",$genres);
 
-        //destruct object SQL
-        $pdo = null;
+        
+        $this->editor = $pdo->query("SELECT Distinct(e.idEditeur),e.nom FROM PRODUIT p, EDITEUR e WHERE  p.idManga = ".$id." AND e.idEditeur = p.idEditeur")->fetchAll()[0][1];
 
     }
 
@@ -64,6 +65,7 @@ class Manga
         return $this->id;
     }
 
+
     public function getTomes(){
         $tomeArray = array();
         
@@ -78,15 +80,37 @@ class Manga
     }
 
 
+    public function getImg(){
+        $pdo = new PDO('mysql:host=localhost;dbname=db','public','phpClient22!');
+        $img = $pdo->query("SELECT i.lienImage FROM PRODUIT p, IMAGE i WHERE p.idManga = ".$this->id." AND p.numTome = 1 AND i.idProduit = p.idProduit")->fetchAll()[0][0];
+        return $img;
+    }
+
+    
+    public function echoHTMLSection(){
+        $this->echoHTMLCard();
+        ?>
+        <section class="catalog carousselMod">
+        <?php
+            foreach ($this->getTomes() as $tome) {
+                $tome->echoHTMLCard();
+            }
+        ?>
+        </section>
+    <?php
+    }
+
+
 
     public function echoHTMLCard(){
         $title = $this->title;
-        $img = "https://www.nautiljon.com/images/manga_volumes/00/48/35484.webp?1649609175";
+        $img = $this->getImg();
         $author = $this->author;
+        $drawer = $this->drawer;
         $editor = $this->editor;
         $type = $this->type;
         $genre = $this->genre;
-//        $desc = $this->desc;
+        $desc = $this->desc;
         require "component/card/mangaCardTemplate.php";
     }
 

@@ -90,7 +90,7 @@
     if(isset($_GET['categories'])&&isset($_GET['search'])){
         if($_GET['categories'] =='manga'){
             foreach($mangaArray as $manga){
-                $manga->echoHTMLCard();
+                $manga->echoHTMLSection();
             }
         }
     }
