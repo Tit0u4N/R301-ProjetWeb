@@ -12,7 +12,7 @@ function getSelected(String $value){
     <option value="categorie"<?= getSelected("categorie") ?>>Categories</option>
     <option value="manga"<?= getSelected("manga") ?>>Manga</option>
     <option value="auteur"<?= getSelected("auteur") ?>>Auteur</option>
-    <option value="dessinateur"<?= getSelected("dessinateur") ?>>Dessinateur</option>
+    <option value="drawer"<?= getSelected("drawer") ?>>Dessinateur</option>
     <option value="type"<?= getSelected("type") ?>>Type</option>
     <option value="genre"<?= getSelected("genre") ?>>Genre</option>
     <option value="editeur"<?= getSelected("editeur") ?>>Editeur</option>

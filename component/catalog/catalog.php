@@ -63,6 +63,16 @@
         return mergeMangaList($mangaList,$mangaList2);
     }
 
+    function searchDrawer(String $search,PDO $pdo){
+        $searchQuery = formatSearchQueryAll($search,true);
+        $mangaList = $pdo->query("SELECT DISTINCT (m.idManga),m.titreManga FROM MANGA m WHERE m.dessinateur REGEXP '".$searchQuery."' ORDER BY m.titreManga")->fetchAll();
+
+        $searchQuery = formatSearchQueryAll($search,false);
+        $mangaList2 = $pdo->query("SELECT DISTINCT (m.idManga),m.titreManga FROM MANGA m WHERE m.dessinateur REGEXP '".$searchQuery."' ORDER BY m.titreManga")->fetchAll();
+        
+        return mergeMangaList($mangaList,$mangaList2);
+    }
+
     function searchTypeInfo(String $search,PDO $pdo){
         $searchQuery = formatSearchQueryAll($search,false);
         $type = $pdo->query("SELECT t.idType,t.nom FROM TYPE t WHERE t.nom REGEXP '".$searchQuery."'")->fetchAll();
@@ -109,6 +119,9 @@
         if($_GET['categories'] =='auteur'){
             $mangas = searchAutor($_GET['search'],$pdo);
         }
+        if($_GET['categories'] =='drawer'){
+            $mangas = searchDrawer($_GET['search'],$pdo);
+        }
         if($_GET['categories'] =='manga'){
             $mangas = searchManga($_GET['search'],$pdo);
         }
@@ -120,9 +133,11 @@
         }
     }
     else{
-        $index = rand(1,18);
-        $manga = new Manga($index);
-        $tomeArray = $manga->getTomes();
+        $listSelection = array(599,279,117,174,348,446,447,480,313,1);//18/6/2/[5]/9/11/12/14/7/1
+        $tomeArray = array();
+        foreach($listSelection as $val){
+            array_push($tomeArray,new Tome($val));
+        }
         
     }
 
@@ -141,14 +156,7 @@
 
     <section class="catalog">
     <?php
-        if(isset($_GET['categories'])&&isset($_GET['search'])){
-            if($_GET['categories'] =='manga'){
-                foreach($tomeArray as $manga){
-                    $tome->echoHTMLCard();
-                }
-            }
-        }
-        else{
+        if(!(isset($_GET['categories'])&&isset($_GET['search']))){
             foreach ($tomeArray as $tome) {
                 $tome->echoHTMLCard();
             }                
