@@ -87,7 +87,7 @@
     function searchType(String $search,PDO $pdo){
         $type = searchTypeInfo($search,$pdo);
         if(!empty($type)){
-            $_GET['search'] = $type[0][1];
+            $_POST['title'] = $type[0][1];
             return searchTypeManga($type[0][0],$pdo);
         }
         return null;
@@ -114,7 +114,6 @@
      
     if(isset($_GET['categories'])&&isset($_GET['search'])){
         $pdo = new PDO('mysql:host=localhost;dbname=db','public','phpClient22!'); 
-        $mangaArray = array();
         $mangas = array();
         if($_GET['categories'] =='auteur'){
             $mangas = searchAutor($_GET['search'],$pdo);
@@ -126,14 +125,15 @@
             $mangas = searchManga($_GET['search'],$pdo);
         }
         if($_GET['categories'] =='type'){
-            $mangas = searchType($_GET['search'],$pdo);
+            $types = searchTypeInfo($_GET['search'],$pdo);
         }
+        $mangaArray = array();
         foreach($mangas as $manga){
             array_push($mangaArray, new Manga($manga[0]));
         }
     }
     else{
-        $listSelection = array(599,279,117,174,348,446,447,480,313,1);//18/6/2/[5]/9/11/12/14/7/1
+        $listSelection = array(599,279,117,174,348,446,447,480,313,1);//18/6/2/[5]/9/11/[12]/14/7/1
         $tomeArray = array();
         foreach($listSelection as $val){
             array_push($tomeArray,new Tome($val));
@@ -143,34 +143,53 @@
 
 
 
-    require "component/catalog/titleGen.php";
+
+
+    
 
 
     if(isset($_GET['categories'])&&isset($_GET['search'])){
-        foreach($mangaArray as $manga){
-            echo $manga->echoHTMLSection();
+        if($_GET['categories'] =='type'){
+            foreach($types as $val){
+                $mangas = searchTypeManga($val[0],$pdo);
+                $_POST['title'] = $val[1];
+                $mangaArray = array();
+                foreach($mangas as $manga){
+                    array_push($mangaArray, new Manga($manga[0]));
+                }
+
+                
+                require "component/catalog/titleGen.php";
+                foreach($mangaArray as $manga){
+                    echo $manga->echoHTMLSection();
+                }
+            }
+        }
+        else{
+            require "component/catalog/titleGen.php";
+            foreach($mangaArray as $manga){
+                echo $manga->echoHTMLSection();
+            }
         }
     }
-    ?>
+    else{
+        require "component/catalog/titleGen.php";
+        ?>
+        <section class="catalog">
+        <?php
+        foreach ($tomeArray as $tome) {
+            $tome->echoHTMLCard();
+        } 
+        ?>
+        </section>
         
-
-    <section class="catalog">
-    <?php
-        if(!(isset($_GET['categories'])&&isset($_GET['search']))){
-            foreach ($tomeArray as $tome) {
-                $tome->echoHTMLCard();
-            }                
-        }
-    ?>
-    </section>
-
-
-    <section class="descCardsContainer" id="descCardsContainer">
-
-    <?php
+        <section class="descCardsContainer" id="descCardsContainer">
+        <?php
         foreach ($tomeArray as $tome) {
             $tome->echoHTMLDescCard();
-        }
+        }  
+                        
+    }
     ?>
 
     </section>
