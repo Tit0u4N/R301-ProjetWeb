@@ -71,7 +71,7 @@ if (isset($_GET['dev'])) {
 
         </section>
     </div>
-    <section class="descCardsContainer" id="descCardsContainer">
+    <section class="descCardContainer" id="descCardsContainer">
         <?php
         if (isset($_GET['dev'])) {
             if ($_GET['dev'] == True) {

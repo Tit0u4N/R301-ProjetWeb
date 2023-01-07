@@ -280,27 +280,38 @@ main {
     }
 
     > article.productCard {
+      justify-content: normal;
+
+
       section.headerCardFull {
         display: flex;
 
+
         div {
-          flex: 5;
+          width: 50%;
 
           div.productTitle {
+            height: auto;
+            width: 100%;
+            margin-bottom: 10px ;
 
             h3 {
               margin-top: 20px;
-              line-height: calc(var(--fontSizeTitle) - 18px);
+              line-height: calc(var(--fontSizeTitle) - 10px);
             }
 
             > h4.vol {
-              margin-top: -10px;
+              margin-top: -4px;
               font-size: 30px;
             }
           }
 
+          div.infoCard {
+            width: 100%;
+          }
+
           &.imageContainer {
-            flex: 5;
+            width: 50%;
             text-align: center;
             height: 100%;
 

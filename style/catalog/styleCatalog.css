@@ -213,22 +213,33 @@ main .descCardContainer .synopsisCard p {
   text-align: justify;
   color: var(--paragraphe);
 }
+main .descCardContainer > article.productCard {
+  justify-content: normal;
+}
 main .descCardContainer > article.productCard section.headerCardFull {
   display: flex;
 }
 main .descCardContainer > article.productCard section.headerCardFull div {
-  flex: 5;
+  width: 50%;
+}
+main .descCardContainer > article.productCard section.headerCardFull div div.productTitle {
+  height: auto;
+  width: 100%;
+  margin-bottom: 10px;
 }
 main .descCardContainer > article.productCard section.headerCardFull div div.productTitle h3 {
   margin-top: 20px;
-  line-height: calc(var(--fontSizeTitle) - 18px);
+  line-height: calc(var(--fontSizeTitle) - 10px);
 }
 main .descCardContainer > article.productCard section.headerCardFull div div.productTitle > h4.vol {
-  margin-top: -10px;
+  margin-top: -4px;
   font-size: 30px;
 }
+main .descCardContainer > article.productCard section.headerCardFull div div.infoCard {
+  width: 100%;
+}
 main .descCardContainer > article.productCard section.headerCardFull div.imageContainer {
-  flex: 5;
+  width: 50%;
   text-align: center;
   height: 100%;
 }
