@@ -8,7 +8,7 @@ $desc = "Odio definitionem dapibus affert atomorum. Dicat persequeris honestatis
 
 <section class="manga">
     <div class="imageContainer">
-        <img src="<?= $img ?>" alt="<?= $alt ?>">
+        <img src="" data-src="<?= $img ?>"alt="<?= $alt ?>">
     </div>
     <div class="descCardContainer">
         <div class="productTitle">

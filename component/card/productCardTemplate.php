@@ -15,7 +15,7 @@ require "component/card/formatTitle.php"
 ?>
 
 <article class="productCard" id="<?= $id ?>" >
-    <img src=<?= $img ?> alt="<?= $alt ?>" onclick="openPanel('<?= $idDescCard ?>')">
+    <img src="" data-src="<?= $img ?>"alt="<?= $alt ?>" onclick="openPanel('<?= $idDescCard ?>')">
     <div class="productTitle">
         <h3><?= $title ?></h3>
         <h4 class="vol"><?= $vol ?></h4>
@@ -24,7 +24,7 @@ require "component/card/formatTitle.php"
     <div class="priceContainer">
         <h4><?= $price ?></h4>
         <button onclick="panier.addArticle('<?= $id ?>')">
-            <img src="/ressources/icons/basket.svg">
+            <img src="" data-src="/ressources/icons/basket.svg">
         </button>
     </div>
 </article>

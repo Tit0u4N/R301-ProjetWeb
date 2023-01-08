@@ -39,12 +39,26 @@ $__DIR__ = '/'
     }, 50)
 
     window.onresize = () => {
-        Title.autoSizeTitles()
+        if(window.screen.width < 1201)
+            Title.autoSizeTitles()
     }
 
     let panier = new Basket();
 
+    let images = document.querySelectorAll("main img")
 
+    const imageLoader = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting)
+                entry.target.src = entry.target.dataset.src;
+            else
+                entry.target.src = "";
+        })
+    })
+
+    imageLoader.root = document.querySelector("main")
+
+    images.forEach(img => imageLoader.observe(img))
 
     // test = document.querySelector("main > .catalog .productCard .productTitle > h3 ")
     // console.log(test + " : " + title.splitSpan(test))
