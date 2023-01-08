@@ -6,7 +6,7 @@
     <?php
         if (isset($_GET['dev'])) {
             if ($_GET['dev'] == True) {
-                $JJK->echoHTMLCard();
+                $JJK->echoHTMLCardDesc();
             }
         }
     ?>

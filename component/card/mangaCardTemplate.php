@@ -1,33 +1,18 @@
 <?php
-$alt = "Cover de " . $title;
-$title = str_replace(" ", "&nbsp;", $title);
-$title = str_replace("-", "&#8209;", $title);
+// Définition des variables
+    $title = "Code Geass - Lelouch of the Rebellion";
+    $img = "https://www.nautiljon.com/images/manga/00/50/berserk_205.webp?1659201541";
+    $editor = "kana";
+    $id = "test";
+    $alt = "Cover de " . $title . " " ;
 
-$desc = "Odio definitionem dapibus affert atomorum. Dicat persequeris honestatis faucibus dicam mei. Esse signiferumque vim duis inciderint corrumpit quem definitionem qui diam. Sea aperiri vidisse graece disputationi melius quam imperdiet. Parturient legere hendrerit persequeris reprehendunt vocent quas inimicus.Omittam dicat integer reprimique cetero vituperata fames decore donec viderer. Periculis falli deterruisset persecuti sodales imperdiet gloriatur. Lorem possit verear potenti quaestio nullam. Esse tantas ornatus tincidunt oporteat magna tota ex. Fuisset nihil expetendis numquam cum lorem."
+    require "component/card/formatTitle.php"
 ?>
 
-<section class="manga">
-    <div class="imageContainer">
-        <img src="" data-src="<?= $img ?>"alt="<?= $alt ?>">
+<a class="productCard" id="<?= $id ?>" href="" >
+    <img src="" data-src="<?= $img ?>"alt="<?= $alt ?>">
+    <div class="productTitle">
+        <h3><?= $title ?></h3>
+        <h4 class="vol"><?= $editor ?></h4>
     </div>
-    <div class="descCardContainer">
-        <div class="productTitle">
-            <h3><?= $title ?></h3>
-        </div>
-        <div class="infoCard">
-            <p>Auteur : <span><?= $author ?> </span></p>
-            <p>Éditeur : <span><?= $editor ?> </span></p>
-            <p>Déssinateur : <span><?= $editor ?> </span></p>
-            <p>Type : <span><?= $type ?> </span></p>
-            <p>Genre : <span><?= $genre ?> </span></p>
-        </div>
-        <div class="synopsisCard">
-            <h4> Synopsis :</h4>
-            <p>
-                <?= $desc ?>
-            </p>
-        </div>
-
-    </div>
-
-</section>
+</a>

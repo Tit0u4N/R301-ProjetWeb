@@ -136,7 +136,7 @@ main {
 
   }
 
-  article.productCard {
+  .productCard {
     background: white;
     width: 100%;
     aspect-ratio: 5/3;
@@ -279,7 +279,7 @@ main {
       }
     }
 
-    > article.productCard {
+    > .productCard {
       justify-content: normal;
 
 

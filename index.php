@@ -24,8 +24,9 @@ $__DIR__ = '/'
 
 <main>
     <h2>Selection :</h2>
+    <?php require "component/catalog/catalogManga.php" ?>
     <?php require "component/catalog/catalogMangaTome.php" ?>
-    <?php require "component/catalog/catalogMangaTome.php" ?>
+
     <?php require "component/basket/basketPanel.php";?>
 </main>
 </body>
