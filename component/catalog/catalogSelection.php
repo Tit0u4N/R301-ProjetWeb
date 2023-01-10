@@ -1,7 +1,4 @@
 <?php
-require "component/catalog/catalog.php";
-
-
 require "component/catalog/titleGen.php";
 ?>
 <section class="catalog">

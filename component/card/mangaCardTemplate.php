@@ -1,8 +1,5 @@
 <?php
 // Définition des variables
-    $title = "Code Geass - Lelouch of the Rebellion";
-    $img = "https://www.nautiljon.com/images/manga/00/50/berserk_205.webp?1659201541";
-    $editor = "kana";
     $id = "test";
     $alt = "Cover de " . $title . " " ;
 

@@ -1,5 +1,4 @@
 <?php
-    require "component/catalog/catalog.php";
 
 ?>
 <div class="mangaContainer">
@@ -9,9 +8,15 @@
                 $JJK->echoHTMLCardDesc();
             }
         }
+        else{
+            $manga->echoHTMLCardDesc();
+        }
     ?>
     <section class="catalog carousselMod">
-        <?php require "component/catalog/catalogTome.php"; ?>
+        <?php 
+        $tomeArray = $manga->getTomes();
+        require "component/catalog/catalogTome.php"; 
+        ?>
     </section>
 
     <hr class="divider">

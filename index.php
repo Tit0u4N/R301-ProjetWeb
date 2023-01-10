@@ -22,8 +22,7 @@
 <?php require "component/navBar/navbar.php" ?>
 
 <main>
-    <?php require "component/catalog/catalogManga.php" ?>
-    <?php require "component/catalog/catalogMangaTome.php" ?>
+    <?php require "component/catalog/catalog.php" ?>
 
     <?php require "component/basket/basketPanel.php";?>
 </main>
