@@ -39,7 +39,7 @@ require "component/card/formatTitle.php"
                 </div>
             </div>
             <div class="imageContainer">
-                <img src=<?= $img ?>  alt="<?= $alt ?>">
+                <img src="" data-src="<?= $img ?>" alt="<?= $alt ?>">
             </div>
         </section>
         <section class="synopsisCard">
@@ -52,7 +52,7 @@ require "component/card/formatTitle.php"
             <button class="priceContainer">
                 <h4><?= $price ?></h4>
                 <div>
-                    <img src="/ressources/icons/basket.svg">
+                    <img src="" data-src="/ressources/icons/basket.svg">
                 </div>
             </button>
         </section>

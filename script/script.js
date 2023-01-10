@@ -4,6 +4,7 @@ function openPanel(id){
     card = document.querySelector('#'+id)
     card.classList.toggle("hide", false)
     card.classList.toggle("slideIn",true)
+    Title.autoSizeTitles()
 }
 
 function closePanel(){
@@ -30,14 +31,19 @@ document.addEventListener("keydown", (event) => {
 
 class Title {
     static minSize = 16;
-    static maxSize = 60;
+
     static listTitles = []
 
-    constructor(box) {
+    constructor(box, baskteTitle = false) {
         this.text = box.querySelector("h3");
         this.lenght = 0;
         this.text.querySelectorAll("span").forEach(elm => this.lenght += elm.textContent.length);
-
+        if(this.lenght > 25)
+            this.maxSize = 32;
+        else if (baskteTitle)
+            this.maxSize = 30;
+        else
+            this.maxSize = 60;
     }
 
     static createTitles(){
@@ -54,7 +60,7 @@ class Title {
     autoSize(){
         let overflow = this.text.scrollWidth > this.text.clientWidth;
         let i = Title.minSize;
-        while (!overflow && i <= Title.maxSize) {
+        while (!overflow && i <= this.maxSize) {
             this.text.style = `--fontSizeTitle : ${i}px`;
             overflow = this.text.scrollWidth > this.text.clientWidth;
             i++
@@ -122,7 +128,7 @@ class Article {
             productTitle.appendChild(title)
             productTitle.appendChild(box.querySelector(".productTitle h4").cloneNode(true))
 
-        Title.listTitles.push(new Title(productTitle))
+        Title.listTitles.push(new Title(productTitle, true))
 
         //div productCounter
         let rect = document.createElement("rect")

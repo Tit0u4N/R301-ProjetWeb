@@ -100,7 +100,7 @@ main .catalog {
   grid-column-gap: 15px;
   grid-row-gap: 20px;
 }
-main article.productCard {
+main .productCard {
   background: white;
   width: 100%;
   aspect-ratio: 5/3;
@@ -109,14 +109,14 @@ main article.productCard {
   justify-content: flex-end;
   box-shadow: 0 0 5px 1px rgb(182, 182, 182);
 }
-main article.productCard img {
+main .productCard img {
   margin: 5px auto;
   width: 80%;
   aspect-ratio: 2/3;
   object-fit: contain;
   box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.25);
 }
-main article.productCard div.productTitle {
+main .productCard div.productTitle {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -125,33 +125,33 @@ main article.productCard div.productTitle {
   padding: 0 6px;
   --fontSizeTitle: 60px;
 }
-main article.productCard div.productTitle > h3 {
+main .productCard div.productTitle > h3 {
   font-size: var(--fontSizeTitle);
   margin: 0;
   line-height: calc(var(--fontSizeTitle) - 4px);
 }
-main article.productCard div.productTitle > h3 > span {
+main .productCard div.productTitle > h3 > span {
   font-family: LIQUIDO, sans-serif;
 }
-main article.productCard div.productTitle > h4, main article.productCard div.productTitle .vol {
+main .productCard div.productTitle > h4, main .productCard div.productTitle .vol {
   margin-top: -2px;
   font-size: 18px;
   font-family: "Poppins Light", sans-serif;
 }
-main article.productCard .priceContainer {
+main .productCard .priceContainer {
   display: flex;
   justify-content: space-between;
 }
-main article.productCard .priceContainer h4 {
+main .productCard .priceContainer h4 {
   position: absolute;
   font-size: 50px;
   margin-left: 10px;
   transition: color 1s;
 }
-main article.productCard .priceContainer h4:after {
+main .productCard .priceContainer h4:after {
   content: "€";
 }
-main article.productCard .priceContainer button {
+main .productCard .priceContainer button {
   height: 60px;
   width: 60px;
   background: var(--highlight);
@@ -161,7 +161,7 @@ main article.productCard .priceContainer button {
   justify-content: center;
   align-items: center;
 }
-main article.productCard .priceContainer button > svg, main article.productCard .priceContainer button img {
+main .productCard .priceContainer button > svg, main .productCard .priceContainer button img {
   height: 80%;
   width: auto;
   aspect-ratio: 1/1;
@@ -170,14 +170,14 @@ main article.productCard .priceContainer button > svg, main article.productCard 
   transform-origin: center;
   margin: 0;
 }
-main article.productCard .priceContainer:hover h4 {
+main .productCard .priceContainer:hover h4 {
   color: white;
 }
-main article.productCard .priceContainer:hover button {
+main .productCard .priceContainer:hover button {
   margin-left: 0;
   width: 100%;
 }
-main article.productCard .priceContainer:hover svg, main article.productCard .priceContainer:hover img {
+main .productCard .priceContainer:hover svg, main .productCard .priceContainer:hover img {
   margin-left: calc(100% - 65px);
 }
 main .descCardContainer .productTitle {
@@ -213,31 +213,42 @@ main .descCardContainer .synopsisCard p {
   text-align: justify;
   color: var(--paragraphe);
 }
-main .descCardContainer > article.productCard section.headerCardFull {
+main .descCardContainer > .productCard {
+  justify-content: normal;
+}
+main .descCardContainer > .productCard section.headerCardFull {
   display: flex;
 }
-main .descCardContainer > article.productCard section.headerCardFull div {
-  flex: 5;
+main .descCardContainer > .productCard section.headerCardFull div {
+  width: 50%;
 }
-main .descCardContainer > article.productCard section.headerCardFull div div.productTitle h3 {
+main .descCardContainer > .productCard section.headerCardFull div div.productTitle {
+  height: auto;
+  width: 100%;
+  margin-bottom: 10px;
+}
+main .descCardContainer > .productCard section.headerCardFull div div.productTitle h3 {
   margin-top: 20px;
-  line-height: calc(var(--fontSizeTitle) - 18px);
+  line-height: calc(var(--fontSizeTitle) - 10px);
 }
-main .descCardContainer > article.productCard section.headerCardFull div div.productTitle > h4.vol {
-  margin-top: -10px;
+main .descCardContainer > .productCard section.headerCardFull div div.productTitle > h4.vol {
+  margin-top: -4px;
   font-size: 30px;
 }
-main .descCardContainer > article.productCard section.headerCardFull div.imageContainer {
-  flex: 5;
+main .descCardContainer > .productCard section.headerCardFull div div.infoCard {
+  width: 100%;
+}
+main .descCardContainer > .productCard section.headerCardFull div.imageContainer {
+  width: 50%;
   text-align: center;
   height: 100%;
 }
-main .descCardContainer > article.productCard section.headerCardFull div.imageContainer img {
+main .descCardContainer > .productCard section.headerCardFull div.imageContainer img {
   margin-top: 10px;
   width: 80%;
   height: auto;
 }
-main .descCardContainer > article.productCard .priceContainer {
+main .descCardContainer > .productCard .priceContainer {
   display: flex;
   margin: auto;
   justify-content: space-between;
@@ -246,20 +257,20 @@ main .descCardContainer > article.productCard .priceContainer {
   padding-left: 10px;
   border: none;
 }
-main .descCardContainer > article.productCard .priceContainer h4 {
+main .descCardContainer > .productCard .priceContainer h4 {
   color: var(--background);
   margin-top: -5px;
   font-size: 60px;
 }
-main .descCardContainer > article.productCard .priceContainer h4:after {
+main .descCardContainer > .productCard .priceContainer h4:after {
   content: "€";
 }
-main .descCardContainer > article.productCard .priceContainer div {
+main .descCardContainer > .productCard .priceContainer div {
   height: 70px;
   aspect-ratio: 1/1;
   margin-left: calc(100% - 70px);
 }
-main .descCardContainer > article.productCard .priceContainer div svg, main .descCardContainer > article.productCard .priceContainer div img {
+main .descCardContainer > .productCard .priceContainer div svg, main .descCardContainer > .productCard .priceContainer div img {
   margin-top: 5px;
   margin-left: -3px;
   height: 80%;

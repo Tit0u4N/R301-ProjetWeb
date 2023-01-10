@@ -20,8 +20,12 @@
 </head>
 <body>
 <?php require "component/navBar/navbar.php" ?>
+
 <main>
-    <?php require "component/catalog/catalog.php" ?>
+    <?php require "component/catalog/catalogManga.php" ?>
+    <?php require "component/catalog/catalogMangaTome.php" ?>
+
+    <?php require "component/basket/basketPanel.php";?>
 </main>
 </body>
 <script>
@@ -34,12 +38,26 @@
     }, 50)
 
     window.onresize = () => {
-        Title.autoSizeTitles()
+        if(window.screen.width < 1201)
+            Title.autoSizeTitles()
     }
 
     let panier = new Basket();
 
+    let images = document.querySelectorAll("main img")
 
+    const imageLoader = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting)
+                entry.target.src = entry.target.dataset.src;
+            else
+                entry.target.src = "";
+        })
+    })
+
+    imageLoader.root = document.querySelector("main")
+
+    images.forEach(img => imageLoader.observe(img))
 
     // test = document.querySelector("main > .catalog .productCard .productTitle > h3 ")
     // console.log(test + " : " + title.splitSpan(test))

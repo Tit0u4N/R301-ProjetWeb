@@ -73,6 +73,7 @@ class Manga
     }
 
 
+
     public function getId(){
         return $this->id;
     }
@@ -118,6 +119,19 @@ class Manga
     <?php
     }
 
+
+
+
+    public function echoHTMLCardDesc(){
+        $title = $this->title;
+        $img = $this->getImg();
+        $author = $this->author;
+        $editor = $this->editor;
+        $type = $this->type;
+        $genre = $this->genre;
+//        $desc = $this->desc;
+        require "component/card/mangaCardDescTemplate.php";
+    }
 
 
     public function echoHTMLCard(){

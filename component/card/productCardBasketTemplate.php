@@ -7,7 +7,7 @@ $title = str_replace("-", "&#8209;", $title);
 ?>
 
 <article class="productCard" id="<?= $id ?>">
-    <img src=<?= $img ?> alt="<?= $alt ?>">
+    <img src="" data-src="<?= $img ?>"alt="<?= $alt ?>">
     <div class="productTitle">
         <h4><?= "kana" ?></h4>
         <h3><?= $title ?></h3>
