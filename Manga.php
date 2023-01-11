@@ -16,7 +16,7 @@ class Manga
     public function __construct(String $id)
     {
         $this->id = $id;
-        $pdo = new PDO('mysql:host=localhost;dbname=db','public','phpClient22!');
+        $pdo = new PDO('mysql:host=165.227.152.225;dbname=db','p2','FicsiT22!');
 
         $mangaSQL = $pdo->query("SELECT * FROM MANGA m WHERE m.idManga = ".$id)->fetchAll()[0];
         $this->title = $mangaSQL[2];
@@ -80,7 +80,7 @@ class Manga
 
 
     public function getTomes(){
-        $pdo = new PDO('mysql:host=localhost;dbname=db','public','phpClient22!');
+        $pdo = new PDO('mysql:host=165.227.152.225;dbname=db','p2','FicsiT22!');
         $tome = $pdo->query("SELECT p.idProduit FROM PRODUIT p WHERE p.idManga =".$this->id)->fetchAll();
         $tomeArray = array();
         foreach($tome as $row){
@@ -91,7 +91,7 @@ class Manga
 
 
     public function getImg(){
-        $pdo = new PDO('mysql:host=localhost;dbname=db','public','phpClient22!');
+        $pdo = new PDO('mysql:host=165.227.152.225;dbname=db','p2','FicsiT22!');
         $img = $pdo->query("SELECT i.lienImage FROM PRODUIT p, IMAGE i WHERE p.idManga = ".$this->id." AND p.numTome = 1 AND i.idProduit = p.idProduit")->fetchAll()[0][0];
         return $img;
     }

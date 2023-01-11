@@ -17,7 +17,7 @@ class Tome
     public function __construct(String $id)
     {
         $this->id = $id;
-        $pdo = new PDO('mysql:host=localhost;dbname=db','public','phpClient22!');
+        $pdo = new PDO('mysql:host=165.227.152.225;dbname=db','p2','FicsiT22!');
         $tomeSQL = $pdo->query("SELECT * FROM PRODUIT p WHERE p.idProduit = ".$id)->fetchAll()[0];
         
         $this->idManga = $tomeSQL[1];

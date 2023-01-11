@@ -1,13 +1,21 @@
 <?php
 function getSelected(String $value){
-  if($_GET['categories'] == $value){
-    return " selected";
-  }
+    if(isset($_GET['categories'])){
+        if($_GET['categories'] == $value){
+            return " selected";
+        }
+    }
+}
+
+function getSearch(){
+    if(isset($_GET['search'])){
+        return $_GET['search'];
+    }
 }
 ?>
 
 <form action="index.php" method="get">
-  <input type="search" name="search" value="<?= $_GET['search'] ?>" placeholder="ex : BOICHI">
+  <input type="search" name="search" value="<?= getSearch() ?>" placeholder="ex : BOICHI">
   <select name="categories">
     <option value="categorie"<?= getSelected("categorie") ?>>Categories</option>
     <option value="manga"<?= getSelected("manga") ?>>Manga</option>

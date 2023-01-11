@@ -9,7 +9,7 @@ class Editeur{
     {
         $this->id = $id;
 
-        $pdo = new PDO('mysql:host=localhost;dbname=db','public','phpClient22!');
+        $pdo = new PDO('mysql:host=165.227.152.225;dbname=db','p2','FicsiT22!');
         $editSQL = $pdo->query("SELECT * FROM EDITEUR e WHERE e.idEditeur = ".$id)->fetchAll()[0];
         $this->name = $editSQL[1];
         if(isset($editSQL[2])){
