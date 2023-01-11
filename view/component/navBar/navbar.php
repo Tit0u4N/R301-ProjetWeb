@@ -6,8 +6,8 @@
     <a class="logo" href="index.php"><span>MANGA</span><span>FLOW</span></a>
     <?php
         if ($fullNavBar) {
-            require "./component/navBar/searchBar.php";
-            require "./component/navBar/account.php";
+            require "view/component/navBar/searchBar.php";
+            require "view/component/navBar/account.php";
         }
 
         ?>

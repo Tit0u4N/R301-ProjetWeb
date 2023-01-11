@@ -10,7 +10,7 @@
 
 $alt = "Cover de " . $title . " " . $vol;
 
-require "component/card/formatTitle.php"
+require "view/component/card/formatTitle.php"
 
 ?>
 

@@ -15,10 +15,10 @@
     <section class="catalog carousselMod">
         <?php 
         $tomeArray = $manga->getTomes();
-        require "component/catalog/catalogTome.php"; 
+        require "view/component/catalog/catalogTome.php";
         ?>
     </section>
 
     <hr class="divider">
 </div>
-<?php require "component/catalog/catalogDescCard.php"; ?>
+<?php require "view/component/catalog/catalogDescCard.php"; ?>

@@ -3,7 +3,7 @@
     $id = "test";
     $alt = "Cover de " . $title . " " ;
 
-    require "component/card/formatTitle.php"
+require "view/component/card/formatTitle.php"
 ?>
 
 <a class="productCard" id="<?= $id ?>" href="" >

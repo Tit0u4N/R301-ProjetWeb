@@ -26,7 +26,7 @@
                         <p>Total du panier</p>
                         <span>Article : <?= rand(0,9) ?></span>
                     </div>
-                    <h4><?= rand(1,9) . rand(0,9) . "," . rand(0,9) . "0€" ?> </h4>
+                    <h4><?= basketPanel . phprand(1, 9) . "," . rand(0,9) . "0€" ?> </h4>
                 </div>
                 <button><span>Payer</span></button>
             </div>
