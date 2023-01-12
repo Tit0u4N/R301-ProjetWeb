@@ -3,7 +3,6 @@ $alt = "Cover de " . $title;
 $title = str_replace(" ", "&nbsp;", $title);
 $title = str_replace("-", "&#8209;", $title);
 
-$desc = "Odio definitionem dapibus affert atomorum. Dicat persequeris honestatis faucibus dicam mei. Esse signiferumque vim duis inciderint corrumpit quem definitionem qui diam. Sea aperiri vidisse graece disputationi melius quam imperdiet. Parturient legere hendrerit persequeris reprehendunt vocent quas inimicus.Omittam dicat integer reprimique cetero vituperata fames decore donec viderer. Periculis falli deterruisset persecuti sodales imperdiet gloriatur. Lorem possit verear potenti quaestio nullam. Esse tantas ornatus tincidunt oporteat magna tota ex. Fuisset nihil expetendis numquam cum lorem."
 ?>
 
 <section class="manga">
@@ -15,9 +14,15 @@ $desc = "Odio definitionem dapibus affert atomorum. Dicat persequeris honestatis
             <h3><?= $title ?></h3>
         </div>
         <div class="infoCard">
+            <?php 
+            if(!empty($titleAlt)){
+                ?>
+                <p>Titres alternatifs : <span><?= $titleAlt ?> </span></p>
+                <?php
+            }?>
             <p>Auteur : <span><?= $author ?> </span></p>
+            <p>Dessinateur : <span><?= $drawer ?> </span></p>
             <p>Éditeur : <span><?= $editor ?> </span></p>
-            <p>Déssinateur : <span><?= $editor ?> </span></p>
             <p>Type : <span><?= $type ?> </span></p>
             <p>Genre : <span><?= $genre ?> </span></p>
         </div>

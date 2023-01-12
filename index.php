@@ -1,5 +1,5 @@
 <?php
-    $_GET['dev'] = True;
+    //$_GET['dev'] = True;
     $__DIR__ = '/';
 ?>
 <!doctype html>

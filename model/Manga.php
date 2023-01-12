@@ -174,9 +174,11 @@ class Manga
 
     public function echoHTMLCardDesc(){
         $title = $this->title;
+        $titleAlt = $this->titleAlt;
         $img = $this->getImg();
         $author = $this->author;
         $editor = $this->editor;
+        $drawer = $this->drawer;
         $type = $this->type;
         $genre = $this->genre;
         $desc = $this->desc;

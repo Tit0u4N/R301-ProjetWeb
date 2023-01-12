@@ -4,11 +4,9 @@
 
 <section class="catalog classicMod">
     <?php
-        require "view/component/card/mangaCardTemplate.php";
-        require "view/component/card/mangaCardTemplate.php";
-        require "view/component/card/mangaCardTemplate.php";
-        require "view/component/card/mangaCardTemplate.php";
-        require "view/component/card/mangaCardTemplate.php";
+        foreach ($mangaArray as $manga) {
+            $manga->echoHTMLCard();
+        }
     ?>
 </section>
 

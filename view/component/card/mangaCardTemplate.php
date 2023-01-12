@@ -1,6 +1,5 @@
 <?php
 // Définition des variables
-    $id = "test";
     $alt = "Cover de " . $title . " " ;
 
 require "view/component/card/formatTitle.php"

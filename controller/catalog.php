@@ -133,6 +133,20 @@ function mergeMangaList($mangaList, $additionalManga)
 }
 
 
+/* Manga list or manga Tome */
+function makeMangas(array $mangaArray,bool $onLine){
+    require "view/component/catalog/titleGen.php";
+    if($onLine){
+        require "view/component/catalog/catalogManga.php";
+    }
+    else{
+        foreach ($mangaArray as $manga) {
+            require "view/component/catalog/catalogMangaTome.php";
+        }
+    }
+}
+
+
 if (isset($_GET['categories']) && isset($_GET['search'])) {
     $pdo = new PDO('mysql:host=localhost;dbname=db', 'public', 'phpClient22!');
     $mangas = array();
@@ -186,10 +200,7 @@ if (isset($_GET['categories']) && isset($_GET['search'])) {
             }
 
             /* echo mangas */
-            require "view/component/catalog/titleGen.php";
-            foreach ($mangaArray as $manga) {
-                echo $manga->echoHTMLSection();
-            }
+            makeMangas($mangaArray,true);
         }
     } else if ($_GET['categories'] == 'genre') {
         foreach ($genres as $val) {
@@ -202,10 +213,7 @@ if (isset($_GET['categories']) && isset($_GET['search'])) {
             }
 
             /* echo mangas */
-            require "view/component/catalog/titleGen.php";
-            foreach ($mangaArray as $manga) {
-                echo $manga->echoHTMLSection();
-            }
+            makeMangas($mangaArray,true);
         }
     } else if ($_GET['categories'] == 'editeur') {
         foreach ($editors as $val) {
@@ -218,16 +226,10 @@ if (isset($_GET['categories']) && isset($_GET['search'])) {
             }
 
             /* echo mangas */
-            require "view/component/catalog/titleGen.php";
-            foreach ($mangaArray as $manga) {
-                echo $manga->echoHTMLSection();
-            }
+            makeMangas($mangaArray,true);
         }
     } else {
-        require "view/component/catalog/titleGen.php";
-        foreach ($mangaArray as $manga) {
-            require "component/catalog/catalogMangaTome.php";
-        }
+        makeMangas($mangaArray,count($mangaArray)>2);
     }
 } else {
     require "view/component/catalog/catalogSelection.php";
