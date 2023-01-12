@@ -3,14 +3,7 @@
 ?>
 <div class="mangaContainer">
     <?php
-        if (isset($_GET['dev'])) {
-            if ($_GET['dev'] == True) {
-                $JJK->echoHTMLCardDesc();
-            }
-        }
-        else{
-            $manga->echoHTMLCardDesc();
-        }
+        $manga->echoHTMLCardDesc();
     ?>
     <section class="catalog carousselMod">
         <?php 

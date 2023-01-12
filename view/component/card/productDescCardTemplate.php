@@ -52,7 +52,7 @@ require "view/component/card/formatTitle.php"
             <button class="priceContainer">
                 <h4><?= $price ?></h4>
                 <div>
-                    <img src="" data-src="/ressources/icons/basket.svg">
+                    <img src="" data-src="view/ressources/icons/basket.svg">
                 </div>
             </button>
         </section>

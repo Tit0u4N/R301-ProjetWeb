@@ -24,7 +24,7 @@ require "view/component/card/formatTitle.php"
     <div class="priceContainer">
         <h4><?= $price ?></h4>
         <button onclick="panier.addArticle('<?= $id ?>')">
-            <img src="" data-src="/ressources/icons/basket.svg">
+            <img src="" data-src="view/ressources/icons/basket.svg">
         </button>
     </div>
 </article>
