@@ -93,7 +93,15 @@ main {
     margin-left: 10px;
     margin-bottom: 20px;
     font-size: 60px;
+    &.sectionTitle {
+      margin-bottom: 10px;
+    }
   }
 
+  h3 {
+    margin-left: 10px;
+    margin-bottom: 20px;
+    font-size: 50px;
+  }
 }
 

@@ -84,5 +84,12 @@ main h2 {
   margin-bottom: 20px;
   font-size: 60px;
 }
-
+main h2.sectionTitle {
+  margin-bottom: 10px;
+}
+main h3 {
+  margin-left: 10px;
+  margin-bottom: 20px;
+  font-size: 50px;
+}
 /*# sourceMappingURL=style.css.map */

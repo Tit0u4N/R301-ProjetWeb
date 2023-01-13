@@ -5,7 +5,7 @@
 require "view/component/card/formatTitle.php"
 ?>
 
-<a class="productCard" id="<?= $id ?>" href="" >
+<a class="productCard" id="<?= $id ?>" href="<?= $link ?>" >
     <img src="" data-src="<?= $img ?>"alt="<?= $alt ?>">
     <div class="productTitle">
         <h3><?= $title ?></h3>

@@ -196,6 +196,7 @@ class Manga
         $type = $this->type;
         $genre = $this->genre;
         $desc = $this->desc;
+        $link = "index.php?manga=".$this->id;
         require "view/component/card/mangaCardTemplate.php";
     }
 

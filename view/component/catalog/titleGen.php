@@ -1,8 +1,21 @@
 <?php
 if(isset($_GET['categories'])&&isset($_GET['search'])){
-    if($_GET['categories'] == 'type'||$_GET['categories'] == 'genre'||$_GET['categories'] == 'editeur'){
+    if($_GET['categories'] == 'categorie'){
+        if($_POST['subtitle'] == true ){
+            ?>
+            <h3><?= $_POST['title']?>:</h3>
+        <?php
+        }
+        else{
+            ?>
+            <h2 class="sectionTitle"><?= $_POST['title']?>:</h2>
+        <?php
+        }
+    }
+    else if($_GET['categories'] == 'type'||$_GET['categories'] == 'genre'||$_GET['categories'] == 'editeur'||$_GET['categories'] == 'categorie'){
         ?>
-        <h2><?= $_POST['title']?>:</h2>
+        <h2 class="sectionTitle"><?= $_POST['title']?>:</h2>
+        <h3><?= $_POST['title']?>:</h3>
         <?php
     }
     else if($_GET['categories'] == 'drawer'){
