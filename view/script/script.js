@@ -24,6 +24,15 @@ function hidePanel(card){
 
 }
 
+function toggleConnexion() {
+    document.getElementById('switchConnexion').classList.toggle("hide")
+    sectionList = document.querySelectorAll("main > section")
+    sectionList.forEach(section => {
+        section.classList.toggle('hide')
+    })
+
+}
+
 document.addEventListener("keydown", (event) => {
     if(event.key === 'Escape')
         closePanel()
