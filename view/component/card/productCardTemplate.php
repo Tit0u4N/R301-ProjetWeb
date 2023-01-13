@@ -15,7 +15,10 @@ require "view/component/card/formatTitle.php"
 ?>
 
 <article class="productCard" id="<?= $id ?>" >
-    <img src="" data-src="<?= $img ?>"alt="<?= $alt ?>" onclick="openPanel('<?= $idDescCard ?>')">
+    <div class="imageContainer">
+        <img src="" data-src="<?= $img ?>"alt="<?= $alt ?>" onclick="openPanel('<?= $idDescCard ?>')">
+
+    </div>
     <div class="productTitle">
         <h3><?= $title ?></h3>
         <h4 class="vol"><?= $vol ?></h4>
