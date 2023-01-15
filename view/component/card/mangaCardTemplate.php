@@ -6,7 +6,7 @@ require "view/component/card/formatTitle.php"
 ?>
 
 
-<a class="productCard" id="<?= $id ?>" href="" >
+<a class="productCard" id="<?= $id ?>" href="<?= $link ?>" >
     <div class="imageContainer">
         <img src="" data-src="<?= $img ?>"alt="<?= $alt ?>">
     </div>

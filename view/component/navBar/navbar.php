@@ -3,7 +3,7 @@
         $fullNavBar = True
 ?>
 <nav>
-    <a class="logo" href="controller.php?CatalogSelection"><span>MANGA</span><span>FLOW</span></a>
+    <a class="logo" href="index.php?CatalogSelection"><span>MANGA</span><span>FLOW</span></a>
     <?php
         if ($fullNavBar) {
             require "view/component/navBar/searchBar.php";
