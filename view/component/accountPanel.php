@@ -6,7 +6,7 @@
 ?>
     <div id="account" class="default-panel hide">
         <h2>Compte :</h2>
-        <form action="controller.php" method="post">
+        <form action="index.php" method="post">
             <div>
                 <label for="emailSubcribe">Email :</label>
                 <input name="emailSubcribe" type="email" placeholder="lelouch@code-geass.fr" value="<?= $emailView ?>">

@@ -24,7 +24,7 @@ function errorPrintLogin(){
 </div>
 <section id="connexionContainer">
     <h3>Replonger dans le FLOW ? </h3>
-    <form action="controller.php" method="post">
+    <form action="index.php" method="post">
         <div>
             <label for="emailMangaFlow">Email :</label>
             <input name="emailMangaFlow" type="email" placeholder="lelouch@code-geass.fr">
@@ -42,7 +42,7 @@ function errorPrintLogin(){
 </section>
 <section id="susbribeContainer" class="hide">
     <h3>Rejoinre le flow</h3>
-    <form action="controller.php" method="post">
+    <form action="index.php" method="post">
         <div>
             <label for="emailSubcribe">Email :</label>
             <input name="emailSubcribe" type="email" placeholder="lelouch@code-geass.fr" required>
