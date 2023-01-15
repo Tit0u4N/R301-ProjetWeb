@@ -1,9 +1,9 @@
 <?php
-$_GET['dev'] = True;
+//$_GET['dev'] = True;
 
 session_start();
 
-require "controller/conexionController.php";
+//require "controller/conexionController.php";
 
 
 if(isset($_GET['Connexion'])){

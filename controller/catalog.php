@@ -201,7 +201,7 @@ else if (isset($_GET['categories']) && isset($_GET['search'])) {
         }
     }
 } else {
-    $listSelection = array(615, 295, 133, 190, 364, 462, 462, 496, 329, 1);//19/67/3/[6]/10/12/[132]/15/8/1
+    $listSelection = array(615, 295, 133, 190, 364, 462, 463, 496, 329, 1);//19/67/3/[6]/10/12/[132]/15/8/1
     $tomeArray = array();
     foreach ($listSelection as $val) {
         array_push($tomeArray, new Tome($val));

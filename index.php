@@ -1,10 +1,4 @@
 <?php
-<<<<<<< HEAD
-    //$_GET['dev'] = True;
-    $__DIR__ = '/';
-=======
-
->>>>>>> PHP
 ?>
 <!doctype html>
 <html lang="fr">
