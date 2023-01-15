@@ -36,6 +36,7 @@
         elseif ($body == "Catalog"){
             require "controller/catalog.php";
             require "view/component/basket/basketPanel.php";
+            require "view/component/accountPanel.php";
         }
     ?>
 
