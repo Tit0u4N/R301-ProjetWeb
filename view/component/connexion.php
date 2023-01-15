@@ -11,20 +11,32 @@ function errorPrintLogin(){
     }
 }
 
+function isHide($element){
+    if($element == "suscribe"){
+        if(!$_GET["method"] == "register"){
+            echo 'class="hide"';
+        }
+    }
+    else{
+        if($_GET["method"] == "register"){
+            echo 'class="hide"';
+        }
+    }
+}
 ?>
 
 
 
-<div id="switchConnexion" onclick="toggleConnexion()">
+<div id="switchConnexion" onclick="toggleConnexion()" <?= isHide("switch")?>>
     <div>
         <h2>CONNEXION</h2>
         <h2>INSCRIPTION</h2>
     </div>
     <rect>&nbsp;</rect>
 </div>
-<section id="connexionContainer">
+<section id="connexionContainer" <?= isHide("connexion")?>>
     <h3>Replonger dans le FLOW ? </h3>
-    <form action="index.php" method="post">
+    <form action="index.php?Connexion&method=login" method="post">
         <div>
             <label for="emailMangaFlow">Email :</label>
             <input name="emailMangaFlow" type="email" placeholder="lelouch@code-geass.fr">
@@ -40,16 +52,16 @@ function errorPrintLogin(){
         </div>
     </form>
 </section>
-<section id="susbribeContainer" class="hide">
+<section id="suscribeContainer" <?= isHide("suscribe")?>>
     <h3>Rejoinre le flow</h3>
-    <form action="index.php" method="post">
+    <form action="index.php?Connexion&method=register" method="post">
         <div>
             <label for="emailSubcribe">Email :</label>
             <input name="emailSubcribe" type="email" placeholder="lelouch@code-geass.fr" required>
         </div>
         <div>
             <label for="surnameSubcribe">Nom :</label>
-            <input name="surnameSubcribe" type="text" placeholder="Lamperouge" required>
+            <input name="surnameSubcribe" type="text" placeholder="Lamperouge" required pattern="[^']*" title= "gnegne">
         </div>
         <div>
             <label for="nameSubcribe">Prénom :</label>

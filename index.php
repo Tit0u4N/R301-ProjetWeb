@@ -3,10 +3,19 @@
 
 session_start();
 
-//require "controller/conexionController.php";
+
 
 
 if(isset($_GET['Connexion'])){
+    if(isset($_GET['method'])){
+        if($_GET['method']=="login"){
+            require "controller/conexionController.php";
+        }
+        else if($_GET['method']=="register"){
+            require "controller/inscriptionController.php";
+        }
+    }
+    $connexionValidation = false;
     $stylePages = [
         "view/style/styleConnexion.css",
     ];
