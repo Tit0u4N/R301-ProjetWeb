@@ -1,3 +1,20 @@
+<?php
+function errorPrintLogin(){
+    if(isset($_POST['errorLogin'])){
+        if($_POST['errorLogin']){
+            ?>
+            <div>
+                <span>Adresse e-mail ou le mot de passe est incorrect.</span>
+            </div>
+            <?php
+        }
+    }
+}
+
+?>
+
+
+
 <div id="switchConnexion" onclick="toggleConnexion()">
     <div>
         <h2>CONNEXION</h2>
@@ -16,6 +33,7 @@
             <label for="passwordMangaFlow">Mot de passe :</label>
             <input name="passwordMangaFlow" type="password" placeholder="**************">
         </div>
+        <?= errorPrintLogin()?>
         <div class="submitContainer">
             <button name="submitConnexion" value="Connexion" type="submit"><span>Connexion</span></button>
             <label for="submit">Mot de passe oublié ?</label>
@@ -39,11 +57,11 @@
         </div>
         <div>
             <label for="passwordConnexion">Mot de passe :</label>
-            <input name="passwordConnexion" type="password" placeholder="**************" >
+            <input name="passwordConnexion" type="password" placeholder="**************" required>
         </div>
         <div>
             <label for="passwordConnexionConfirmation">Confirmation :</label>
-            <input name="passwordConnexionConfirmation" type="password" placeholder="**************">
+            <input name="passwordConnexionConfirmation" type="password" placeholder="**************" required>
         </div>
         <div class="submitContainer">
             <button name="submitSubcribe" value="Inscritpion" type="submit"><span>Inscritpion</span></button>
