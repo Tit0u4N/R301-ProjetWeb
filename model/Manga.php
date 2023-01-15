@@ -147,28 +147,6 @@ class Manga
     }
 
 
-    public function echoHTMLSection(){
-        $this->echoHTMLCard();
-        $tomes = $this->getTomes();
-        ?>
-        <section class="catalog carousselMod">
-        <?php
-            foreach ($tomes as $tome) {
-                $tome->echoHTMLCard();
-            }
-        ?>
-        </section>
-        <section class="descCardsContainer" id="descCardsContainer">
-
-        <?php
-            foreach ($tomes as $tome) {
-                $tome->echoHTMLDescCard();
-            }
-        ?>
-        </section>
-    <?php
-    }
-
 
 
 
