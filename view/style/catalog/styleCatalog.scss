@@ -146,12 +146,19 @@ main {
 
     box-shadow: 0 0 5px 1px rgb(182, 182, 182);
 
-    img {
-      margin: 5px auto;
-      width: 80%;
+    .imageContainer {
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
       aspect-ratio: 2/3;
-      object-fit: contain;
-      box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.25);
+      width: 80%;
+
+      img {
+        margin: 5px auto;
+        object-fit: contain;
+        box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.25);
+      }
+
     }
 
     div.productTitle {
@@ -314,6 +321,8 @@ main {
             width: 50%;
             text-align: center;
             height: 100%;
+            display: block;
+            aspect-ratio: unset;
 
             img {
               margin-top: 10px;

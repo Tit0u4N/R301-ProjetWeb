@@ -1,6 +1,10 @@
 <?php
+<<<<<<< HEAD
     //$_GET['dev'] = True;
     $__DIR__ = '/';
+=======
+
+>>>>>>> PHP
 ?>
 <!doctype html>
 <html lang="fr">
@@ -10,12 +14,14 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="view/style/style.css">
-    <link rel="stylesheet" type="text/css" href="view/style/catalog/styleCatalog.css">
-    <link rel="stylesheet" type="text/css" href="view/style/catalog/styleCatalogSearch.css">
-    <link rel="stylesheet" type="text/css" href="view/style/styleBasket.css">
+    <?php
+        foreach($stylePages as $page){
+            echo '<link rel="stylesheet" type="text/css" href="' . $page . '">';
+        }
+    ?>
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
-    <title>MangaFlow</title>
+    <title><?= $titlePage ?></title>
 
     <script type="text/javascript" src="view/script/basket/Article.js" defer></script>
     <script type="text/javascript" src="view/script/basket/Basket.js" defer></script>
@@ -28,13 +34,18 @@
 <?php require "view/component/navBar/navbar.php" ?>
 
 <main>
-    <?php require "controller/catalog.php" ?>
+    <?php
+        if($body == "Connexion"){
+            require "view/component/connexion.php";
+        }
+        elseif ($body == "Catalog"){
+            require "controller/catalog.php";
+            require "view/component/basket/basketPanel.php";
+        }
+    ?>
 
-    <?php require "view/component/basket/basketPanel.php";?>
+    <?php ?>
 </main>
-<script>
-
-</script>
 </body>
 
 </html>
