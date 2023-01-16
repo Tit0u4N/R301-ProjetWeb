@@ -32,14 +32,14 @@
         if($body == "Connexion"){
             require "view/component/connexion.php";
         }
-        elseif ($body == "Catalog"){
+        else if ($body == "Catalog"){
             require "controller/catalog.php";
-            require "view/component/basket/basketPanel.php";
             require "view/component/accountPanel.php";
         }
+        else if ($body == "Payement") {
+            require "view/component/payementPage.php";
+        }
     ?>
-
-    <?php ?>
 </main>
 </body>
 

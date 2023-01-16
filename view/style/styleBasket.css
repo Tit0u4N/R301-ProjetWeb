@@ -129,13 +129,26 @@
   margin-top: -13px;
   font-size: 50px;
 }
-#totalBasket > div button {
+#totalBasket > div a {
   background: var(--highlight);
+  text-decoration: none;
+  text-align: center;
 }
-#totalBasket > div button span {
+#totalBasket > div a span {
   font-size: 50px;
   font-family: LIQUIDO, sans-serif;
   color: white;
+}
+
+.basketContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+.basketContainer h2 {
+  width: 100%;
+}
+.basketContainer > div {
+  width: 50%;
 }
 
 /*# sourceMappingURL=styleBasket.css.map */

@@ -1,9 +1,9 @@
 <?php
-//$_GET['dev'] = True;
+$_GET['dev'] = True;
 
 session_start();
 
-//require "controller/conexionController.php";
+require "controller/conexionController.php";
 
 
 if(isset($_GET['Connexion'])){
@@ -16,20 +16,25 @@ if(isset($_GET['Connexion'])){
 
     $body = "Connexion";
 }
+else if(isset($_GET['Payement'])) {
+    $stylePages = [
+        "view/style/styleBasket.css",
+    ];
+
+    $titlePage = "MangaFlow | Paiement";
+
+    $fullNavBar = false;
+    $body = "Payement";
+}
 else {
     $stylePages = [
         "view/style/catalog/styleCatalog.css",
         "view/style/catalog/styleCatalogSearch.css",
-        "view/style/styleBasket.css"
+        "view/style/styleBasket.css",
     ];
 
     $titlePage = "MangaFlow";
     $body = "Catalog";
-}
-
-if($connexionValidation){
-    echo "Connexion Validation " . $email . " mdp " . $password;
-
 }
 
 require "mainStructure.php";
