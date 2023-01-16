@@ -21,7 +21,6 @@
 
         //todo faire le traitement dans la BDD (mettre a true ou false tu connais)
 
-
     }
 
     function addArticle($idArticle){
@@ -30,9 +29,7 @@
             return ["idArticle" => $idArticle, "nbArticle" => $nbArticle];
         }
 
-
         //todo faire le traitement dans la BDD (mettre a true ou false tu connais)
-
 
         return ["idArticle" => -1, "nbArticle" => -1];
     }

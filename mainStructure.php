@@ -17,11 +17,19 @@
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
     <title><?= $titlePage ?></title>
 
-    <script type="text/javascript" src="view/script/basket/Article.js" defer></script>
-    <script type="text/javascript" src="view/script/basket/Basket.js" defer></script>
 
-    <script type="text/javascript" src="view/script/Title.js" defer></script>
-    <script type="text/javascript" src="view/script/script.js?version = 0.2" defer></script>
+    <?php
+    foreach($scripts as $script){
+        echo '<script type="text/javascript" src="' . $script . '" defer></script>';
+    }
+    ?>
+<!--    <script type="text/javascript" src="view/script/basket/Article.js" defer></script>-->
+<!--    <script type="text/javascript" src="view/script/basket/Basket.js" defer></script>-->
+<!---->
+<!--    <script type="text/javascript" src="view/script/Title.js" defer></script>-->
+<!--    <script type="text/javascript" src="view/script/script.js?version = 0.2" defer></script>-->
+<!--    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>-->
+<!--    <script type="text/javascript" src="view/script/Stock.js"></script>-->
 
 </head>
 <body>
@@ -39,8 +47,13 @@
         else if ($body == "Payement") {
             require "view/component/payementPage.php";
         }
+        else if ($body == "Stock"){
+            require "view/component/stockPage.php";
+        }
     ?>
+
 </main>
+
 </body>
 
 </html>
