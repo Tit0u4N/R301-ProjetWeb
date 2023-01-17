@@ -1,6 +1,6 @@
 <?php
     function mailUsed(PDO $pdo,String $email){
-        $user = $pdo->query("SELECT cl.idClient FROM CLIENT cl WHERE cl.adresseMail = '".$user."'")->fetchAll();
+        $user = $pdo->query("SELECT cl.idClient FROM CLIENT cl WHERE cl.adresseMail = '".$email."'")->fetchAll();
         return !empty($user);
     }
 
@@ -18,30 +18,75 @@
     }
 
     function checkSyntax(String $string){
-        $check = preg_match("/(\"|\'|\\)+/",$check) == 0;
-        return $check;
+        $check = preg_match("/(%|\\)+/",$string) == 0;
+        return !$check;
+    }
+
+
+    function addUser(PDO $pdo,String $email, String $name, String $surname, String $password){
+        $hashPassword = password_hash($password, PASSWORD_BCRYPT);
+        $pdo->query("INSERT INTO COMPTE(identifiant,motDePasse) VALUES('".$email."','".$hashPassword."')");
+        $id = $pdo->query("SELECT c.idCompte FROM COMPTE c WHERE c.identifiant = '".$email."'")->fetchAll()[0][0];
+
+        
+        $pdo->query("INSERT INTO CLIENT(idClient,adresseMail,nom,prenom) VALUES('".$id."','".$email."','".$surname."','".$name."')");
+
+
     }
 
     
 
 
+    $errorEmailAlreadyUsed = false;
+    $errorEmailSyntax = false;
+    $errorSurnameSyntax = false;
+    $errorNameSyntax = false;
+    $errorPasswordStrength = false;
+    $errorPasswordSyntax = false;
+    $errorPasswordConfirmation = false;
 
+ 
 
-    //$pdo = new PDO('mysql:host=localhost;dbname=db', 'client', 'phpClientCo22!');
-    if(isset($_POST["passwordConnexion"])){
-
-        $test1 = $_POST["passwordConnexion"];
-        //$test3 = preg_match("/[a-z]+/","asdadsDFG1523");
-        $test2 = checkPasswordStrengh($_POST["passwordConnexion"]);
-        $test1 = $_POST["passwordConnexion"];
-    }
-
+    $email= $_POST["emailSubcribe"];
+    $surname = $_POST["surnameSubcribe"];
+    $name = $_POST["nameSubcribe"];
     $password = $_POST["passwordConnexion"];
+    $passwordConfirmation = $_POST["passwordConnexionConfirmation"];
+    /*
     if(!checkPasswordStrengh($password)){
         $errorPasswordStrength = true;
     }
-    else{
+    else*/
+    if(checkSyntax($email)){
+        $errorEmailSyntax = true;
     }
+    else if(checkSyntax($surname)){
+        $errorSurnameSyntax = true;
+    }
+    else if(checkSyntax($name)){
+        $errorNameSyntax = true;
+    }
+    else if(checkSyntax($password)){
+        $errorPasswordSyntax = true;
+    }
+    else if(!checkPassword($password,$passwordConfirmation)){
+        $errorPasswordConfirmation = true;
+    } 
+    else{
+        $pdo = new PDO('mysql:host=localhost;dbname=db', 'client', 'phpClientCo22!');
+        if(mailUsed($pdo,$email)){
+            $errorEmailAlreadyUsed = true;
+        }
+        else{
+            addUser($pdo,$email,$name,$surname,$password);
+        }
+    }
+                    
+                
+            
+       
+
+
 
 
 

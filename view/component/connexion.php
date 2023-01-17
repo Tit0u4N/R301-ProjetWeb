@@ -11,9 +11,19 @@ function errorPrintLogin(){
     }
 }
 
+function errorPwConfirmPrintRegister(bool $error){
+    if($error){
+        ?>
+        <div>
+            <span>Les mot de passes doivent correspondre!</span>
+        </div>
+        <?php
+    }
+}
+
 function isHide($element){
     if($element == "suscribe"){
-        if(!$_GET["method"] == "register"){
+        if(!($_GET["method"] == "register")){
             echo 'class="hide"';
         }
     }
@@ -22,6 +32,10 @@ function isHide($element){
             echo 'class="hide"';
         }
     }
+}
+
+if(!isset($errorPasswordConfirmation)){
+    $errorPasswordConfirmation = false;
 }
 ?>
 
@@ -73,7 +87,8 @@ function isHide($element){
         </div>
         <div>
             <label for="passwordConnexionConfirmation">Confirmation :</label>
-            <input name="passwordConnexionConfirmation" type="password" placeholder="**************" required>
+            <input name="passwordConnexionConfirmation" type="password" placeholder="**************" required>  
+            <?= errorPwConfirmPrintRegister($errorPasswordConfirmation)?>
         </div>
         <div class="submitContainer">
             <button name="submitSubcribe" value="Inscritpion" type="submit"><span>Inscritpion</span></button>
