@@ -1,9 +1,13 @@
 <?php
     $accountLink = 'href="?Connexion"';
     if($connexionValidation){
-        $accountLink = 'onclick="openPanel(\'account\')"';
+      if( $_SESSION["webMaster"]){
+            $accountLink = 'href="?Stock"';
+      }
+      else{
+            $accountLink = 'onclick="openPanel(\'account\')"';
+      }
     }
-
 ?>
 <div>
   <a onclick="openPanel('basket')">

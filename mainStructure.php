@@ -55,6 +55,7 @@
 </main>
 
 <?php 
+echo var_dump($_SESSION)."\n";
 echo $test1."\n";
 echo $test2."\n";
 echo $test3."\n";

@@ -13,8 +13,11 @@
         return password_verify($password,$knowPassword);
     }
 
-    function login(){
-        //Start cookies etc
+    function login(String $id){
+        $_POST["webMaster"] = false;
+        $_POST["userId"] = $id;
+        header("Location: index.php");
+        //exit;
     }
 
 
@@ -37,7 +40,7 @@
             $password = getPassword($pdo,$userId);
             if(checkPassword($password,$_POST["passwordMangaFlow"])){
                 $connexionValidation = true;
-                login();
+                login($user[0][0]);
             }
             else{
                 $_POST['errorLogin'] = true;

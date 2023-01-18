@@ -1,5 +1,5 @@
 <?php
-    $emailView = "Bob@b.fr";
+    $emailView = $_SESSION["emailMangaFlow"];
     $surnameView = "Le Crampon";
     $nameView = "Bob";
 ?>

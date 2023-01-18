@@ -1,5 +1,5 @@
 <?php
-$_GET['dev'] = True;
+//$_GET['dev'] = True;
 
 session_start();
 
@@ -7,6 +7,8 @@ session_start();
 
 
 if(isset($_GET['Connexion'])){
+    
+    $connexionValidation = false;
     if(isset($_GET['method'])){
         if($_GET['method']=="login"){
             require "controller/conexionController.php";
@@ -15,7 +17,6 @@ if(isset($_GET['Connexion'])){
             require "controller/inscriptionController.php";
         }
     }
-    $connexionValidation = false;
     $stylePages = [
         "view/style/styleConnexion.css",
     ];
@@ -70,5 +71,7 @@ else {
     $titlePage = "MangaFlow";
     $body = "Catalog";
 }
+require "controller/sessionController.php";
+
 
 require "mainStructure.php";
