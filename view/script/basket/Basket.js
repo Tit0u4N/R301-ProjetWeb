@@ -28,28 +28,30 @@ class Basket {
     }
 
     addArticle(idArticle) {
-        let iArticle = this.#listArticle.findIndex(article => article.equals(idArticle));
-        console.log(iArticle)
-        if (iArticle !== -1) {
-            this.#listArticle[iArticle].addProduit();
-        } else {
-            let article = new Article(idArticle)
-            this.#listArticle.push(new Article(idArticle))
-            this.carrousel.appendChild(article.getCardBasketHTML())
-            Title.autoSizeTitles()
-        }
-        this.actuBasket()
+        this.#actuBasketServer(idArticle, 0);
     }
 
     removeArticle(idArticle){
-        let iArticle = this.#listArticle.findIndex(article => article.equals(idArticle));
-        console.log("removeArticle called iarticle = " + iArticle)
-        if (this.#listArticle[iArticle] !== -1) {
-            this.#listArticle[iArticle].subProduit();
-            if(this.#listArticle[iArticle].nbProduit === 0){
+        this.#actuBasketServer(idArticle, 1);
+    }
+
+    #actuBasketData(response){
+        console.log(response)
+        if (response["idArticle"] === -1 || response["nbArticle"] === -1)
+            return
+        let iArticle = this.#listArticle.findIndex(article => article.equals(response["idArticle"]));
+        if(iArticle !== -1){
+            if(response["nbArticle"] === 0){
                 document.getElementById(this.#listArticle[iArticle].idCardBasket).remove()
                 this.#listArticle.splice(iArticle, 1);
+
+            } else {
+                this.#listArticle[iArticle].setNbProduit(response["nbArticle"]);
             }
+        } else {
+            let article = new Article(response["idArticle"],response["nbArticle"] )
+            this.#listArticle.push(article)
+            this.carrousel.appendChild(article.getCardBasketHTML())
         }
         this.actuBasket()
     }
@@ -65,6 +67,24 @@ class Basket {
         document.querySelector("#totalBasket div > h4").textContent = this.#totalBasket+"€";
         this.#nbArticle = cpt;
         document.querySelector("#totalBasket div div > span").textContent = this.#nbArticle
+        Title.autoSizeTitles();
     }
+
+    #actuBasketServer(idPorduit, type){
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "controller/controllerBasketAjax.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.send("basketActuIdProduit="+idPorduit+"&basketActuType="+type);
+        let tempThis = this
+        xhr.onreadystatechange = function() {
+            if (this.readyState === 4 && this.status === 200) {
+                tempThis.#actuBasketData(JSON.parse(this.response))
+            }
+        };
+
+    }
+
+
+
 
 }

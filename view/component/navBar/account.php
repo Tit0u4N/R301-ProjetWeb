@@ -1,3 +1,10 @@
+<?php
+    $accountLink = 'href="?Connexion"';
+    if($connexionValidation){
+        $accountLink = 'onclick="openPanel(\'account\')"';
+    }
+
+?>
 <div>
   <a onclick="openPanel('basket')">
     <svg width="53" height="53" viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -17,7 +24,8 @@
     </svg>
 
   </a>
-  <a href="index.php?Connexion">
+
+  <a <?= $accountLink ?> >
     <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M25 27.0417C31.5929 27.0417 36.9375 21.6971 36.9375 15.1042C36.9375 8.51127 31.5929 3.16667 25 3.16667C18.4071 3.16667 13.0625 8.51127 13.0625 15.1042C13.0625 21.6971 18.4071 27.0417 25 27.0417Z"
             stroke="var(--background)" stroke-width="3.2" stroke-miterlimit="10"/>

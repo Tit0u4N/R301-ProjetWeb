@@ -323,7 +323,4 @@ else if (isset($_GET['categories']) && isset($_GET['search'])) {
 
 </section>
 
-<?php require "view/component/basket/basketPanel.php";
-
-
-?>
+<?php require_once "view/component/basket/basketPanel.php"; ?>

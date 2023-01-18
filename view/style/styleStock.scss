@@ -1,0 +1,19 @@
+button {
+  border: solid 1px gray;
+  width: 25px;
+}
+
+#formStock {
+  display: flex;
+  gap: 20px;
+  margin: auto;
+
+  select, input {
+    max-width: 300px;
+  }
+
+}
+
+#ChartStock {
+  margin-top: 30px;
+}
