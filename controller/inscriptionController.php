@@ -30,8 +30,8 @@
 
         
         $pdo->query("INSERT INTO CLIENT(idClient,adresseMail,nom,prenom) VALUES('".$id."','".$email."','".$surname."','".$name."')");
-
-
+        header("Location: index.php?Connexion");//http://165.227.152.225/
+        exit;
     }
 
     
