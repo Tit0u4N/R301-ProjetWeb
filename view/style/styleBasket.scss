@@ -162,8 +162,10 @@
       }
     }
 
-      button {
+      a {
         background: var(--highlight);
+        text-decoration: none;
+        text-align: center;
 
         span {
           font-size: 50px;
@@ -174,4 +176,18 @@
 
   }
 
+}
+
+.basketContainer{
+
+  display: flex;
+  flex-wrap: wrap;
+
+  h2{
+    width: 100%;
+  }
+
+  > div {
+    width: 50%;
+  }
 }

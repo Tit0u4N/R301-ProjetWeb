@@ -23,18 +23,13 @@ class Article {
         this.addEventsButtons()
     }
 
-    addProduit(){
-        this.#nbProduit++;
-        this.#changeNbProduitHTML()
-    }
-
-    subProduit(){
-        this.#nbProduit--;
-        this.#changeNbProduitHTML()
-    }
-
     #changeNbProduitHTML(){
         document.querySelector("#"+this.idCardBasket+" .productCounter div > h4").textContent = this.#nbProduit
+    }
+
+    setNbProduit(nbProduit){
+        this.#nbProduit = nbProduit;
+        this.#changeNbProduitHTML()
     }
 
     getCardBasketHTML(){
