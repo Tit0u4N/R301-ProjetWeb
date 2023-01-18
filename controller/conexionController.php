@@ -13,8 +13,9 @@
         return password_verify($password,$knowPassword);
     }
 
-    function login(String $id){
-        $_POST["webMaster"] = false;
+    function login(String $id,PDO $pdo){
+        $webMaster = !empty($pdo->query("SELECT w.idWebMaster FROM WEB_MASTER w WHERE w.idWebMaster = ".$id)->fetchAll());
+        $_POST["webMaster"] = $webMaster;
         $_POST["userId"] = $id;
         header("Location: index.php");
         //exit;
@@ -40,7 +41,7 @@
             $password = getPassword($pdo,$userId);
             if(checkPassword($password,$_POST["passwordMangaFlow"])){
                 $connexionValidation = true;
-                login($user[0][0]);
+                login($user[0][0],$pdo);
             }
             else{
                 $_POST['errorLogin'] = true;

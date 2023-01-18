@@ -1,7 +1,7 @@
 <?php
 $_GET['dev'] = true;
 
-//todo controller que ce spoit bien un admin
+//$_SESSION['idUser'];
 
 //Date sous la forme jj-mm-aaaa
 //echo $_POST['idProduitStock'] . "   "  . $_POST['startDateStock'] .  "   " . $_POST['endDateStock'];

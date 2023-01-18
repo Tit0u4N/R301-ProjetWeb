@@ -16,6 +16,10 @@ if (!isset($_SESSION['CREATED'])) {
     $_SESSION['CREATED'] = time();  
 }
 
+if (!isset($_SESSION['basket'])) {
+    $_SESSION['basket'] = array();
+}
+
 $connected = false;
 $connexionValidation = false;
 if(isset($_SESSION["userId"])){

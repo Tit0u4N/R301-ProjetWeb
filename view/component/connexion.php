@@ -53,7 +53,7 @@ if(!isset($errorPasswordConfirmation)){
     <form action="index.php?Connexion&method=login" method="post">
         <div>
             <label for="emailMangaFlow">Email :</label>
-            <input name="emailMangaFlow" type="email" placeholder="lelouch@code-geass.fr">
+            <input name="emailMangaFlow" type="username" autocomplete ="username" placeholder="lelouch@code-geass.fr">
         </div>
         <div>
             <label for="passwordMangaFlow">Mot de passe :</label>
