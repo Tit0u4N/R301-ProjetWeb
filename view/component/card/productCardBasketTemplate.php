@@ -1,13 +1,10 @@
 <?php
-function getQuantity($qte){
-    if(isset($qte)){
-        return $qte;
-    }
-    return 1;
-}
+
+
 $alt = "Cover de " . $title . " " . $vol;
 $title = str_replace(" ", "&nbsp;", $title);
 $title = str_replace("-", "&#8209;", $title);
+
 //require "component/card/formatTitle.php"
 ?>
 
@@ -23,7 +20,7 @@ $title = str_replace("-", "&#8209;", $title);
             <button>
                 <rect>&nbsp;</rect>
             </button>
-            <div><h4><?= getQuantity($qte) ?></h4></div>
+            <div><h4><?= $qte ?></h4></div>
             <button>
                 <rect>&nbsp;</rect>
                 <rect>&nbsp;</rect>

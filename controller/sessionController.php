@@ -1,5 +1,5 @@
 <?php
-function getBasket(bool $connected,&$test1){
+function getBasket(bool $connected){
     if (!isset($_SESSION['basket'])) {
         $_SESSION['basket'] = array();
     }
@@ -20,7 +20,9 @@ function getBasket(bool $connected,&$test1){
             
             foreach($basketBDD as $products){
                 if(isset($_SESSION['basket'][$products[0]])){
-                    $_SESSION['basket'][$products[0]][1] = $_SESSION['basket'][$products[0]][1] + $products[1];
+                    if( $_SESSION['basket'][$products[0]][1] !=  intval($products[1])){
+                        $_SESSION['basket'][$products[0]][1] = intval($_SESSION['basket'][$products[0]][1]) + intval($products[1]);
+                    }
                 }
                 else{
                     $_SESSION['basket'][$products[0]] = array($products[0],$products[1]);
@@ -35,7 +37,7 @@ function getBasket(bool $connected,&$test1){
                     $pdo->query("INSERT INTO PRODUIT_FACTURATION(idProduit,idFacturation,nombreProduit) VALUES (".$tome[0].",".$basketId.",".$tome[1].")");
                 }
                 else{
-                    $pdo->query("UPDATE PRODUIT_FACTURATION SET nombreProduit=".$tome[1]."  WHERE pf.idFacturation = ".$basketId." AND pf.idProduit = ".$tome[0]);
+                    $pdo->query("UPDATE PRODUIT_FACTURATION pf SET nombreProduit=".$tome[1]."  WHERE pf.idFacturation = ".$basketId." AND pf.idProduit = ".$tome[0]);
                 }
             }
         }
@@ -57,9 +59,11 @@ function getBasket(bool $connected,&$test1){
 }
 
 session_start();
+$destroyed = false;
 
 /* Destroy session after 5 min of inactivity */
-if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 300)) {
+if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 100)) {
+    $destroyed = true;
     session_unset();    
     session_destroy();   
 }
@@ -96,5 +100,12 @@ else if(isset($_POST["userId"]) && isset($_POST["emailMangaFlow"])){
 }
 
 if($body == "Payement" || $body == "Catalog"){
-    $basket = getBasket(true,$test1);
+    $basket = getBasket(true);
+}
+
+
+if($destroyed){
+    //TODO APPEL ALERTE
+    header("Location: index.php");
+    exit();
 }

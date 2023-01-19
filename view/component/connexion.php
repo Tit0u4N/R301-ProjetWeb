@@ -15,7 +15,38 @@ function errorPwConfirmPrintRegister(bool $error){
     if($error){
         ?>
         <div>
-            <span>Les mot de passes doivent correspondre!</span>
+            <span>Les mots de passes doivent correspondre!</span>
+        </div>
+        <?php
+    }
+}
+
+function errorPwStrengPrintRegister(bool $error){
+    if($error){
+        ?>
+        <div>
+            <span>Le mot de passes doit contenir au moins 8 caractère dont au moins une minuscule, une majuscule, un chiffre et un caractère spécial!</span>
+        </div>
+        <?php
+    }
+}
+
+function errorSyntaxRegister(bool $error){
+    if($error){
+        ?>
+        <div>
+            <span>Veuillez ne pas utiliser les caractères(%,\)!</span>
+        </div>
+        <?php
+    }
+}
+
+
+function errorEmailUsedRegister(bool $error){
+    if($error){
+        ?>
+        <div>
+            <span>Adresse mail déja utilisé</span>
         </div>
         <?php
     }
@@ -36,6 +67,24 @@ function isHide($element){
 
 if(!isset($errorPasswordConfirmation)){
     $errorPasswordConfirmation = false;
+}
+if(!isset($errorPasswordStrength)){
+    $errorPasswordStrength = false;
+}
+if(!isset($errorPasswordSyntax)){
+    $errorPasswordSyntax = false;
+}
+if(!isset($errorEmailSyntax)){
+    $errorEmailSyntax = false;
+}
+if(!isset($errorEmailAlreadyUsed)){
+    $errorEmailAlreadyUsed = false;
+}
+if(!isset($errorSurnameSyntax)){
+    $errorSurnameSyntax = false;
+}
+if(!isset($errorNameSyntax)){
+    $errorNameSyntax = false;
 }
 ?>
 
@@ -72,14 +121,18 @@ if(!isset($errorPasswordConfirmation)){
         <div>
             <label for="emailSubcribe">Email :</label>
             <input name="emailSubcribe" type="email" placeholder="lelouch@code-geass.fr" required>
+            <?= errorSyntaxRegister($errorEmailSyntax)?>
+            <?= errorEmailUsedRegister($errorEmailAlreadyUsed)?>
         </div>
         <div>
             <label for="surnameSubcribe">Nom :</label>
             <input name="surnameSubcribe" type="text" placeholder="Lamperouge" required pattern="[^']*" title= "gnegne">
+            <?= errorSyntaxRegister($errorSurnameSyntax)?>
         </div>
         <div>
             <label for="nameSubcribe">Prénom :</label>
             <input name="nameSubcribe" type="text" placeholder="Lelouche" required>
+            <?= errorSyntaxRegister($errorNameSyntax)?>
         </div>
         <div>
             <label for="passwordConnexion">Mot de passe :</label>
@@ -88,7 +141,9 @@ if(!isset($errorPasswordConfirmation)){
         <div>
             <label for="passwordConnexionConfirmation">Confirmation :</label>
             <input name="passwordConnexionConfirmation" type="password" placeholder="**************" required>  
-            <?= errorPwConfirmPrintRegister($errorPasswordConfirmation)?>
+            <?= errorSyntaxRegister($errorPasswordSyntax)?>
+            <?= errorPwConfirmPrintRegister($errorPasswordConfirmation)?> 
+            <?= errorPwStrengthPrintRegister($errorPasswordStrength)?> 
         </div>
         <div class="submitContainer">
             <button name="submitSubcribe" value="Inscritpion" type="submit"><span>Inscritpion</span></button>

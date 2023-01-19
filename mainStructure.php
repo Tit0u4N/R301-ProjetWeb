@@ -55,9 +55,8 @@
 </main>
 
 <?php 
-echo var_dump($_SESSION['basket'])."\n";
 echo $test1."\n";
-echo $test2."\n";
+echo "<pre>".var_export($_SESSION['basket'],true)."</pre>\n";
 echo $test3."\n";
 ?>
 </body>

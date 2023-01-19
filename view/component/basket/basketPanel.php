@@ -1,5 +1,4 @@
 <?php
-    
 ?>
 <section id="basket" class="default-panel hide">
     <button onclick="closePanel()"><span class="material-symbols-outlined">arrow_forward_ios</span></button>

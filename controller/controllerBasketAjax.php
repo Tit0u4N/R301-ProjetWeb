@@ -36,7 +36,7 @@
                     $pdo->query("INSERT INTO PRODUIT_FACTURATION(idProduit,idFacturation,nombreProduit) VALUES (".$prod[0].",".$basketId.",".$prod[1].")");
                 }
                 else{
-                    $pdo->query("UPDATE PRODUIT_FACTURATION SET nombreProduit=".$prod[1]."  WHERE pf.idFacturation = ".$basketId." AND pf.idProduit = ".$prod[0]);
+                    $pdo->query("UPDATE PRODUIT_FACTURATION pf SET nombreProduit=".$prod[1]."  WHERE pf.idFacturation = ".$basketId." AND pf.idProduit = ".$prod[0]);
                 }
             }
         }
@@ -72,7 +72,7 @@
             if(isset($_SESSION['basket'][$idArticleBDD])){
                 $_SESSION['basket'][$idArticleBDD][1] = $_SESSION['basket'][$idArticleBDD][1] - 1;
                 if($_SESSION['basket'][$idArticleBDD][1] == 0){
-                    $_SESSION['basket'][$idArticleBDD][1] = null;
+                    $_SESSION['basket'][$idArticleBDD][1] = 0;
                 }
             }
             return ["idArticle" => $idArticle, "nbArticle" => $_SESSION['basket'][$idArticleBDD][1]];

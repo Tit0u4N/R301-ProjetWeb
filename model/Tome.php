@@ -116,6 +116,9 @@ class Tome
 
 
     public function echoHTMLCardBasket($qte){
+        if(!isset($qte)){
+            $qte = 1;
+        }
         $manga =  new Manga($this->idManga);
         $title = $manga->getTitle();
         $img = $this->imgPath;

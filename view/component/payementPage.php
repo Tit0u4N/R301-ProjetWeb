@@ -1,37 +1,46 @@
 <?php
+if(!isset($_SESSION['userId'])){
+    header("Location: index.php?Connexion");
+    exit;
+}
+else{
+    ?>
+    <section class="basketContainer">
+        <h2>Panier :</h2>
+    <div id="basket">
+        <div>
+            <div class="caroussel">
+                <?php
 
-?>
-<section class="basketContainer">
-    <h2>Panier :</h2>
-<div id="basket">
-    <div>
-        <div class="caroussel">
-            <?php
+    //                if (isset($_GET["dev"])){
+    //
+    //                    foreach ($tomeArray as $tome){
+    //                        $tome->echoHTMLCardBasket();
+    //
+    //                    }
+    //                }
+                    foreach($basket as $product){
+                        $product[0]->echoHTMLCardBasket($product[1]);
+                    }
 
-//                if (isset($_GET["dev"])){
-//
-//                    foreach ($tomeArray as $tome){
-//                        $tome->echoHTMLCardBasket();
-//
-//                    }
-//                }
-            ?>
-        </div>
-        <article id="totalBasket">
-            <div>
+                ?>
+            </div>
+            <article id="totalBasket">
                 <div>
                     <div>
-                        <p>Total du panier</p>
-                        <span>Article :</span>
+                        <div>
+                            <p>Total du panier</p>
+                            <span>Article :</span>
+                        </div>
+                        <h4></h4>
                     </div>
-                    <h4></h4>
                 </div>
-            </div>
-        </article>
+            </article>
+        </div>
     </div>
-</div>
-<div>
-    Ajouter le moyen de paiement ici
-</div>
-</section>
-
+    <div>
+        Ajouter le moyen de paiement ici
+    </div>
+    </section>
+<?php
+}
