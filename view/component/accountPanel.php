@@ -1,7 +1,13 @@
 <?php
     $emailView = $_SESSION["emailMangaFlow"];
-    $surnameView = "Le Crampon";
-    $nameView = "Bob";
+    $surnameView = "";
+    $nameView = "";
+    if(!$_SESSION['webmaster']){
+        $pdo = new PDO('mysql:host=localhost;dbname=db', 'client', 'phpClientCo22!');
+        $user = $pdo->query("SELECT c.nom,c.prenom FROM CLIENT c WHERE c.idClient = ".$_SESSION['userId'])->fetchAll()[0];
+        $surnameView = $user[0];
+        $nameView = $user[1];
+    }
 ?>
 <section id="account" class="default-panel hide">
     <h2>Compte :</h2>

@@ -44,13 +44,28 @@ function getBasket(bool $connected){
     }
 
 
+    
+
+    /* Unset inused products */
+    $ids = array();
+    foreach($_SESSION['basket'] as $id => $tome){
+        if($tome[1] == 0){
+            array_push($ids,$id);
+        }
+    }
+    foreach($ids as $id ){
+        unset($_SESSION['basket'][$id]);
+    }
+
+
+    /* Make Tomes */
     if(isset($update)){
         require "./../model/Tome.php";
     }
     else{
         require_once "model/Tome.php";
     }
-
+    
     $basket = array();
     foreach($_SESSION['basket'] as $tomeBasket){
         array_push($basket, array(new Tome($tomeBasket[0]),$tomeBasket[1]) );
@@ -99,7 +114,7 @@ else if(isset($_POST["userId"]) && isset($_POST["emailMangaFlow"])){
     $connexionValidation = true;
 }
 
-if($body == "Payement" || $body == "Catalog"){
+if(!$_SESSION["webMaster"] && ($body == "Payement" || $body == "Catalog")){
     $basket = getBasket(true);
 }
 

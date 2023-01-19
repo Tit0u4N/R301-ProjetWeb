@@ -120,6 +120,10 @@ class Tome
             $qte = 1;
         }
         $manga =  new Manga($this->idManga);
+        
+        $edit = new Editeur($this->idEditeur);
+        $editor = $edit->getName();
+        $editorImg = $edit->getImgPath();
         $title = $manga->getTitle();
         $img = $this->imgPath;
         $price = $this->price;
