@@ -1,5 +1,5 @@
 <?php
-    $_GET['dev'] = true;
+    //$_GET['dev'] = true;
 
 //todo session controller pour verifier si user connecté
 

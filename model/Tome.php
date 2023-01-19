@@ -115,7 +115,7 @@ class Tome
     }
 
 
-    public function echoHTMLCardBasket(){
+    public function echoHTMLCardBasket($qte){
         $manga =  new Manga($this->idManga);
         $title = $manga->getTitle();
         $img = $this->imgPath;
@@ -128,5 +128,5 @@ class Tome
         $id = "basket-tome-".$this->id;
         require "view/component/card/productCardBasketTemplate.php";
     }
-}
 
+}

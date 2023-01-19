@@ -1,5 +1,5 @@
 <?php
-
+    
 ?>
 <section id="basket" class="default-panel hide">
     <button onclick="closePanel()"><span class="material-symbols-outlined">arrow_forward_ios</span></button>
@@ -7,7 +7,9 @@
     <div>
         <div class="caroussel">
             <?php
-
+            foreach($basket as $product){
+                $product[0]->echoHTMLCardBasket($product[1]);
+            }
             ?>
 
         </div>
