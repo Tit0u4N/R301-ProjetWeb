@@ -18,6 +18,7 @@
   width: 100%;
 }
 #basket .caroussel > article.productCard img {
+  object-fit: contain;
   margin: 0;
   height: 95%;
   width: 15%;

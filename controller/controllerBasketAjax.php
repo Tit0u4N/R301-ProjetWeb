@@ -1,4 +1,5 @@
 <?php
+//todo devMod
     $_GET['dev'] = true;
 
 //todo session controller pour verifier si user connecté

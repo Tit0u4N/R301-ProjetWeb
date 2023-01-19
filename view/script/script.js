@@ -3,10 +3,13 @@
 
 function openPanel(id){
     closePanel()
+
     card = document.querySelector('#'+id)
     card.classList.toggle("hide", false)
     card.classList.toggle("slideIn",true)
-    Title.autoSizeTitles()
+    card.addEventListener("animationend", () => {
+        Title.autoSizeTitles()
+    })
 }
 
 function closePanel(){
@@ -21,15 +24,6 @@ function hidePanel(card){
         card.classList.toggle("slideOut",false)
         card.classList.toggle("slideIn",false)
     },510)
-
-}
-
-function toggleConnexion() {
-    document.getElementById('switchConnexion').classList.toggle("hide")
-    sectionList = document.querySelectorAll("main > section")
-    sectionList.forEach(section => {
-        section.classList.toggle('hide')
-    })
 
 }
 

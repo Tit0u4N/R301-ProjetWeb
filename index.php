@@ -8,10 +8,10 @@ require "controller/conexionController.php";
 
 if(isset($_GET['Connexion'])){
     $stylePages = [
-        "view/style/styleConnexion.css",
+        "view/style/styleConnexion.css"
     ];
     $scripts = [
-
+        "view/script/connexion.js"
     ];
 
     $titlePage = "MangaFlow | Connexion";
@@ -21,7 +21,7 @@ if(isset($_GET['Connexion'])){
 }
 else if(isset($_GET['Payement'])) {
     $stylePages = [
-        "view/style/styleBasket.css",
+        "view/style/styleBasket.css"
     ];
     $scripts = [
         "view/script/Title.js"
@@ -34,7 +34,7 @@ else if(isset($_GET['Payement'])) {
 }
 else if (isset($_GET['Stock'])) {
     $stylePages = [
-        "view/style/styleStock.css",
+        "view/style/styleStock.css"
     ];
     $scripts = [
         "view/script/Stock.js"

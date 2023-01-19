@@ -23,15 +23,21 @@ function getDataStock() {
 }
 
 function actuChart(response) {
-    const ctx = document.getElementById('ChartStock');
+    Chart.data.label = response["dates"];
+    Chart.data.datasets[0].data = response["productStocks"];
+    Chart.update();
+}
 
-    new Chart(ctx, {
+
+function createChart(data){
+    const ctx = document.getElementById('ChartStock');
+    let chart =  new Chart(ctx, {
         type: 'line',
         data: {
-            labels: response["dates"],
+            labels: data["dates"],
             datasets: [{
                 label: 'Nombre de produit en stock',
-                data: response["productStocks"],
+                data: data["productStocks"],
                 borderWidth: 2,
                 color:'rgb(243,12,61)',
                 tension: 0.1
@@ -59,9 +65,12 @@ function actuChart(response) {
         // }
 
     });
+
+    return chart;
 }
 
-actuChart({
+
+const Chart = createChart({
     "dates": ["aaaaa", "aaaaa", "aaaaa", "aaaaa", "aaaaa", "aaaaa", "aaaaa", "aaaaa", "aaaaa", "aaaaa"],
     "productStocks": [12, 5, 18, 2, 5, 8, 30, 5, 16, 24]
 })

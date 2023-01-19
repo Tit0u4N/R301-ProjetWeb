@@ -1,4 +1,5 @@
 <?php
+//todo devMod
 $_GET['dev'] = true;
 
 //todo controller que ce spoit bien un admin
