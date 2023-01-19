@@ -55,12 +55,8 @@
 </main>
 
 <?php 
-if(isset($stockEvo)){
-    foreach($stockEvo as $evo){
-        echo "<p>".$evo[0]."".$evo[1]."</p>";
-    }
-}
-echo var_dump($stockEvo)."\n";
+echo var_dump($_SESSION['basket'])."\n";
+echo $test1."\n";
 echo $test2."\n";
 echo $test3."\n";
 ?>

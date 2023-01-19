@@ -1,5 +1,5 @@
 <?php
-require "model/Tome.php";
+require_once "model/Tome.php";
 
 function formatSearchQueryAll(string $search, bool $firstWord)
 {

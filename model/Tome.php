@@ -4,7 +4,7 @@ require "model/Editeur.php";
 
 class Tome
 {
-    private int $id;
+    private String $id;
     private int $idManga;
     private int $idEditeur;
     private int $vol;
