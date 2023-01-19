@@ -49,7 +49,7 @@ require "view/component/card/formatTitle.php"
             </p>
         </section>
         <section>
-            <button class="priceContainer">
+            <button class="priceContainer" onclick="basket.addArticle('<?= $id ?>')">
                 <h4><?= $price ?></h4>
                 <div>
                     <img src="" data-src="view/ressources/icons/basket.svg">

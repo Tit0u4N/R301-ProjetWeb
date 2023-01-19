@@ -24,7 +24,8 @@ else if(isset($_GET['Payement'])) {
         "view/style/styleBasket.css"
     ];
     $scripts = [
-        "view/script/Title.js"
+        "view/script/Title.js",
+        "view/script/ImageCharger.js"
     ];
 
     $titlePage = "MangaFlow | Paiement";
@@ -37,7 +38,8 @@ else if (isset($_GET['Stock'])) {
         "view/style/styleStock.css"
     ];
     $scripts = [
-        "view/script/Stock.js"
+        "view/script/Stock.js",
+        "view/script/ImageCharger.js"
     ];
 
     $titlePage = "MangaFlow | Stock";
@@ -55,6 +57,7 @@ else {
         "view/script/basket/Article.js",
         "view/script/basket/Basket.js",
         "view/script/Title.js",
+        "view/script/ImageCharger.js",
         "view/script/script.js?version = 0.2"
     ];
 
