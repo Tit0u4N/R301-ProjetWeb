@@ -5,6 +5,18 @@ $options = ["MHA Tome 1", "Made in Abyss tome 2", "One piece Tome 3"]
 
 <section>
     <h2>Stocks :</h2>
+    <article>
+        <p>
+            Graphique des stocks par tome, sélectionner :
+        </p>
+        <ul>
+            <li>Tome de voulu</li>
+            <li>Date de debut (facultatif)</li>
+            <li>Date de fin (facultatif)</li>
+        </ul>
+    </article>
+
+
     <div id="formStock">
 
         <select name="product" required>
