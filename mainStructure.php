@@ -55,8 +55,12 @@
 </main>
 
 <?php 
-echo password_hash("admin1", PASSWORD_BCRYPT)."\n";
-echo $test1."\n";
+if(isset($stockEvo)){
+    foreach($stockEvo as $evo){
+        echo "<p>".$evo[0]."".$evo[1]."</p>";
+    }
+}
+echo var_dump($stockEvo)."\n";
 echo $test2."\n";
 echo $test3."\n";
 ?>

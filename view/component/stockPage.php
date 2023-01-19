@@ -1,5 +1,13 @@
 <?php
-$options = ["MHA Tome 1", "Made in Abyss tome 2", "One piece Tome 3"]
+$pdo = new PDO('mysql:host=localhost;dbname=db', 'webmaster', 'phpWebMaster22!');
+$products = $pdo->query("SELECT p.titreTome,p.idProduit FROM PRODUIT p")->fetchAll();
+$options = array(array("s","s"));
+
+$options = array();
+foreach ($products as $product){
+    $prod = array($product[0],$product[1]);
+    array_push($options,$prod);
+}
 ?>
 
 
@@ -12,10 +20,10 @@ $options = ["MHA Tome 1", "Made in Abyss tome 2", "One piece Tome 3"]
             $first = true;
             foreach ($options as $option)
                 if ($first) {
-                    echo '<option value="' . $option . '">' . $option . '</option selected>';
+                    echo '<option value="' . $option[1] . '">' . $option[0] . '</option selected>';
                     $first = false;
                 } else {
-                    echo '<option value="' . $option . '">' . $option . '</option>';
+                    echo '<option value="' . $option[1] . '">' . $option[0] . '</option>';
                 }
             ?>
         </select>

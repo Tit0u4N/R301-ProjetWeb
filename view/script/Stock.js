@@ -23,9 +23,12 @@ function getDataStock() {
 }
 
 function actuChart(response) {
-    const ctx = document.getElementById('ChartStock');
+    var ctx = document.getElementById('ChartStock').getContext("2d");
+    if (typeof myChart != 'undefined') {
+        myChart.destroy();
+    }
 
-    new Chart(ctx, {
+    myChart = new Chart(ctx, {
         type: 'line',
         data: {
             labels: response["dates"],
@@ -60,6 +63,8 @@ function actuChart(response) {
 
     });
 }
+
+var myChart;
 
 actuChart({
     "dates": ["aaaaa", "aaaaa", "aaaaa", "aaaaa", "aaaaa", "aaaaa", "aaaaa", "aaaaa", "aaaaa", "aaaaa"],
