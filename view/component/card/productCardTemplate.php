@@ -26,7 +26,7 @@ require "view/component/card/formatTitle.php"
     <hr class="divider">
     <div class="priceContainer">
         <h4><?= $price ?></h4>
-        <button onclick="panier.addArticle('<?= $id ?>')">
+        <button onclick="basket.addArticle('<?= $id ?>')">
             <img src="" data-src="view/ressources/icons/basket.svg">
         </button>
     </div>

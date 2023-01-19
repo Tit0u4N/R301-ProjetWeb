@@ -31,10 +31,10 @@ function actuChart(response) {
     myChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: response["dates"],
+            labels: data["dates"],
             datasets: [{
                 label: 'Nombre de produit en stock',
-                data: response["productStocks"],
+                data: data["productStocks"],
                 borderWidth: 2,
                 color:'rgb(243,12,61)',
                 tension: 0.1
@@ -62,7 +62,10 @@ function actuChart(response) {
         // }
 
     });
+
+    return chart;
 }
+
 
 var myChart;
 

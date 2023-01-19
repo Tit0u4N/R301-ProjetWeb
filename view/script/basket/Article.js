@@ -96,8 +96,8 @@ class Article {
     }
 
     addEventsButtons(){
-        this.#card.querySelector(".productCounter div button:first-of-type").addEventListener("click",() => panier.removeArticle(this.#idCard))
-        this.#card.querySelector(".productCounter div button:last-of-type").addEventListener("click",() => panier.addArticle(this.#idCard))
+        this.#card.querySelector(".productCounter div button:first-of-type").addEventListener("click",() => basket.removeArticle(this.#idCard))
+        this.#card.querySelector(".productCounter div button:last-of-type").addEventListener("click",() => basket.addArticle(this.#idCard))
     }
 
     get idCardBasket() {

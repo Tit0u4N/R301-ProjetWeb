@@ -18,10 +18,10 @@ if(isset($_GET['Connexion'])){
         }
     }
     $stylePages = [
-        "view/style/styleConnexion.css",
+        "view/style/styleConnexion.css"
     ];
     $scripts = [
-
+        "view/script/connexion.js"
     ];
 
     $titlePage = "MangaFlow | Connexion";
@@ -31,10 +31,11 @@ if(isset($_GET['Connexion'])){
 }
 else if(isset($_GET['Payement'])) {
     $stylePages = [
-        "view/style/styleBasket.css",
+        "view/style/styleBasket.css"
     ];
     $scripts = [
-        "view/script/Title.js"
+        "view/script/Title.js",
+        "view/script/ImageCharger.js"
     ];
 
     $titlePage = "MangaFlow | Paiement";
@@ -44,10 +45,11 @@ else if(isset($_GET['Payement'])) {
 }
 else if (isset($_GET['Stock'])) {
     $stylePages = [
-        "view/style/styleStock.css",
+        "view/style/styleStock.css"
     ];
     $scripts = [
-        "view/script/Stock.js"
+        "view/script/Stock.js",
+        "view/script/ImageCharger.js"
     ];
 
     $titlePage = "MangaFlow | Stock";
@@ -65,6 +67,7 @@ else {
         "view/script/basket/Article.js",
         "view/script/basket/Basket.js",
         "view/script/Title.js",
+        "view/script/ImageCharger.js",
         "view/script/script.js?version = 0.2"
     ];
 

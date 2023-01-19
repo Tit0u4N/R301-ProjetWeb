@@ -1,5 +1,8 @@
 <?php
-
+    //todo devMod
+    if (isset($_GET['dev'])){
+        $manga = new Manga(0);
+    }
 ?>
 <div class="mangaContainer">
     <?php

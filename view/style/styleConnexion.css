@@ -7,23 +7,26 @@ nav a {
 }
 
 main {
-  margin-top: 100px;
-  min-height: 0;
+  background-color: transparent;
+  box-shadow: none;
+}
+main > div {
+  margin: 100px auto;
   height: auto;
   width: 360px;
   background: white;
   padding: 0;
 }
-main > div {
+main > div > div {
   height: 50px;
   width: 100%;
 }
-main > div > div {
+main > div > div > div {
   margin: auto;
   position: absolute;
   display: flex;
 }
-main > div > div > h2 {
+main > div > div > div > h2 {
   user-select: none;
   display: block;
   padding: 0;
@@ -33,22 +36,22 @@ main > div > div > h2 {
   width: 180px;
   transition: color 0.4s;
 }
-main > div > div h2:first-of-type {
+main > div > div > div h2:first-of-type {
   color: black;
 }
-main > div > div h2:last-of-type {
+main > div > div > div h2:last-of-type {
   color: var(--background);
 }
-main > div.hide > div h2:first-of-type {
+main > div > div.hide > div h2:first-of-type {
   color: var(--background);
 }
-main > div.hide > div h2:last-of-type {
+main > div > div.hide > div h2:last-of-type {
   color: black;
 }
-main > div.hide rect {
+main > div > div.hide rect {
   margin-left: 0;
 }
-main > div rect {
+main > div > div rect {
   display: block;
   height: 100%;
   width: 50%;
@@ -56,18 +59,18 @@ main > div rect {
   margin-left: 50%;
   transition: margin-left 0.5s;
 }
-main section {
+main > div section {
   padding: 20px 0 20px;
   display: block;
 }
-main section > h3 {
+main > div section > h3 {
   font-size: 22px;
   font-family: "Poppins Light", sans-serif;
   font-weight: lighter;
   text-align: center;
   margin-bottom: 20px;
 }
-main section.hide {
+main > div section.hide {
   display: none;
 }
 

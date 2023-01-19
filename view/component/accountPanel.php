@@ -25,5 +25,6 @@
             <input name="nameSubcribe" type="text" placeholder="Lelouche" value="<?= $nameView ?>" readonly>
         </div>
     </form>
+    <a href="index.php?Connexion=Disconnect"></a>
 </section>
 

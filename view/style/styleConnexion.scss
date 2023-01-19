@@ -8,84 +8,88 @@ nav {
 }
 
 main {
-  margin-top: 100px;
-  min-height: 0;
-  height: auto;
-  width: 360px;
-  background: white;
-  padding: 0;
+  background-color: transparent;
+  box-shadow: none;
 
   > div {
-    height: 50px;
-    width: 100%;
+    margin: 100px auto;
+    height: auto;
+    width: 360px;
+    background: white;
+    padding: 0;
 
     > div {
-      margin: auto;
-      position: absolute;
-      display: flex;
+      height: 50px;
+      width: 100%;
 
-      > h2 {
-        user-select: none;
-        display: block;
-        padding: 0;
-        margin: 0;
-        text-align: center;
-        font-size: 40px;
-        width: 180px;
-        transition: color .4s;
-      }
-
-      h2:first-of-type {
-        color: black;
-      }
-
-      h2:last-of-type {
-        color: var(--background);
-      }
-    }
-
-    &.hide {
       > div {
+        margin: auto;
+        position: absolute;
+        display: flex;
+
+        > h2 {
+          user-select: none;
+          display: block;
+          padding: 0;
+          margin: 0;
+          text-align: center;
+          font-size: 40px;
+          width: 180px;
+          transition: color .4s;
+        }
+
         h2:first-of-type {
+          color: black;
+        }
+
+        h2:last-of-type {
           color: var(--background);
         }
-        h2:last-of-type {
-          color: black;
+      }
+
+      &.hide {
+        > div {
+          h2:first-of-type {
+            color: var(--background);
+          }
+
+          h2:last-of-type {
+            color: black;
+          }
+        }
+
+        rect {
+          margin-left: 0;
         }
       }
 
       rect {
-        margin-left: 0;
+        display: block;
+        height: 100%;
+        width: 50%;
+        background: var(--highlight);
+        margin-left: 50%;
+        transition: margin-left 0.5s;
       }
     }
 
-    rect {
+    section {
+      padding: 20px 0 20px;
       display: block;
-      height: 100%;
-      width: 50%;
-      background: var(--highlight);
-      margin-left: 50%;
-      transition: margin-left 0.5s ;
-    }
-  }
-
-  section {
-    padding: 20px 0 20px;
-    display: block;
 
 
-    > h3 {
-      font-size: 22px;
-      font-family: "Poppins Light", sans-serif;
-      font-weight: lighter;
-      text-align: center;
-      margin-bottom: 20px;
-    }
+      > h3 {
+        font-size: 22px;
+        font-family: "Poppins Light", sans-serif;
+        font-weight: lighter;
+        text-align: center;
+        margin-bottom: 20px;
+      }
 
 
-
-    &.hide {
-      display: none;
+      &.hide {
+        display: none;
+      }
     }
   }
 }
