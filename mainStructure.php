@@ -7,6 +7,11 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="view/ressources/icons/favico/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="view/ressources/icons/favico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="view/ressources/icons/favico/favicon-16x16.png">
+
     <link rel="stylesheet" type="text/css" href="view/style/style.css">
     <?php
     foreach ($stylePages as $page) {
@@ -23,13 +28,6 @@
         echo '<script type="text/javascript" src="' . $script . '" defer></script>';
     }
     ?>
-    <!--    <script type="text/javascript" src="view/script/basket/Article.js" defer></script>-->
-    <!--    <script type="text/javascript" src="view/script/basket/Basket.js" defer></script>-->
-    <!---->
-    <!--    <script type="text/javascript" src="view/script/Title.js" defer></script>-->
-    <!--    <script type="text/javascript" src="view/script/script.js?version = 0.2" defer></script>-->
-    <!--    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>-->
-    <!--    <script type="text/javascript" src="view/script/Stock.js"></script>-->
 
 </head>
 <body>
