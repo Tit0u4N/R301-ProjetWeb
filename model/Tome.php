@@ -144,6 +144,19 @@ class Tome
         return $this->price;
     }
 
+    public function getImgPath(): String
+    {
+        return $this->imgPath;
+    }
 
+    public function getName(): String
+    {
+        $manga =  new Manga($this->idManga);
+        if ($this->vol == -1)
+            $vol = "Hors Serie";
+        else
+            $vol = "Vol. ".$this->vol;
+        return $manga->getTitle()." ".$vol;
+    }
 
 }

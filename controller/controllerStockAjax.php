@@ -3,10 +3,29 @@
 
 //$_SESSION['idUser'];
 
-//Date sous la forme jj-mm-aaaa
-//echo $_POST['idProduitStock'] . "   "  . $_POST['startDateStock'] .  "   " . $_POST['endDateStock'];
-if(isset($_POST['idProduitStock']) && isset($_POST['startDateStock']) && isset($_POST['endDateStock'])){
+function compareDate(String $date1,String $date2){
+    $b = false;
+    $date1 = explode("-",$date1);
+    $date2 = explode("-",$date2);
+    if(intval($date1[0]) < intval($date2[0])){
+        $b = true;
+    }
+    else if(intval($date1[0]) == intval($date2[0])){ 
+        if(intval($date1[1]) < intval($date2[1])){
+            $b = true;
+        }
+        else if(intval($date1[1]) == intval($date2[1])){
+            if(intval($date1[2]) < intval($date2[2])){
+                $b = true;
+            }
+        }
+    }
+    return $b;
+}
 
+//Date sous la forme jj-mm-aaaa
+// $_POST['idProduitStock'] . "   "  . $_POST['startDateStock'] .  "   " . $_POST['endDateStock'];
+if(isset($_POST['idProduitStock'])){
     if(isset($_GET['dev'])){
         $dates = array();
         for ($i=0; $i<20; $i++) {
@@ -43,7 +62,7 @@ if(isset($_POST['idProduitStock']) && isset($_POST['startDateStock']) && isset($
         }
         $sells = $pdo->query("SELECT pf.nombreProduit,f.date FROM PRODUIT_FACTURATION pf, FACTURATION f WHERE f.idFacturation = pf.idFacturation AND pf.idProduit = ".$_POST['idProduitStock'])->fetchAll();
         foreach($sells as $sell){
-            $evo = array($sell[1],$sell[0]*-1);
+            $evo = array($sell[1],($sell[0]*-1));
             $stockEvo[$evo[0]] = $evo;
         }
         ksort($stockEvo,SORT_STRING);
@@ -52,8 +71,30 @@ if(isset($_POST['idProduitStock']) && isset($_POST['startDateStock']) && isset($
         $productStocks = array();
         $stock = 0;
         foreach($stockEvo as $evo){
-            $stock = $stock + $evo[1];
-            array_push($dates, $evo[0]);
+            if(!empty($_POST['startDateStock']) && !empty($_POST['endDateStock'])){  
+                if(compareDate($evo[0],$_POST['startDateStock'])){
+                    $stock = $stock + $evo[1];
+                }
+                else if(compareDate($evo[0],$_POST['endDateStock'])){
+                    $stock = $stock + $evo[1];
+                    array_push($dates, $evo[0]);
+                    array_push( $productStocks, $stock);
+                }
+            }
+            else{
+                $stock = $stock + $evo[1];
+                array_push($dates, $evo[0]);
+                array_push( $productStocks, $stock);
+            }
+        }
+        if(empty($dates)){
+            array_push($dates, $_POST['startDateStock']);
+            array_push( $productStocks, $stock);
+            array_push($dates, $_POST['endDateStock']);
+            array_push( $productStocks, $stock);
+        }
+        else if(count($dates) == 1){
+            array_push($dates, $_POST['endDateStock']);
             array_push( $productStocks, $stock);
         }
 

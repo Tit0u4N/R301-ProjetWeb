@@ -3,7 +3,7 @@
 
 
 
-
+$payment = false;
 
 if(isset($_GET['Connexion'])){
     
@@ -30,6 +30,9 @@ if(isset($_GET['Connexion'])){
 }
 else if(isset($_GET['Payement'])) {
     if ($_GET['Payement'] == "Stripe"){
+        $payment = true;
+        $body = "Payement";
+        require "controller/sessionController.php";
         require "controller/create-checkout-session.php";
         exit;
     }
@@ -79,7 +82,10 @@ else {
     $titlePage = "MangaFlow";
     $body = "Catalog";
 }
-require "controller/sessionController.php";
+
+if(!$payment){
+    require "controller/sessionController.php";
+    require "mainStructure.php";
+}
 
 
-require "mainStructure.php";

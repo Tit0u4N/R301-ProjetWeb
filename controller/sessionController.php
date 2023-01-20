@@ -77,7 +77,7 @@ session_start();
 $destroyed = false;
 
 /* Destroy session after 5 min of inactivity */
-if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 100)) {
+if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 300)) {
     $destroyed = true;
     session_unset();    
     session_destroy();   
@@ -114,6 +114,9 @@ else if(isset($_POST["userId"]) && isset($_POST["emailMangaFlow"])){
 
 if(!$_SESSION["webMaster"] && ($body == "Payement" || $body == "Catalog")){
     $basket = getBasket(true);
+}
+else{
+    $basket;
 }
 
 
