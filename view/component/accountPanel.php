@@ -28,7 +28,7 @@ if($connexionValidation){
                 <input name="nameSubcribe" type="text" placeholder="Lelouche" value="<?= $nameView ?>" readonly>
             </div>
         </form>
-        <a href="index.php?Connexion=Disconnect">buuton</a>
+        <a href="index.php?Connexion=Disconnect">Déconnexion</a>
     </section>
 
     <?php

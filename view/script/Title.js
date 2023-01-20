@@ -18,8 +18,11 @@ class Title {
     }
 
     static createTitles(){
-        document.querySelectorAll('.productCard .productTitle').forEach((titleBox) => {
+        document.querySelectorAll('.catalog .productCard .productTitle, .descCardContainer .productCard .productTitle').forEach((titleBox) => {
             Title.listTitles.push(new Title(titleBox))
+        })
+        document.querySelectorAll('#basket .productCard .productTitle').forEach((titleBox) => {
+            Title.listTitles.push(new Title(titleBox, true))
         })
         Title.autoSizeTitles()
     }

@@ -1,7 +1,5 @@
 <?php
-//$_GET['dev'] = true;
 
-//$_SESSION['idUser'];
 
 function compareDate(String $date1,String $date2){
     $b = false;
@@ -24,7 +22,6 @@ function compareDate(String $date1,String $date2){
 }
 
 //Date sous la forme jj-mm-aaaa
-// $_POST['idProduitStock'] . "   "  . $_POST['startDateStock'] .  "   " . $_POST['endDateStock'];
 if(isset($_POST['idProduitStock'])){
     if(isset($_GET['dev'])){
         $dates = array();
@@ -100,10 +97,32 @@ if(isset($_POST['idProduitStock'])){
 
     }
 
-    //todo faire la requete SQL qui prend les donnée entre les deux dates si date < a l'apparition prendre la premiere possible
 
+    
+    $ventes = 0;
+    $ventesArgent = 0;
+    $achats = 0;
+    $achatsArgent = 0;
+    if(!empty($_POST['startDateStock']) && !empty($_POST['endDateStock'])){
+        $reappros = $pdo->query("SELECT p.idProduit,p.prixAchat,sum(r.qte) FROM PRODUIT p, REAPPRO_STOCK r  WHERE p.idProduit = r.idProduit AND r.date BETWEEN '".$_POST['startDateStock']."' AND '".$_POST['endDateStock']."' GROUP BY p.idProduit")->fetchAll();
+        $sells = $pdo->query("SELECT p.idProduit,p.prixAchat,sum(pf.nombreProduit) FROM PRODUIT p, PRODUIT_FACTURATION pf, FACTURATION f WHERE p.idProduit = pf.idProduit AND f.idFacturation = pf.idFacturation AND f.fini = TRUE AND f.date BETWEEN '".$_POST['startDateStock']."' AND '".$_POST['endDateStock']."' GROUP BY p.idProduit")->fetchAll();  
+    }
+    else{
+        $reappros = $pdo->query("SELECT p.idProduit,p.prixAchat,sum(r.qte) FROM PRODUIT p, REAPPRO_STOCK r  WHERE p.idProduit = r.idProduit GROUP BY p.idProduit")->fetchAll();
+        $sells = $pdo->query("SELECT p.idProduit,p.prixAchat,sum(pf.nombreProduit) FROM PRODUIT p, PRODUIT_FACTURATION pf, FACTURATION f WHERE p.idProduit = pf.idProduit AND f.idFacturation = pf.idFacturation AND f.fini = TRUE GROUP BY p.idProduit")->fetchAll();  
+    }
+    foreach($reappros as $reappro){
+        $achats = $achats + $reappro[2];
+        $achatsArgent = $achatsArgent + ($reappro[2]*$reappro[1]);
+    }
+    foreach($sells as $sell){
+        $ventes = $ventes +$sell[2];
+        $ventesArgent = $ventesArgent + $sell[2]*$sell[1];
+    }
+    $bilan = $ventesArgent-$achatsArgent;
 
-    $fullArray = ["dates" => $dates, "productStocks" => $productStocks];
+    $seuil = $pdo->query("SELECT gs.seuilLimite FROM GESTION_STOCK gs WHERE gs.idProduit = ".$_POST['idProduitStock'])->fetchAll()[0][0];
+    $fullArray = ["dates" => $dates, "productStocks" => $productStocks, "seuil" => array_fill(0, count($productStocks), $seuil), "bilan" => $bilan];
     echo json_encode($fullArray);
 }
 

@@ -95,7 +95,12 @@ if (!isset($_SESSION['CREATED'])) {
 
 $connected = false;
 $connexionValidation = false;
-if(isset($_SESSION["userId"])){
+if($_GET['Connexion'] == "Disconnect"){
+    $destroyed = true;
+    session_unset();    
+    session_destroy(); 
+}
+else if(isset($_SESSION["userId"])){
     $email = $_SESSION["emailMangaFlow"];
     $connexionValidation = true;
 }

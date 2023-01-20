@@ -18,11 +18,14 @@ class Basket {
 
     initBasket(){
         let basketBox = document.querySelectorAll("#basket .caroussel > article.productCard");
+        //console.log(basketBox);
         basketBox.forEach( art => {
             let id = art.id
+            console.log(id);
             id = id.replace("basket-", "")
+            console.log(id);
             let nbProduit = parseInt(art.querySelector(".productCounter div > h4 ").textContent)
-            let article = new Article(id, nbProduit, art)
+            let article = new Article(id, nbProduit, art, true)
             this.#listArticle.push(article)
         })
     }

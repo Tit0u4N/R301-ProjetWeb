@@ -9,13 +9,19 @@ class Article {
     #price;
     #card
 
-    constructor(idArticle, nbProduit = 1, card = null) {
-        let box = document.getElementById(idArticle)
-        this.#idCard = box.id;
-        this.#idCardDesc = "desc-"+box.id;
-        this.#idCardBasket = "basket-"+box.id;
+    constructor(idArticle, nbProduit = 1, card = null, basketOrigne = false) {
+        let box = null;
+        if (basketOrigne) {
+            this.#price = parseFloat(card.querySelector(".priceContainer > h4").textContent).toFixed(2);
+        } else {
+            box = document.getElementById(idArticle)
+            this.#price = parseFloat(box.querySelector(".priceContainer > h4").textContent).toFixed(2);
+        }
+        this.#idCard = idArticle;
+        this.#idCardDesc = "desc-"+idArticle;
+        this.#idCardBasket = "basket-"+idArticle;
         this.#nbProduit = nbProduit;
-        this.#price = parseFloat(box.querySelector(".priceContainer > h4").textContent).toFixed(2);
+        
         if(card !== null)
             this.#card = card;
         else

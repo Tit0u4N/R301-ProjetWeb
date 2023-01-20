@@ -15,6 +15,7 @@ function getDataStock() {
     xhr.send("idProduitStock=" + data[0] + "&startDateStock=" + data[1] + "&endDateStock=" + data[2]);
     xhr.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
+            console.log(this.response);
             actuChart(JSON.parse(this.response))
         }
     };
@@ -37,8 +38,18 @@ function actuChart(data) {
                 data: data["productStocks"],
                 borderWidth: 2,
                 color:'rgb(243,12,61)',
-                tension: 0.1
-            }]
+                tension: 0.1,
+                yAxisID: 'y',
+            },
+            {
+                label: 'Seuil',
+                data: data["seuil"],
+                borderWidth: 2,
+                color:'rgb(243,12,61)',
+                tension: 0.1,
+                yAxisID: 'y',
+            }
+        ]
         },
         options: {
             scales: {
@@ -63,7 +74,6 @@ function actuChart(data) {
 
     });
 
-    return chart;
 }
 
 
