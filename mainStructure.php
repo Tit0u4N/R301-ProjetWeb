@@ -52,6 +52,7 @@
     <?php
     require "view/component/footer.php";
     ?>
+
 </body>
 
 </html>
