@@ -163,10 +163,11 @@
       }
     }
 
-      a {
+    #checkout-button {
         background: var(--highlight);
         text-decoration: none;
         text-align: center;
+        height: 50px;
 
         span {
           font-size: 50px;

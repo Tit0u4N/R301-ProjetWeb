@@ -3,6 +3,7 @@ function getBasket(bool $connected){
     if (!isset($_SESSION['basket'])) {
         $_SESSION['basket'] = array();
     }
+
     if(isset($_SESSION["userId"])){
         $pdo = new PDO('mysql:host=localhost;dbname=db', 'client', 'phpClientCo22!');
 
@@ -59,16 +60,11 @@ function getBasket(bool $connected){
 
 
     /* Make Tomes */
-    if(isset($update)){
-        require "./../model/Tome.php";
-    }
-    else{
-        require_once "model/Tome.php";
-    }
+    require_once "model/Tome.php";
 
     $basket = array();
     foreach($_SESSION['basket'] as $tomeBasket){
-        array_push($basket, array(new Tome($tomeBasket[0]),$tomeBasket[1]) );
+        array_push($basket, array(new Tome($tomeBasket[0]),$tomeBasket[1]));
     }
     return $basket;
 }
@@ -77,7 +73,7 @@ session_start();
 $destroyed = false;
 
 /* Destroy session after 5 min of inactivity */
-if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 300)) {
+if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 300) && !isset($_SESSION['payementId'])) {
     $destroyed = true;
     session_unset();    
     session_destroy();   
@@ -104,24 +100,13 @@ else if(isset($_SESSION["userId"])){
     $email = $_SESSION["emailMangaFlow"];
     $connexionValidation = true;
 }
-else if(isset($_POST["userId"]) && isset($_POST["emailMangaFlow"])){
-    $test2  ="connection";
-    $connected = true;
-    $_SESSION['CREATED'] = time();
-    $_SESSION["userId"] = $_POST["userId"];
-    $_SESSION["emailMangaFlow"] = $_POST["emailMangaFlow"];
-    $_SESSION["webMaster"] = $_POST["webMaster"];
 
-    $_POST["webMaster"] = null;
-    $_POST["userId"] = null;
-    $connexionValidation = true;
+if(!isset($update)){
+    $update=false;
 }
 
-if(!$_SESSION["webMaster"] && ($body == "Payement" || $body == "Catalog")){
+if(!$_SESSION["webMaster"] && !$update){
     $basket = getBasket(true);
-}
-else{
-    $basket;
 }
 
 

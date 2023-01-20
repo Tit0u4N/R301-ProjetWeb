@@ -1,10 +1,10 @@
 <?php
-//$_GET['dev'] = True;
 
 
 
 $payment = false;
 
+require "controller/sessionController.php";
 if(isset($_GET['Connexion'])){
     
     $connexionValidation = false;
@@ -29,12 +29,14 @@ if(isset($_GET['Connexion'])){
     $body = "Connexion";
 }
 else if(isset($_GET['Payement'])) {
+    $body = "Payement";
     if ($_GET['Payement'] == "Stripe"){
         $payment = true;
-        $body = "Payement";
-        require "controller/sessionController.php";
-        require "controller/create-checkout-session.php";
+        require "controller/createCheckoutSession.php";
         exit;
+    }
+    else if ($_GET['Payement'] == "Success"){
+        require "controller/payemantSuccessController.php";
     }
 
 
@@ -49,7 +51,6 @@ else if(isset($_GET['Payement'])) {
     $titlePage = "MangaFlow | Paiement";
 
     $fullNavBar = false;
-    $body = "Payement";
 }
 else if (isset($_GET['Stock'])) {
     $stylePages = [
@@ -84,7 +85,6 @@ else {
 }
 
 if(!$payment){
-    require "controller/sessionController.php";
     require "mainStructure.php";
 }
 

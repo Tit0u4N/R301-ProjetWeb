@@ -1,5 +1,3 @@
-// module.exports = Article;
-
 class Article {
 
     #nbProduit;

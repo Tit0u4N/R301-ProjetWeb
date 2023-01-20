@@ -1,5 +1,3 @@
-// module.exports = Title;
-
 class Title {
     static minSize = 16;
 

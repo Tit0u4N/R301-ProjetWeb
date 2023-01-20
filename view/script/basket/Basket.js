@@ -1,7 +1,3 @@
-// module.exports = basket;
-
-// const Article = module.require('view/script/basket/article')
-
 class Basket {
     #listArticle;
     #totalBasket;
@@ -18,12 +14,9 @@ class Basket {
 
     initBasket(){
         let basketBox = document.querySelectorAll("#basket .caroussel > article.productCard");
-        //console.log(basketBox);
         basketBox.forEach( art => {
             let id = art.id
-            console.log(id);
             id = id.replace("basket-", "")
-            console.log(id);
             let nbProduit = parseInt(art.querySelector(".productCounter div > h4 ").textContent)
             let article = new Article(id, nbProduit, art, true)
             this.#listArticle.push(article)
@@ -39,7 +32,6 @@ class Basket {
     }
 
     #actuBasketData(response){
-        console.log(response)
         if (response["idArticle"] === -1 || response["nbArticle"] === -1)
             return
         let iArticle = this.#listArticle.findIndex(article => article.equals(response["idArticle"]));
@@ -77,17 +69,16 @@ class Basket {
         var xhr = new XMLHttpRequest();
         xhr.open("POST", "controller/controllerBasketAjax.php", true);
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        console.log("basketActuIdProduit="+idPorduit+"&basketActuType="+type);
         xhr.send("basketActuIdProduit="+idPorduit+"&basketActuType="+type);
         let tempThis = this
         xhr.onreadystatechange = function() {
             if (this.readyState === 4 && this.status === 200) {
+                console.log(JSON.parse(this.response))
                 tempThis.#actuBasketData(JSON.parse(this.response))
             }
         };
 
     }
-
-
-
 
 }

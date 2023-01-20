@@ -59,30 +59,19 @@ function actuChart(data) {
                 }
             }
         },
-        // plugins: {
-        //     annotation: {
-        //         annotations: {
-        //             line1: {
-        //                 type: 'line',
-        //                 yMin: 20,
-        //                 yMax: 20,
-        //                 borderColor: 'rgb(243,12,61)',
-        //                 borderWidth: 2,
-        //             }
-        //         }
-        //     }
-        // }
-
     });
 
 }
 
 function actuTableData(data){
-    let dataKeys = ["tomesSold","totalTomesSold","tomesBuy","totalTomesBuy","bilan"]
+    let dataKeys = ["tomesBuy","totalTomesBuy","tomesSold","totalTomesSold","bilan"]
     let tableNodes = document.querySelectorAll('#infoTomeStock tbody th');
     for(let i = 0 ; i < dataKeys.length ; i++){
-        tableNodes[i].textContent = parseFloat(data[dataKeys[i]]).toFixed(2)
-        console.log(data[dataKeys[i]]);
+        if (dataKeys[i] == "tomesBuy" || dataKeys[i] == "tomesSold"){
+            tableNodes[i].textContent = data[dataKeys[i]]
+        } else {
+            tableNodes[i].textContent = parseFloat(data[dataKeys[i]]).toFixed(2)
+        }
     }
 }
 

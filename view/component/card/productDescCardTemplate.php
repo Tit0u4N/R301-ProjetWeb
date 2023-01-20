@@ -1,22 +1,4 @@
 <?php
-
-//
-//        $title = "Berserk";
-//        $img = "https://www.nautiljon.com/images/manga/00/50/berserk_205.webp?1659201541";
-//        $price = "8.50€";
-//        $vol = "Vol. 1";
-//        $author = "Syouko Kinugasa";
-//        $editor = "Kana";
-//        $publicationDate = "12/02/2019";
-//        $type = "Seinen";
-//        $genre = "Shool Life";
-//        $desc = "Yōkoso jitsuryoku shijō shugi no kyōshitsu e, abrégée Youzitsu, est une série de light novel
-//                japonais écrite par Shōgo Kinugasa et illustrée par Shunsaku Tomose. Media Factory a publié dix-huit
-//                volumes depuis 2015 dans leur collection MF Bunko J. La série est aussi appelée Classroom of the
-//                Elite à l'étranger.";
-//
-
-
     $alt = "Cover de ".$title." ".$vol;
 
 require "view/component/card/formatTitle.php"

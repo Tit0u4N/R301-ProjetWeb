@@ -21,7 +21,9 @@
                     </div>
                     <h4></h4>
                 </div>
-                <a href="?Payement"><span>Payer</span></a>
+                <form action="index.php?Payement=Stripe" method="POST">
+            <button type="submit" id="checkout-button"><span>Payer</span></button>
+        </form>
             </div>
         </article>
     </div>

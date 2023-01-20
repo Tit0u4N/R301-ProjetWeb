@@ -9,7 +9,5 @@
             require "view/component/navBar/searchBar.php";
             require "view/component/navBar/account.php";
         }
-
-        ?>
-
+    ?>
 </nav>

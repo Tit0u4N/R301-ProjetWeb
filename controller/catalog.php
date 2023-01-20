@@ -167,16 +167,21 @@ else if (isset($_GET['categories']) && isset($_GET['search'])) {
     $pdo = new PDO('mysql:host=localhost;dbname=db', 'public', 'phpClient22!');
     $mangas = array();
     if ($_GET['categories'] == 'categorie') {
-        $types = searchTypeInfo($_GET['search'], $pdo);
-        $genres = searchGenreInfo($_GET['search'], $pdo);
-        $editors = searchEditorInfo($_GET['search'], $pdo);
-        $mangasAutor = searchAutor($_GET['search'], $pdo);
-        $mangasDrawer = searchDrawer($_GET['search'], $pdo);
-        $mangas = searchManga($_GET['search'], $pdo);
-        
-        $mangaArray = array();
-        foreach ($mangas as $manga) {
-            array_push($mangaArray, new Manga($manga[0]));
+        if($_GET['search'] == ""){
+            $types = searchTypeInfo($_GET['search'], $pdo);
+        }
+        else{
+            $types = searchTypeInfo($_GET['search'], $pdo);
+            $genres = searchGenreInfo($_GET['search'], $pdo);
+            $editors = searchEditorInfo($_GET['search'], $pdo);
+            $mangasAutor = searchAutor($_GET['search'], $pdo);
+            $mangasDrawer = searchDrawer($_GET['search'], $pdo);
+            $mangas = searchManga($_GET['search'], $pdo);
+            
+            $mangaArray = array();
+            foreach ($mangas as $manga) {
+                array_push($mangaArray, new Manga($manga[0]));
+            }
         }
 
     }else if ($_GET['categories'] == 'type') {

@@ -7,13 +7,6 @@ class Editeur{
 
     public function __construct(String $id)
     {
-        //todo devMod
-        if(isset($_GET["dev"])){
-            $this->name = "kana";
-
-            return;
-        }
-
         $this->id = $id;
 
         $pdo = new PDO('mysql:host=165.227.152.225;dbname=db','p2','FicsiT22!');

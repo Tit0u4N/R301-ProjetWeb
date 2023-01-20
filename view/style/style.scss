@@ -3,6 +3,11 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+  outline: none;
+
+  &:focus-visible, &:focus-within, &:focus, &:-moz-focusring{
+    outline: none;
+  }
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400&display=swap');
@@ -36,6 +41,55 @@ h1, h2, h3, h4 {
   background: var(--paragraphe);
   user-select: none;
   border: none;
+}
+
+.popUp {
+  text-align: center;  
+  position: fixed;
+  margin: auto;
+  inset: 0;
+  z-index: 10;
+  padding: 20px;
+  
+
+  width: 450px;
+  height: 230px;
+
+  background-color: white;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+
+  > h2 {
+      font-size: 45px;
+    }
+
+    > p {
+      margin-top: 10px ;
+      font-size: 20px;
+    }
+
+    button {
+      margin-top: 10px ;
+      background-color: var(--highlight);
+      height: 50px;
+      aspect-ratio: 3/1;
+      color: white;
+
+      
+      div {
+        transform: translateY(-7px);
+      
+        span {
+          font-family: LIQUIDO, sans-serif;
+          font-size: 50px;
+          
+        }
+      }
+
+    }
+
+    &.hide{
+      display: none;
+    }
 }
 
 button {
@@ -180,6 +234,17 @@ main {
     margin-bottom: 20px;
     font-size: 50px;
   }
+}
+
+#account > a {
+  display: block;
+  margin:auto;
+  text-decoration: none;
+  text-align: center;
+  height: 25px;
+  width: 125px;
+  color: white;
+  background-color: var(--highlight);
 }
 
 footer {

@@ -1,6 +1,3 @@
-<?php
-
-?>
 <div class="mangaContainer">
     <section class="catalog classicMod">
         <?php

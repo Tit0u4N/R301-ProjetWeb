@@ -27,6 +27,11 @@ function hidePanel(card){
 
 }
 
+function closePopUp(){
+    let popoUp = document.querySelectorAll('.popUp')
+    popoUp.forEach(pop => pop.classList.add('hide'))
+}
+
 document.addEventListener("keydown", (event) => {
     if(event.key === 'Escape')
         closePanel()

@@ -131,12 +131,13 @@
   margin-top: -13px;
   font-size: 50px;
 }
-#totalBasket > div a {
+#totalBasket > div #checkout-button {
   background: var(--highlight);
   text-decoration: none;
   text-align: center;
+  height: 50px;
 }
-#totalBasket > div a span {
+#totalBasket > div #checkout-button span {
   font-size: 50px;
   font-family: LIQUIDO, sans-serif;
   color: white;

@@ -1,8 +1,4 @@
 <?php
-    //$_GET['dev'] = true;
-
-//todo session controller pour verifier si user connecté
-
 //Type : addArticle = 0
 //     : removeArticle = 1
 // return ["idArticle" => -1, "nbArticle" => -1] si erreur

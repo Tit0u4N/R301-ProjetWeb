@@ -23,23 +23,7 @@ function compareDate(String $date1,String $date2){
 
 //Date sous la forme jj-mm-aaaa
 if(isset($_POST['idProduitStock'])){
-    if(isset($_GET['dev'])){
-        $dates = array();
-        for ($i=0; $i<20; $i++) {
-            $day = rand(1, 28);
-            $month = rand(1, 12);
-            $year = rand(2000, 2022);
-            $date = str_pad($day, 2, "0", STR_PAD_LEFT) . "-" . str_pad($month, 2, "0", STR_PAD_LEFT) . "-" . $year;
-            array_push($dates, $date);
-        }
-
-        $productStocks = [];
-        for ($i=0; $i<20; $i++) {
-            array_push($productStocks, rand(10,200));
-        }
-
-    }
-    else{
+   
         $dates = array();
         for ($i=0; $i<20; $i++) {
             $day = rand(1, 28);
@@ -94,8 +78,6 @@ if(isset($_POST['idProduitStock'])){
             array_push($dates, $_POST['endDateStock']);
             array_push( $productStocks, $stock);
         }
-
-    }
 
 
     

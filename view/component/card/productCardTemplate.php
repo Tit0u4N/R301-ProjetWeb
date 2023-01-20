@@ -1,13 +1,5 @@
 <?php
 
-// Définition des variables
-//    $title = "Code Geass - Lelouch of the Rebellion";
-//    $img = "https://www.nautiljon.com/images/manga/00/50/berserk_205.webp?1659201541";
-//    $vol = "Vol. 1";
-//    $price = "6.50€";
-//    $id = 1;
-
-
 $alt = "Cover de " . $title . " " . $vol;
 
 require "view/component/card/formatTitle.php"

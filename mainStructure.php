@@ -1,5 +1,3 @@
-<?php
-?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -32,7 +30,15 @@
 </head>
 <body>
 
-    <?php require "view/component/navBar/navbar.php" ?>
+    <?php require "view/component/navBar/navbar.php"; 
+
+    if(isset($_GET['Success'])){
+        require 'view/component/payement/success.html';
+    } else if (isset($_GET['Cancel'])) {
+        require 'view/component/payement/cancel.html';
+    }
+
+    ?>
     <main>
         <?php
         if ($body == "Connexion") {
@@ -40,12 +46,9 @@
         } else if ($body == "Catalog") {
             require "controller/catalog.php";
             require_once "view/component/accountPanel.php";
-        } else if ($body == "Payement") {
-            require "view/component/payementPage.php";
-        } else if ($body == "Stock") {
+        }  else if ($body == "Stock") {
             require "view/component/stockPage.php";
         }
-        //        require "view/component/catalog/catalogMangaTome.php";
         ?>
 
     </main>

@@ -2,15 +2,19 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-//require_once "model/Tome.php";
 
 require 'controller/vendor/autoload.php';
+
+function generateRandomString($length) {
+    return substr(str_shuffle(str_repeat($x='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length);
+}
+
 
 // This is your test secret API key.
 \Stripe\Stripe::setApiKey('sk_test_51MS3v0HQaSk8iKL26ZWmgJNeCFwOB8Hj465uVUN6YJLfAU7EzYSsX1XgKa0aTBxg0vv6qYLfAlS3jkulNmR5IxaV00ML9D7n8i');
 
 
-$YOUR_DOMAIN = 'http://mangaflow.ninja/view/component/payement';
+$YOUR_DOMAIN = 'http://mangaflow.ninja/';
 
 $productsForStripe = [];
 
@@ -21,9 +25,6 @@ foreach($basket as $product){
         'currency' => 'eur',
         'product_data' => [
             'name' => $product[0]->getName(),
-            'images' => [
-                "http://mangaflow.ninja/" . $product[0]->getImgPath()
-            ],
         ],
         'unit_amount' => $product[0]->getPrice() * 100
     ];
@@ -37,15 +38,14 @@ foreach($basket as $product){
 }
 
 
+$_SESSION['payementId'] = hash('sha256',generateRandomString(8));
 
 $checkout_session = \Stripe\Checkout\Session::create([
     'line_items' => $productsForStripe,
     'mode' => 'payment',
-    'success_url' => $YOUR_DOMAIN . '/success.html',
-    'cancel_url' => $YOUR_DOMAIN . '/cancel.html',
+    'success_url' => $YOUR_DOMAIN . 'index.php?Payement=Success&id='.$_SESSION['payementId'],
+    'cancel_url' => $YOUR_DOMAIN . '?Cancel',
 ]);
-
-echo "lala5";
 
 header("HTTP/1.1 303 See Other");
 header("Location: " . $checkout_session->url);
