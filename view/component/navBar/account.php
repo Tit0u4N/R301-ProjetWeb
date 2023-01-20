@@ -2,10 +2,9 @@
       $basketLink = 'onclick="openPanel(\'basket\')"';
       $accountLink = 'href="?Connexion"';
       if($connexionValidation){
-            $accountLink = 'onclick="openPanel(\'account\')"';
-            
+            $accountLink = 'onclick="openPanel(\'account\')"'; 
       }
-      if( $_SESSION["webMaster"]){
+      if($_SESSION["webMaster"]){
             $basketLink = 'href="?Stock"';
       }
 ?>

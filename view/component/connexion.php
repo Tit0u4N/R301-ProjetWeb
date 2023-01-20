@@ -22,7 +22,7 @@ function errorPwConfirmPrintRegister(bool $error){
     }
 }
 
-function errorPwStrengPrintRegister(bool $error){
+function errorPwStrengthPrintRegister(bool $error){
     if($error){
         ?>
         <div>

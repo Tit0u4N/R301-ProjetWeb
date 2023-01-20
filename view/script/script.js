@@ -1,5 +1,4 @@
-// const Title = module.require("view/script/Title");
-// const basket = module.require("view/script/basket/basket");
+
 
 function openPanel(id){
     closePanel()
@@ -7,6 +6,7 @@ function openPanel(id){
     card = document.querySelector('#'+id)
     card.classList.toggle("hide", false)
     card.classList.toggle("slideIn",true)
+    Title.autoSizeTitles()
     card.addEventListener("animationend", () => {
         Title.autoSizeTitles()
     })
@@ -42,4 +42,4 @@ window.onresize = () => {
         Title.autoSizeTitles()
 }
 
-const basket = new Basket();
+let basket = new Basket();

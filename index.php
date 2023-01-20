@@ -1,7 +1,6 @@
 <?php
 //$_GET['dev'] = True;
 
-session_start();
 
 
 
@@ -35,7 +34,7 @@ else if(isset($_GET['Payement'])) {
     ];
     $scripts = [
         "view/script/Title.js",
-        "view/script/ImageCharger.js"
+        "view/script/ImageCharger.js",
     ];
 
     $titlePage = "MangaFlow | Paiement";
@@ -64,11 +63,11 @@ else {
         "view/style/styleBasket.css"
     ];
     $scripts = [
-        "view/script/basket/Article.js",
-        "view/script/basket/Basket.js",
+        "view/script/basket/Article.js?version = 0.3",
+        "view/script/basket/Basket.js?version = 0.3",
         "view/script/Title.js",
-        "view/script/ImageCharger.js",
-        "view/script/script.js?version = 0.2"
+        "view/script/ImageCharger.js?version = 0.3",
+        "view/script/script.js?version = 0.3"
     ];
 
     $titlePage = "MangaFlow";

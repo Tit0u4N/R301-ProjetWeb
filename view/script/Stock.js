@@ -22,7 +22,7 @@ function getDataStock() {
 
 }
 
-function actuChart(response) {
+function actuChart(data) {
     var ctx = document.getElementById('ChartStock').getContext("2d");
     if (typeof myChart != 'undefined') {
         myChart.destroy();

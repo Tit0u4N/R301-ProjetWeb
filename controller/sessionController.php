@@ -65,7 +65,7 @@ function getBasket(bool $connected){
     else{
         require_once "model/Tome.php";
     }
-    
+
     $basket = array();
     foreach($_SESSION['basket'] as $tomeBasket){
         array_push($basket, array(new Tome($tomeBasket[0]),$tomeBasket[1]) );
@@ -97,13 +97,11 @@ $connected = false;
 $connexionValidation = false;
 if(isset($_SESSION["userId"])){
     $email = $_SESSION["emailMangaFlow"];
-    $password = $_SESSION["passwordMangaFlow"];
     $connexionValidation = true;
 }
 else if(isset($_POST["userId"]) && isset($_POST["emailMangaFlow"])){
     $test2  ="connection";
     $connected = true;
-    session_cache_limiter('private');
     $_SESSION['CREATED'] = time();
     $_SESSION["userId"] = $_POST["userId"];
     $_SESSION["emailMangaFlow"] = $_POST["emailMangaFlow"];

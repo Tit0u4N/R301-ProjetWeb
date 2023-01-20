@@ -32,15 +32,13 @@
 </head>
 <body>
 <?php require "view/component/navBar/navbar.php" ?>
-
-<div class="corpus">
-    <main>
+<main>
         <?php
         if ($body == "Connexion") {
             require "view/component/connexion.php";
         } else if ($body == "Catalog") {
             require "controller/catalog.php";
-            require "view/component/accountPanel.php";
+            require_once "view/component/accountPanel.php";
         } else if ($body == "Payement") {
             require "view/component/payementPage.php";
         } else if ($body == "Stock") {
@@ -53,7 +51,9 @@
     <?php
     require "view/component/footer.php";
     ?>
-
+<div class="corpus">
+    
+</div>
 </body>
 
 </html>

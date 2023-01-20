@@ -22,6 +22,9 @@ class Editeur{
         if(isset($editSQL[2])){
             $this->imgPath = $editSQL[2];
         }
+        else{
+            $this->imgPath = "";
+        }
 
     }
 
