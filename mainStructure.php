@@ -31,8 +31,9 @@
 
 </head>
 <body>
-<?php require "view/component/navBar/navbar.php" ?>
-<main>
+
+    <?php require "view/component/navBar/navbar.php" ?>
+    <main>
         <?php
         if ($body == "Connexion") {
             require "view/component/connexion.php";
