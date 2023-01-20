@@ -51,9 +51,7 @@
     <?php
     require "view/component/footer.php";
     ?>
-<div class="corpus">
-    
-</div>
+
 </body>
 
 </html>
