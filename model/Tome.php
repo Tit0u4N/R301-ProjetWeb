@@ -136,4 +136,14 @@ class Tome
         require "view/component/card/productCardBasketTemplate.php";
     }
 
+    /**
+     * @return float
+     */
+    public function getPrice(): float
+    {
+        return $this->price;
+    }
+
+
+
 }

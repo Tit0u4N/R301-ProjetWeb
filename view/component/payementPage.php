@@ -1,4 +1,5 @@
 <?php
+
 if(!isset($_SESSION['userId'])){
     header("Location: index.php?Connexion");
     exit;
@@ -39,7 +40,9 @@ else{
         </div>
     </div>
     <div>
-        Ajouter le moyen de paiement ici
+        <form action="index.php?Payement=Stripe" method="POST">
+            <button type="submit" id="checkout-button">Checkout</button>
+        </form>
     </div>
     </section>
 <?php

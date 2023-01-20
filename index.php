@@ -29,6 +29,12 @@ if(isset($_GET['Connexion'])){
     $body = "Connexion";
 }
 else if(isset($_GET['Payement'])) {
+    if ($_GET['Payement'] == "Stripe"){
+        require "controller/create-checkout-session.php";
+        exit;
+    }
+
+
     $stylePages = [
         "view/style/styleBasket.css"
     ];
