@@ -25,11 +25,12 @@ Site web: mangaflow.ninja
 ## Tâches prévus non réalisé
 - Site responsive
 - Historique d'achat
-- Une partie des feedback pour les utilisateurs
-- Modification de parametre d'une compte
-- Ajout/suppresion des données de la BDD à partir du Site web
+- Une partie des feedbacks pour les utilisateurs (front)
+- Modification de parametre d'un compte
+- Ajout/Suppresion des données de la BDD à partir du Site web (stock)
 
-## Comptes Admin 
+## Information de Test
+### Comptes Admin
 - Nom d'utlisateur: admin1 -> Mot de passe: admin331
 - Nom d'utlisateur: admin2 -> Mot de passe: admin763
 - Nom d'utlisateur: admin3 -> Mot de passe: admin850
@@ -41,6 +42,10 @@ Site web: mangaflow.ninja
 - Nom d'utlisateur: admin9 -> Mot de passe: admin304
 - Nom d'utlisateur: admin10 -> Mot de passe: admin121
 
+### Carte de paiement
+- Paiement valide : 4242 4242 4242 4242
+- Paiement invalide : 4000 0000 0000 9995
+
 ## Comptes base de données
 ### Localhost
 Nom d'utlisateur: public -> Mot de passe: phpClient22!
@@ -49,6 +54,7 @@ Nom d'utlisateur: webmaster -> Mot de passe: phpWebMaster22!
 
 ### Remote
 Nom d'utlisateur: p2 -> Mot de passe: FicsiT22!
+
 
 ## Scrapping/BBD génération
 En java
