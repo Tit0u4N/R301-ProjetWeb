@@ -23,7 +23,8 @@ main .catalog.carousselMod {
   grid-template-columns: none;
   overflow-x: scroll;
   padding: 10px 0 20px 0;
-  scroll-snap-type: x proximity;
+  -ms-scroll-snap-type: x proximity;
+      scroll-snap-type: x proximity;
 }
 main .catalog.carousselMod > .productCard {
   width: 220px;
@@ -72,6 +73,4 @@ main .catalog.classicMod > .productCard > .priceContainer button, main .catalog.
 main .catalog.classicMod a.productCard, main .catalog.carousselMod a.productCard {
   text-decoration: none;
   color: black;
-}
-
-/*# sourceMappingURL=styleCatalogSearch.css.map */
+}/*# sourceMappingURL=styleCatalogSearch.css.map */

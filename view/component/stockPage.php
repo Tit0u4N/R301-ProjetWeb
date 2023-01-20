@@ -58,7 +58,30 @@ else{
         </div>
 
         <canvas id="ChartStock"></canvas>
+    <hr class="divider">
+                    <table id="infoTomeStock">
+                        <thead>
+                            <tr>
+                                <th>Nombre de tomes achetés</th>
+                                <th>Couts des tomes achatés</th>
+                                <th>Nombre de tomes vendus</th>
+                                <th>Recette des tomes vendus</th>
+                                <th>Bilan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>*****</th>
+                                <th class="deviseEuro">*****</th>
+                                <th>*****</th>
+                                <th class="deviseEuro">*****</th>
+                                <th class="deviseEuro">*****</th>
+                            </tr>
+                        </tbody>
+                    </table>
     </section>
+
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <?php

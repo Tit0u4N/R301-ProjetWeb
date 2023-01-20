@@ -120,9 +120,16 @@ if(isset($_POST['idProduitStock'])){
         $ventesArgent = $ventesArgent + $sell[2]*$sell[1];
     }
     $bilan = $ventesArgent-$achatsArgent;
+    $infoTome = [
+        "tomesSold" => $ventes,
+        "totalTomesSold" => $ventesArgent,
+        "tomesBuy" => $achats,
+        "totalTomesBuy" => $achatsArgent,
+        "bilan" => $bilan
+    ];
 
     $seuil = $pdo->query("SELECT gs.seuilLimite FROM GESTION_STOCK gs WHERE gs.idProduit = ".$_POST['idProduitStock'])->fetchAll()[0][0];
-    $fullArray = ["dates" => $dates, "productStocks" => $productStocks, "seuil" => array_fill(0, count($productStocks), $seuil), "bilan" => $bilan];
+    $fullArray = ["dates" => $dates, "productStocks" => $productStocks, "seuil" => array_fill(0, count($productStocks), $seuil),"infoTome" => $infoTome ];
     echo json_encode($fullArray);
 }
 

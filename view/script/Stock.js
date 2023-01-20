@@ -15,8 +15,9 @@ function getDataStock() {
     xhr.send("idProduitStock=" + data[0] + "&startDateStock=" + data[1] + "&endDateStock=" + data[2]);
     xhr.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
-            console.log(this.response);
-            actuChart(JSON.parse(this.response))
+            let response = JSON.parse(this.response);
+            actuChart(response)
+            actuTableData(response["infoTome"])
         }
     };
 
@@ -76,11 +77,20 @@ function actuChart(data) {
 
 }
 
+function actuTableData(data){
+    let dataKeys = ["tomesSold","totalTomesSold","tomesBuy","totalTomesBuy","bilan"]
+    let tableNodes = document.querySelectorAll('#infoTomeStock tbody th');
+    for(let i = 0 ; i < dataKeys.length ; i++){
+        tableNodes[i].textContent = parseFloat(data[dataKeys[i]]).toFixed(2)
+        console.log(data[dataKeys[i]]);
+    }
+}
+
 
 var myChart;
 
 actuChart({
-    "dates": ["aaaaa", "aaaaa", "aaaaa", "aaaaa", "aaaaa", "aaaaa", "aaaaa", "aaaaa", "aaaaa", "aaaaa"],
-    "productStocks": [12, 5, 18, 2, 5, 8, 30, 5, 16, 24]
+    "dates": ["******", "******", "******", "******", "******", "******", "******", "******", "******", "******"],
+    "productStocks": [11, 12, 13, 14, 15, 16, 18, 21, 24, 30]
 })
 

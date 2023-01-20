@@ -32,7 +32,7 @@ article > li, ul > li {
 #infoTomeStock {
   margin: 30px auto;
   border-collapse: collapse;
-  border: 2px solid rgb(200, 200, 200);
+  border: 2px solid #c8c8c8;
   letter-spacing: 1px;
   font-family: sans-serif;
   font-size: 0.8rem;
@@ -44,9 +44,9 @@ article > li, ul > li {
   background-color: #fde5e5;
 }
 #infoTomeStock th {
-  border: 1px solid rgb(190, 190, 190);
+  border: 1px solid #bebebe;
   padding: 5px 12px;
 }
 #infoTomeStock td {
   text-align: center;
-}/*# sourceMappingURL=styleStock.css.map */
+}

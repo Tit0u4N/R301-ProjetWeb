@@ -27,7 +27,10 @@ main > div > div > div {
   display: flex;
 }
 main > div > div > div > h2 {
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   display: block;
   padding: 0;
   margin: 0;
@@ -72,6 +75,4 @@ main > div section > h3 {
 }
 main > div section.hide {
   display: none;
-}
-
-/*# sourceMappingURL=styleConnexion.css.map */
+}/*# sourceMappingURL=styleConnexion.css.map */
