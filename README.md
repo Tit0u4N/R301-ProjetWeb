@@ -58,4 +58,4 @@ Nom d'utlisateur: p2 -> Mot de passe: FicsiT22!
 
 ## Scrapping/BBD génération
 En java
-Pour plus d'info contacter tamaspalotas.pro@gmail.com 
+Pour plus d'info contacter tamaspalotas.contactpro@gmail.com ou tamas.palotas@etu.univ-cotedazur.fr 
